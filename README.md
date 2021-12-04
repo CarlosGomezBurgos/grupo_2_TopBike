@@ -18,5 +18,5 @@ Roles de equipo:
 
 -Marina, Arrieta: FrontEnd developer, amo el desarrollo web.
 -Carlos, Gómez Burgos: UX Experience, me gusta diseñar wireframes.
--Florencia, Capara:
+-Florencia, Capara: Estudiante de Programación, me gustaría especializarme en Frontend XD.
 -Cristian, Conci: Full Stack Developer, siempre en aprendizaje de algo nuevo.
