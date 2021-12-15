@@ -3,8 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* HEADER */
 header{
-    border: solid 1px red;
+    padding-top: 5px;
     display: flex;
     justify-content: space-between;
 }
@@ -17,17 +19,78 @@ section{
 .burger{
     margin-left: 50px;
 }
+.i_header{
+    margin-left: 15px;
+    margin-right: 5px;
+}
 div .agrupados i{
     margin: 0px 5px 0px 5px;
 }
+
+/* MAIN */
 .carrusel{
     width: 100%;
     margin-top: 5px;
 }
-
+h3{
+    margin: 10px;
+}
+section{
+    flex-direction: column;
+}
+.contenedor{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 7px;
+    display: flex;
+}
 .foto-producto{
     width: 20%;
     padding: 0px;
+}
+div{
+    margin-left: 15px;
+}
+.precio{
+    font-weight: bold;
+    margin: 5px;
+}
+button{
+    margin: 5px;
+    font-weight: bold;
+}
+section h3{
+    text-align: center;
+    margin: 17px 0px 3px;
+}
+.metodo-pago{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid black;
+    margin: 0px 5px 5px;
+}
+.metodo-pago i{
+    margin: 5px;
+}
+footer{
+    border: 2px solid black;
+    margin-top: 20px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+.contenedor_a{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor_i{
+    display: flex;
+    align-items: flex-end;
+}
+footer section nav div, i{
+    padding: 0px 5px 0px;
 }
 
 
