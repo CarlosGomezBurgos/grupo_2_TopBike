@@ -1,6 +1,25 @@
 {
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.1"
+  },
+  "name": "grupo_2_topbike",
+  "description": "En Top Bike nos dedicamos hace 10 años a la venta y distribucion de bicicletas nacionales e importadas con diseños únicos, versátiles y audaces.\r Apuntamos a ofrecer un producto de calidad, durabilidad y seguridad para la satisfaccion de nuestros clientes.\r Contamos con una amplia variedad de modelos para atender la demanda tanto de niños, adolescentes y adultos, tanto amateurs o profesionales.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosGomezBurgos/grupo_2_TopBike.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosGomezBurgos/grupo_2_TopBike/issues"
+  },
+  "homepage": "https://github.com/CarlosGomezBurgos/grupo_2_TopBike#readme"
 }

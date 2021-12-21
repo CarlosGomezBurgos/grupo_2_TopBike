@@ -3,25 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color: black;
+    font-family: 'Mukta', sans-serif;
+}
 /* HEADER */
 header{
     padding-top: 5px;
     display: flex;
     justify-content: space-between;
+    background-color: black;
 }
 section{
     display: flex;
 }
 .logo{
     margin-left: 10px;
+    width: 25%;
 }
-.burger{
-    margin-left: 50px;
+.imagen-logo{
+    width: 75%;
+}
+.burger-menu{
+    font-size: 30px;
+    color: white;
+    text-align: center;
 }
 .i_header{
     margin-left: 15px;
     margin-right: 5px;
+    color: white;
+    font-size: 15px;
+    position: relative;
+    right: 0px;
+    top: 5px;
 }
 div .agrupados i{
     margin: 0px 5px 0px 5px;
@@ -33,28 +48,74 @@ div .agrupados i{
     margin-top: 5px;
 }
 h3{
-    margin: 10px;
+    margin: 5px 5px 0px 10px;
+    color: skyblue;
 }
 section{
     flex-direction: column;
 }
 .contenedor{
-    border: 2px solid black;
-    margin: 5px;
-    padding: 7px;
+    margin: 2px;
+    padding: 2px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin-bottom: 0px;
+    border-bottom: 2px solid #e4e4e4;
+}
+.contenedor-foto{
+    width: 50%;
+    margin: 10px 10px 10px 5px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 15px;
+
+}
+.titulo-producto{
+    font-size: 18px;
     display: flex;
 }
 .foto-producto{
-    width: 20%;
-    padding: 0px;
+    width: 100%;
+}
+.detalle{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
 }
 div{
-    margin-left: 15px;
+    margin-right: 5px;
+}
+.precio-anterior{
+    font-size: 14px;
+    text-decoration: line-through;
+    color: gray;
 }
 .precio{
+    font-size: 24px;
     font-weight: bold;
-    margin: 5px;
+    margin-top: 2px;
+    display: inline;
 }
+.descuento{
+    display: inline;
+    color: greenyellow;
+    font-size: 16px;
+    font-weight: bold;
+}
+.descripcion{
+    margin-top: 5px;
+    font-size: 16px;
+    display: inline;
+}
+
 button{
     margin: 5px;
     font-weight: bold;
@@ -66,33 +127,225 @@ section h3{
 .metodo-pago{
     display: flex;
     justify-content: space-around;
-    border: 2px solid black;
+    border: 2px solid white;
     margin: 0px 5px 5px;
 }
 .metodo-pago i{
     margin: 5px;
+    color: white;
 }
 footer{
-    border: 2px solid black;
     margin-top: 20px;
 }
 nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 5px;
 }
 .contenedor_a{
     display: flex;
     flex-direction: column;
 }
+.direccion{
+    color: white;
+    margin-top: 10px;
+    margin-left: 0px;
+}
 .contenedor_i{
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
+    color: white;
 }
 footer section nav div, i{
     padding: 0px 5px 0px;
 }
+a{
+    color:white;
+    text-decoration: none;
+}
 
+/*producto*/
+.producto-contenedor{
+    margin: 2px;
+    padding: 2px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin-bottom: 0px;
+}
+.producto-contenedor-foto{
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+}
+.contenedor-miniatura{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.producto-detalle{
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-bottom: solid 4px #e4e4e4;
+}
+.producto-precio{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 2px;
+    display: inline;
+    color: white;
+}
+.producto-descripcion{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    color: white;
+}
+.boton-envio{
+    display: inline;
+    font-size: 24px;
+    border-bottom: 10px;
 
+}
+.producto-envio{
+    display: block;
+    color: greenyellow;
+    font-size: 16px;
+    font-weight: bold;
+}
+.boton-comprar, .boton-ver-carrito, .boton-pagar{
+    color: #0099CC;
+    background-color: #0099CC;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 2;
+    margin: 2px 5px 10px 0px;
+    color: white;
+    width: 100%; 
+    display: inline;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid #0099CC;
+    
+}
+.producto-botones{ /*padre*/
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+.producto-comprar, .producto-ver-carrito{
+    width: 40%;
+}
 
-
+/*CARRITO DE COMPRAS*/
+.cart-contenedor-foto{ /*hijo*/
+    width: 25%;
+    margin: 10px 10px 10px 5px;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 15px;
+}
+.cart-detalle{ /*hijo*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 75%;
+}
+.cart-precio-anterior{
+    font-size: 14px;
+    text-decoration: line-through;
+    color: gray;
+    display: inline;
+}
+.cart-descuento{
+    display: inline;
+    color: greenyellow;
+    font-size: 14px;
+    font-weight: bold;
+}
+.cart-producto-botones{ /*padre*/
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 05px;
+}
+.boton-eliminar-art{
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 2;
+    margin: 2px 5px 10px 0px;
+    color: white;
+    width: 100%; 
+    display: flex;
+    align-items: flex-end;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid red;
+}
+.cart-descripcion{
+    font-size: 12px;
+    display: block;
+}
+.cart-precio{
+    font-size: 18px;
+}
+.boton-eliminar-art{
+    display: flex;
+    align-content: flex-end;
+}
+.cart-boton-eliminar{
+    width: 40%;
+    padding: none;
+}
+.boton-eliminar{
+    color: #0099CC;
+    background-color: #0099CC;
+    line-height: 1.5;
+    color: rgb(221, 194, 194);
+    width: 100%; 
+    display: inline;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid#0099CC;
+}
+.cart-total-resumen{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 5px 0px 5px;
+}
+.cart-texto-gral, .cart-monto-gral{
+    color: white;
+    margin-top: 5px;
+    display: flex;
+    font-weight: bold;
+}
+.cart-envio{
+    color: greenyellow;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0px 10px 5px;
+}
+.cart-stock-comprar p{
+    font-size: 14px;
+}
