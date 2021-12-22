@@ -14,17 +14,71 @@
 <body>
     <header>
         <div class="logo">
-        <img src="./img/logo-white-top-bike.png" alt="logo" class="imagen-logo">
+          <img src="./img/logo-white-top-bike.png" alt="logo" class="imagen-logo">
         </div>
+
+   
         <div class="burger-menu">
             <i class="fas fa-bars"></i>
         </div>
         <div class="i_header">
             <i class="fas fa-search"></i>
-            <i class="fas fa-user"></i>
             <i class="fas fa-shopping-cart"></i>
+            <label for="check">
+              <i class="fas fa-user" id="btn"></i>
+            </label>
         </div>
     </header>
+
+
+
+    <div class="contenedor_usuario">
+        <input type="checkbox" id="check">
+        <div class="sidebar">
+            <header>
+              <h3>INICIAR SESIÓN</h3>
+              <label for="check">
+                <i class="fas fa-times" id="cancel"></i>
+              </label>
+            </header>
+            <form action="index.html" method="post">
+                <label for="name">NOMBRE</label>
+                <input type="text" id="name" name="user_name">
+                <label for="password">CONTRASEÑA</label>
+                <input type="password" id="password" name="user_password">
+                <button type="submit">INICIAR SESIÓN</button>
+                <h3>¿ No tenés cuenta ?</h3>
+                <label for="check-register">CREAR CUENTA</label>                
+            </form>
+        </div>
+    </div>
+
+
+    <div class="contenedor_register">
+        <input type="checkbox" id="check-register">
+        <div class="sidebar-register">
+            <header>
+              <h3>REGISTRARSE</h3>
+              <label for="check-register">
+                <i class="fas fa-times" id="cancel"></i>
+              </label>
+            </header>
+            <form action="#" method="post">
+                <label for="name">NOMBRE</label>
+                <input type="text" id="name" name="user_name">
+                <label for="mail">EMAIL</label>
+                <input type="text" id="mail" name="mail">                
+                <label for="password">CONTRASEÑA</label>
+                <input type="password" id="password" name="user_password">
+                <button type="submit">REGISTRARSE</button>
+                
+            </form>
+        </div>
+    </div>
+
+
+
+
     <main>
         <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel">
         <h3>Ofertas</h3>
@@ -97,4 +151,5 @@
         </nav>
     </footer>
 </body>
+
 </html>

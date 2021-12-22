@@ -8,7 +8,7 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res)=>{ //analiza la ruta ./ para saber que hacer ahi.
-    res.sendFile(path.resolve('./views/index.html'))
+   res.sendFile(path.resolve('./views/index.html'))
 })
 app.get('/productDetail', (req, res)=>{ //analiza la ruta ./ para saber que hacer ahi.
     res.sendFile(path.resolve('./views/productDetail.html'))

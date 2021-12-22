@@ -42,6 +42,207 @@ div .agrupados i{
     margin: 0px 5px 0px 5px;
 }
 
+/* USUARIO */
+.contenedor_usuario{
+    display: flex;
+    align-content: flex-end;
+}
+.sidebar {
+  position: fixed;
+  top: 28px;
+  left: -786px; /* esconder menu*/
+  width: 0;
+  height: 100%;
+  background: #042331;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 1em;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #000000;
+  user-select: none;
+}
+.sidebar form{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px 0px;
+}
+.sidebar form label{
+    color: white;
+    margin-top: 20px;
+    background-color: #02192799;
+    font-family: 'DM Mono', monospace;
+    font-size: 1em;
+    padding-bottom: 3px;
+}
+.sidebar form input{
+    height: 30px;
+}
+.sidebar form button, .sidebar form [for="check-register"]{
+    margin: auto;
+    width: 90%;
+    border: #75e5f1 solid 1px;
+    border-radius: 4px;
+    padding: 3px;
+    background-color: #021521;
+    color: aliceblue;
+    font-family: 'DM Mono', monospace;
+    height: 54px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar form #password{
+    margin-bottom: 50px;
+}
+.sidebar form h3{
+    font-family: 'DM Mono', monospace;
+    font-size: 1em;
+    text-align: center;
+    margin: 64px 0px 23px;
+    color: #f5f6f7;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+label #btn{
+  color: #FFFFFF    ;
+  transition: all .5s;
+}
+
+label #cancel{
+  z-index: 1111;
+  font-size: 25px;
+  color: #f1f5f7;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+  margin-top: 18px;
+  width: 100%;
+}
+#check:checked ~ #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+#check:checked ~ label #cancel{
+  display: block;
+}
+/* TERMINA USUARIO */
+
+
+/* REGISTRO DE USUARIO */
+/* USUARIO */
+.contenedor_register{
+    display: flex;
+    align-content: flex-end;
+}
+.sidebar-register {
+  position: fixed;
+  top: 28px;
+  left: -786px; /* esconder menu*/
+  width: 0;
+  height: 100%;
+  background: #042331;
+  transition: all .5s ease;
+}
+.sidebar-register header {
+  font-size: 1em;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #000000;
+  user-select: none;
+}
+.sidebar-register form{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px 0px;
+}
+.sidebar-register form label{
+    color: white;
+    margin-top: 20px;
+    background-color: #02192799;
+    font-family: 'DM Mono', monospace;
+    font-size: 1em;
+    padding-bottom: 3px;
+}
+.sidebar-register form input{
+    height: 30px;
+}
+.sidebar-register form button{
+    margin: auto;
+    width: 90%;
+    border: #75e5f1 solid 1px;
+    border-radius: 4px;
+    padding: 3px;
+    background-color: #021521;
+    color: aliceblue;
+    font-family: 'DM Mono', monospace;
+    height: 54px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-register form #password{
+    margin-bottom: 50px;
+}
+.sidebar-register form h3{
+    font-family: 'DM Mono', monospace;
+    font-size: 1em;
+    text-align: center;
+    margin: 64px 0px 23px;
+    color: #f5f6f7;
+}
+#check-register{
+  display: none;
+}
+label #btn,label #cancel{
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+label #btn{
+  color: #FFFFFF    ;
+  transition: all .5s;
+}
+
+label #cancel{
+  z-index: 1111;
+  font-size: 25px;
+  color: #f1f5f7;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check-register:checked ~ .sidebar-register{
+  left: 0;
+  margin-top: 18px;
+  width: 100%;
+}
+#check-register:checked ~ #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+#check-register:checked ~ label #cancel{
+  display: block;
+}
+/* TERMINA REGISTRO USUARIO */
+
+
 /* MAIN */
 .carrusel{
     width: 100%;
