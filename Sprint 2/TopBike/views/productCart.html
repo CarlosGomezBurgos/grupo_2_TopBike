@@ -20,15 +20,68 @@
              <div class="burger-menu">
                  <i class="fas fa-bars"></i>
              </div>
+             <nav class="navbar-header">
+                 <ul class="navbar-lista">
+                   <a href="#">NOSOTROS</a>
+                   <a href="#">PRODUCTOS</a>
+                   <a href="#">NOVEDADES</a>
+                   <a href="#">OFERTAS</a>
+                   <a href="#">EVENTOS</a>
+                 </ul>
+             </nav>
              <div class="i_header">
-                 <i class="fas fa-search"></i>
-                 <i class="fas fa-shopping-cart"></i>
-                 <label for="check">
+                   <i class="fas fa-search"></i>
+                   <a href="/productCart">
+                       <i class="fas fa-shopping-cart"></i>
+                   </a>
+                   <label for="check">
                    <i class="fas fa-user" id="btn"></i>
                  </label>
              </div>
         </div>   
-    </header>
+       </header>
+   
+       <div class="contenedor_usuario">
+           <input type="checkbox" id="check">
+           <div class="sidebar">
+               <header>
+                 <h3>INICIAR SESIÓN</h3>
+                 <label for="check">
+                   <i class="fas fa-times" id="cancel"></i>
+                 </label>
+               </header>
+               <form action="/" method="get">
+                   <label for="name">NOMBRE</label>
+                   <input type="text" id="name" name="user_name">
+                   <label for="password">CONTRASEÑA</label>
+                   <input type="password" id="password" name="user_password">
+                   <button type="submit">INICIAR SESIÓN</button>
+                   <h3>¿ No tenés cuenta ?</h3>
+                   <label for="check-register">CREAR CUENTA</label>                
+               </form>
+           </div>
+       </div>
+       <div class="contenedor_register">
+           <input type="checkbox" id="check-register">
+           <div class="sidebar-register">
+               <header>
+                   <h3>REGISTRARSE</h3>
+                   <label for="check">
+                     <i class="fas fa-times" id="cancel"></i>
+                   </label>
+                 </header>
+     
+               <form action="/" method="get">
+                   <label for="name">NOMBRE</label>
+                   <input type="text" id="name" name="user_name">
+                   <label for="mail">EMAIL</label>
+                   <input type="text" id="mail" name="mail">                
+                   <label for="password">CONTRASEÑA</label>
+                   <input type="password" id="password" name="user_password">
+                   <button type="submit">REGISTRARSE</button>
+               </form>
+           </div>
+       </div>
     <main>
         <h3 class="cart-titulo">Carrito de Compras</h3>
         <section>

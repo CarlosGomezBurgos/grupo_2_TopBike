@@ -29,6 +29,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+.navbar-lista {
+    display: none;
+}
 .i_header {
     width: 33%;
     color: white;
@@ -39,21 +42,24 @@ body{
 }
 /* FIN HEADER */
 
-
 /* USUARIO */
 .contenedor_usuario{
     display: flex;
     align-content: flex-end;
 }
+#check{
+    display: none;
+  }
 .sidebar {
     position: fixed;
     top: 28px;
-    left: -786px; /* esconder menu*/
+    right:-786px; /* esconder menu*/
     width: 0;
     height: 100%;
     background: #042331;
     transition: all .5s ease;
 }
+
 .sidebar header {
     position: relative;
     font-size: 1em;
@@ -63,10 +69,20 @@ body{
     user-select: none;
     padding: 20px;
 }
+label #cancel{
+    position: absolute;
+    left: 310px;
+    top: 17px;
+    z-index: 1111;
+    font-size: 1.1em;
+    color:#75e5f1;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
 .sidebar form{
     display: flex;
     flex-direction: column;
-    padding: 0px 15px 0px;
+    padding: 0px 30px;
 }
 .sidebar form label{
     color: white;
@@ -98,37 +114,27 @@ body{
     margin-bottom: 50px;
 }
 .sidebar form h3{
-    font-family: 'DM Mono', monospace;
+    font-family: 'Mukta', sans-serif;
     font-size: 1em;
     text-align: center;
     margin: 40px 0px 20px;
-    color: #f5f6f7;
+    color: #FFFFFF;
 }
-#check{
-  display: none;
+button{
+    margin: 5px;
+    font-weight: bold;
 }
 label #btn,label #cancel{
   border-radius: 3px;
   cursor: pointer;
 }
-
 label #btn{
   color: #FFFFFF    ;
   transition: all .5s;
 }
-label #cancel{
-    position: absolute;
-    left: 310px;
-    top: 17px;
-    z-index: 1111;
-    font-size: 20px;
-    color:#75e5f1;
-    padding: 4px 9px;
-    transition: all .5s ease;
-}
 #check:checked ~ .sidebar{
-  left: 0;
-  margin-top: 30px;
+  right: 0;
+  margin-top: 32px;
   width: 100%;
 }
 #check:checked ~ #btn{
@@ -142,7 +148,6 @@ label #cancel{
 }
 /* TERMINA USUARIO */
 
-
 /* REGISTRO DE USUARIO */
 /* USUARIO */
 .contenedor_register{
@@ -152,7 +157,7 @@ label #cancel{
 .sidebar-register {
   position: fixed;
   top: 28px;
-  left: -786px; /* esconder menu*/
+  right: -786px; /* esconder menu*/
   width: 0;
   height: 100%;
   background: #042331;
@@ -176,7 +181,7 @@ label #cancel{
     color: white;
     margin-top: 20px;
     background-color: #02192799;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Mukta', sans-serif;
     font-size: 1em;
     padding-bottom: 3px;
 }
@@ -191,7 +196,7 @@ label #cancel{
     padding: 3px;
     background-color: #021521;
     color: aliceblue;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Mukta', sans-serif;
     height: 54px;
     font-size: 1em;
     display: flex;
@@ -202,38 +207,36 @@ label #cancel{
     margin-bottom: 50px;
 }
 .sidebar-register form h3{
-    font-family: 'DM Mono', monospace;
+    font-family: 'Mukta', sans-serif;
     font-size: 1em;
     text-align: center;
     margin: 64px 0px 23px;
     color: #f5f6f7;
 }
 #check-register{
-  display: none;
+    display: none;
 }
 label #btn,label #cancel{
-  border-radius: 3px;
-  cursor: pointer;
+    border-radius: 3px;
+    cursor: pointer;
 }
-
 label #btn{
-  color: #FFFFFF    ;
-  transition: all .5s;
+    color: #FFFFFF    ;
+    transition: all .5s;
 }
-
 #check-register:checked ~ .sidebar-register{
-  left: 0;
-  margin-top: 30px;
-  width: 100%;
+    right: 0;
+    margin-top: 30px;
+    width: 100%;
 }
 #check-register:checked ~ #btn{
-  left: 250px;
-  opacity: 0;
-  pointer-events: none;
-  display: none;
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
 }
 #check-register:checked ~ label #cancel{
-  display: block;
+    display: block;
 }
 /* TERMINA REGISTRO USUARIO */
 
@@ -243,12 +246,13 @@ label #btn{
     margin-top: 65px;
 }
 /* FIN CARRUSEL */
+
 /* MAIN INDEX */
 main {
     background-color: #000000;
 }
 .oferta {
-    font-size: 2em;
+    font-size: 1.5em;
     color: skyblue;
     margin: 5px;
 }
@@ -282,6 +286,18 @@ main {
     text-decoration: line-through;
     color: gray;
 }
+#precio-anterior{
+    font-size: 1.1em;
+    text-decoration: line-through;
+    color: gray;
+}
+.producto-precio{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 2px;
+    display: inline;
+    color: white;
+}
 .precio{
     font-size: 1.5em;
     font-weight: bold;
@@ -289,6 +305,15 @@ main {
     display: inline;
 }
 .descuento{
+    display: inline;
+    color: #000000;
+    font-size: .8em;
+    font-weight: bold;
+    background-color: rgb(202, 248, 133);
+    border-radius: 2px;
+    margin-left: 5px;
+}
+#descuento{
     display: inline;
     color: #000000;
     font-size: 1em;
@@ -302,6 +327,7 @@ main {
     display: block
 }
 /* FIN MAIN INDEX */
+
 /* INICIO FOOTER*/
 .contenedor-footer {
     background-color: #000000;
@@ -329,9 +355,16 @@ main {
     border-top: 10px solid #000000;
     border-bottom: 5px solid #000000;
     padding: 5px;
-
+}
+footer section nav div, i{
+    padding: 0px 5px 0px;
+}
+a{
+    color:white;
+    text-decoration: none;
 }
 /* FIN FOOTER*/
+
 /* INICIO PRODUCT DETAIL*/
 .product-titulo {
     padding-bottom: 15px;
@@ -342,12 +375,15 @@ main {
 }
 .contenedor-productDetail {
     background-color: #000000;
-    margin-top: 5px;
+    margin-top: 58px;
 }
 .productDetail-section {
     display: flex;
     width: 100%;
     height: 50%;
+    border-top: 2px solid #0099CC;
+    border-bottom: 2px solid #0099CC;
+
 }
 .productDetail-miniatura{
     display: flex;
@@ -358,21 +394,20 @@ main {
     width: 70%;
     display: flex;
 }
-.product{
-margin: 0 5px;
-} 
-.productDetail-foto {
-    margin: 0 5px 5px 0;
-}
 .foto-chica {
     width: 100%;
-    border-radius: 10%;
+    border-radius: 15%;
+    padding: 5px;
 }
 .foto-grande{
     width: 100%;
     border-radius: 10%;
+    padding: 5px;
 }
-
+.product {
+    display: flex;
+    align-content: center;
+}
 .producto-detalle{
     display: block;
     margin: auto;
@@ -386,7 +421,45 @@ margin: 0 5px;
     color: skyblue;
     background-color: rgb(46, 46, 48);
 }
+.producto-envio{
+    display: block;
+    color: greenyellow;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 0 20px 0;
+}
+.producto-descripcion{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    color: white;
+}
+.boton-comprar, .boton-ver-carrito, .boton-pagar{
+    color: #0099CC;
+    background-color: #0099CC;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 2;
+    margin: 2px 5px 10px 0px;
+    color: white;
+    width: 100%; 
+    display: inline;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid #0099CC;
+}
+.producto-comprar, .producto-ver-carrito{
+    width: 40%;
+}
+li {
+    padding: 2px 0;
+    font-size: 1.1em;
+    margin-left: 30px;
+}
 /* FIN PRODUCT DETAIL*/
+
 /* INICIO CART */
 .cart-titulo {
     padding-bottom: 15px;
@@ -410,7 +483,6 @@ margin: 0 5px;
     color: gray;
     display: inline; 
 }
-
 .cart-precio{
     display: inline;
     font-size: 1.1em;
@@ -474,98 +546,182 @@ margin: 0 5px;
     font-weight: bold;
     margin: 5px 0px 10px 5px;
 }
+.producto-botones{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
 /* FIN CART */
+@media(min-width: 361px) {
+    /* INDEX HEADER */
+    .contenedor-header {
+        display: flex;
+        width: 100vw;
+        justify-content: flex-end;
+    }
+    .logo {
+        margin-left: 0;
+        padding: 10px;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .contenedor-logo{
+        width: 15%;
+        display: flex;
+        margin: 0;    
+    }
+    .i_header {
+        width: 15%;
+        justify-content: space-around;
+        align-items: center;
+        padding-right: 20px;
+    }
+    .navbar-header{
+        width: 70%;
+        display: flex;
+        justify-content: center;
+    }
+    .navbar-lista {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+    ul a {
+        padding: 0 20px;
+        font-size: 1.1em;
+    }
+    /*FIN INDEX HEADER*/
 
-button{
-    margin: 5px;
-    font-weight: bold;
-}
-.metodo-pago{
-    display: flex;
-    justify-content: space-around;
-    border: 2px solid white;
-    margin: 0px 5px 5px;
-}
-.metodo-pago i{
-    margin: 5px;
-    color: white;
-}
+    /*INDEX PRODUCTOS*/
+    .index-articulos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 50%;
+        padding: 20px 0;
+        border-bottom: 5px solid rgb(92, 92, 92);
+    }
+    .oferta {
+        font-size: 2em;
+        margin: 0;
+        padding: 20px 0 0 60px;
+    }
+    .detalle, .contenedor-foto {
+        width: 80%;
+    }
 
+    /* LOGIN */
+    .sidebar {
+        position: fixed;
+        top: 28px;
+        right:-786px; /* esconder menu*/
+        width: 0;
+        height: 100%;
+        background: #042331;
+        transition: all .5s ease;
+    }
+    #check:checked ~ .sidebar{
+        right: 0;
+        margin-top: 68px;
+        width: 50%;
+      }
+    label #cancel{
+        position: absolute;
+        left: 625px;
+        top: 17px;
+        z-index: 1111;
+        font-size: 1.1em;
+        color:#75e5f1;
+        padding: 4px 9px;
+        transition: all .5s ease;
+    }
+    /* REGISTER */
+    #check-register:checked ~ .sidebar-register{
+        right: 0;
+        margin-top: 68px;
+        width: 50%;
+    }
 
+    /* PRODUCT DETAIL */
+    .productDetail-section {
+        padding: 10px;
+    }
+    .foto-chica{
+        padding: 5px 10px;
+    }
+    .contenedor-productDetail {
+        margin-top: 96px;
+    }
+    .product-titulo {
+        font-size: 2em;
+        padding: 10px 0 10px 15px;
+    }
+    .product-destacados {
+        font-size: 2.5em;
+    }
+    .productDetail-section {
+        width: 60%;
+        height: 50%;
+        border-top: 4px solid #0099CC;
+        border-bottom: 4px solid #0099CC;
+    }
+    .producto-detalle {
+        width: 40%;
+        margin: 0;
+        padding-top: 30px;
+        
+    }
+    .contenedor-product-main {
+        display: flex;
+    }
+    #precio-anterior{
+        text-decoration: line-through;
+        color: gray;    
+        font-size: 2em;
+        margin-left: 30px;
+    }
+    .producto-precio {
+        font-size: 3.5em;
+        margin-left: 30px;
+    }
+    #descuento {
+        display: inline;
+        color: #000000;
+        font-size: 2em;
+        font-weight: bold;
+        background-color: rgb(202, 248, 133);
+        border-radius: 10px;
+        margin-left: 20px;
+        padding: 0 10px;
 
-footer section nav div, i{
-    padding: 0px 5px 0px;
+    }
+    .producto-descripcion {
+        font-size: 1.2em;
+    }
+    .producto-envio {
+        padding: 50px 0 20px 30px;
+        font-size: 1.5em;
+    }
+    .producto-botones {
+        padding-top: 20px;
+    }
+    .boton-comprar, .boton-ver-carrito, .boton-pagar {
+        font-size: 1.5em;
+    }
+    li {
+        padding: 2px 0;
+        font-size: 1.1em;
+        margin-left: 30px;
+    }
+    .boton-comprar,.boton-ver-carrito {
+        border: 4px solid #0099CC;
+    }
 }
-a{
-    color:white;
-    text-decoration: none;
-}
-
-/*producto*/
-.producto-contenedor{
-    color: white;
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    margin-bottom: 0px;
-}
-
-
-
-.producto-precio{
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 2px;
-    display: inline;
-    color: white;
-}
-.producto-descripcion{
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    color: white;
-}
-.boton-envio{
-    display: inline;
-    font-size: 24px;
-    border-bottom: 10px;
-
-}
-.producto-envio{
-    display: block;
-    color: greenyellow;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 5px 0 20px 10px;
-}
-.boton-comprar, .boton-ver-carrito, .boton-pagar{
-    color: #0099CC;
-    background-color: #0099CC;
-    font-family: inherit;
-    font-size: 18px;
-    line-height: 2;
-    margin: 2px 5px 10px 0px;
-    color: white;
-    width: 100%; 
-    display: inline;
-    border-radius: 6px;
-    background: transparent;
-    border: 2px solid #0099CC;
-    
-}
-.producto-botones{ /*padre*/
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-}
-.producto-comprar, .producto-ver-carrito{
-    width: 40%;
-}
-
-/*CARRITO DE COMPRAS*/
-
-
 

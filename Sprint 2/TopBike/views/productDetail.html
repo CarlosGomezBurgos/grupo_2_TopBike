@@ -20,99 +20,165 @@
              <div class="burger-menu">
                  <i class="fas fa-bars"></i>
              </div>
+             <nav class="navbar-header">
+                 <ul class="navbar-lista">
+                   <a href="#">NOSOTROS</a>
+                   <a href="#">PRODUCTOS</a>
+                   <a href="#">NOVEDADES</a>
+                   <a href="#">OFERTAS</a>
+                   <a href="#">EVENTOS</a>
+                 </ul>
+             </nav>
              <div class="i_header">
-                 <i class="fas fa-search"></i>
-                 <i class="fas fa-shopping-cart"></i>
-                 <label for="check">
+                   <i class="fas fa-search"></i>
+                   <a href="/productCart">
+                       <i class="fas fa-shopping-cart"></i>
+                   </a>
+                   <label for="check">
                    <i class="fas fa-user" id="btn"></i>
                  </label>
              </div>
         </div>   
     </header>
+   
+    <div class="contenedor_usuario">
+           <input type="checkbox" id="check">
+           <div class="sidebar">
+               <header>
+                 <h3>INICIAR SESIÓN</h3>
+                 <label for="check">
+                   <i class="fas fa-times" id="cancel"></i>
+                 </label>
+               </header>
+               <form action="/" method="get">
+                   <label for="name">NOMBRE</label>
+                   <input type="text" id="name" name="user_name">
+                   <label for="password">CONTRASEÑA</label>
+                   <input type="password" id="password" name="user_password">
+                   <button type="submit">INICIAR SESIÓN</button>
+                   <h3>¿ No tenés cuenta ?</h3>
+                   <label for="check-register">CREAR CUENTA</label>                
+               </form>
+           </div>
+       </div>
+       <div class="contenedor_register">
+           <input type="checkbox" id="check-register">
+           <div class="sidebar-register">
+               <header>
+                   <h3>REGISTRARSE</h3>
+                   <label for="check">
+                     <i class="fas fa-times" id="cancel"></i>
+                   </label>
+                 </header>
+     
+               <form action="/" method="get">
+                   <label for="name">NOMBRE</label>
+                   <input type="text" id="name" name="user_name">
+                   <label for="mail">EMAIL</label>
+                   <input type="text" id="mail" name="mail">                
+                   <label for="password">CONTRASEÑA</label>
+                   <input type="password" id="password" name="user_password">
+                   <button type="submit">REGISTRARSE</button>
+               </form>
+           </div>
+       </div>
     <main>
         <div class="contenedor-productDetail">
             <h3 class="product-titulo">Detalle de Producto</h3>
-            <section class="productDetail-section">
-                <div class="productDetail-miniatura">
-                    <div class="product">
-                        <img class="foto-chica" src="./img/producto1-0.jpg" alt="miniatura">
+            <div class="contenedor-product-main">
+                <section class="productDetail-section">
+                    <div class="productDetail-miniatura">
+                        <div class="product">
+                            <img class="foto-chica" src="./img/producto1-0.jpg" alt="miniatura">
+                        </div>
+                        <div class="product">
+                            <img class="foto-chica" src="./img/producto1-0.jpg" alt="miniatura">
+                        </div>
+                        <div class="product">
+                            <img class="foto-chica" src="./img/producto1-0.jpg" alt="miniatura">
+                        </div>
                     </div>
-                    <div class="product">
-                        <img class="foto-chica" src="./img/producto1-0.jpg" alt="miniatura">
+                    <div class="productDetail-foto">
+                        <img class="foto-grande" src="./img/producto1-0.jpg" alt="miniatura">
+                    </div>              
+                </section>
+                <div class="producto-detalle">
+                    <p id="precio-anterior">$ 45.729</p>
+                    <p class="producto-precio">$ 38.869</p>
+                    <p id="descuento">OFF 15%</p>
+                    <div class="producto-descripcion">
+                        <ul>
+                            <li>Bicicleta Nordic X1.0 By Slp R29 Shim.21v Disco</i>
+                            <li>Lorem ipsum dolor sit amet consect adipisicing.</i>
+                            <li>Animi eum tenetur quidem rem non eius alias</i>
+                            <li>quia possimus blanditiis iureconsequatur veritatis</li>
+                            <li>nulla itaque consequuntur, iste porro?</li>
+                        </ul>
                     </div>
-                    <div class="product">
-                        <img class="foto-chica" src="./img/producto1-0.jpg" alt="miniatura">
+                    <div>
+                        <p class="producto-envio">Envío Gratis</p>
+                        <div class="producto-botones">
+                            <div class="producto-comprar"> 
+                                <input  class="boton-comprar" type="button" value="Comprar">
+                            </div>
+                            <div class="producto-ver-carrito"> 
+                                <input  class="boton-ver-carrito" type="button" value="Agregar al Carrito">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="productDetail-foto">
-                    <img class="foto-grande" src="./img/producto1-0.jpg" alt="miniatura">
-                </div>              
-            </section>
-            <div class="producto-detalle">
-                <p class="precio-anterior">$ 45.729</p>
-                <p class="producto-precio">$ 38.869</p>
-                <p class="descuento">OFF 15%</p>
-                <p class="producto-descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eum tenetur quidem rem non eius alias sequi adipisci quia possimus blanditiis iure consequatur veritatis architecto nulla itaque consequuntur, iste porro?
-                </p>
+    
             </div>
-            <div>
-                <p class="producto-envio">Envío Gratis</p>
-                <div class="producto-botones">
-                    <div class="producto-comprar"> 
-                        <input  class="boton-comprar" type="button" value="Comprar">
-                    </div>
-                    <div class="producto-ver-carrito"> 
-                        <input  class="boton-ver-carrito" type="button" value="Ver Carrito">
-                    </div>
-                </div>
-            </div>
+
             <section class="main-product">
                 <h3 class="product-destacados">Productos Destacados</h3>
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
+                <section class="index-articulos">
+                    <article class="contenedor">
+                        <div class="contenedor-foto">
+                                <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
+                        </div>
+                        <div class="detalle">
+                                <p class="precio-anterior">$ 45.729</p>
+                                <p class="precio">$ 38.869</p>
+                                <p class="descuento">15% OFF</p>
+                                <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
+                        </div>
+                    </article>
+                    <article class="contenedor">
+                        <div class="contenedor-foto">
+                                <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
+                        </div>
+                        <div class="detalle">
+                                <p class="precio-anterior">$ 45.729</p>
+                                <p class="precio">$ 38.869</p>
+                                <p class="descuento">15% OFF</p>
+                                <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
+                        </div>
+                    </article> 
+                    <article class="contenedor">
+                        <div class="contenedor-foto">
+                                <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
+                        </div>
+                        <div class="detalle">
+                                <p class="precio-anterior">$ 45.729</p>
+                                <p class="precio">$ 38.869</p>
+                                <p class="descuento">15% OFF</p>
+                                <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
+                        </div>
+                    </article>
+                    <article class="contenedor">
+                        <div class="contenedor-foto">
+                                <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
+                        </div>
+                        <div class="detalle">
+                                <p class="precio-anterior">$ 45.729</p>
+                                <p class="precio">$ 38.869</p>
+                                <p class="descuento">15% OFF</p>
+                                <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
+                        </div>
                     </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>     
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>
+                    
+                </section>
             </section>
     
         </main>
