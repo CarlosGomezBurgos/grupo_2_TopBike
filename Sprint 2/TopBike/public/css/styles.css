@@ -1,24 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*  :root{
+    --Amarillo: #EAC926;
+    --Azul: #03264C;
+    --Celeste: #1259c3;
+    --Gris_oscuro: #666;
+    --Gris_claro: #ebebeb;
+    --Verde: #39b54a;
+    }  */
+
+/* Variables CSS */
+:root{
+    --Orange1: #F24C27;
+    --Orange2: #F25F29;
+    --Orange3: #F28D35;
+    --Azul: #35428C;
+    --Dark: #202124;
+    }
+    
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: var(--Dark);
 }
 /* INICIO HEADER */
 .contenedor-header {
     display: flex;
     position: fixed;
-    background-color: #000000;
+    background-color: #202124e8;
+    
 }
 .contenedor-logo {
-    width: 33%;
+    width: 30%;
     display: block;
     margin: auto;
 }
 .logo {
-    width: 100%;
+    width: 95%;
     padding: 5px;
 }
 .burger-menu {
@@ -33,13 +55,18 @@ body{
     display: none;
 }
 .i_header {
-    width: 33%;
+    width: 15%;
     color: white;
-    font-size: 1.5em;
+    font-size: 1.1em;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-right: 50px;
 }
+
+
+
+
 /* FIN HEADER */
 
 /* USUARIO */
@@ -75,7 +102,7 @@ label #cancel{
     top: 17px;
     z-index: 1111;
     font-size: 1.1em;
-    color:#75e5f1;
+    color:var(--Orange1);
     padding: 4px 9px;
     transition: all .5s ease;
 }
@@ -243,25 +270,28 @@ label #btn{
 /* INICIO CARRUSEL */
 .carrusel-foto{
     width: 100%;
-    margin-top: 65px;
+    margin-top: 60px;
 }
 /* FIN CARRUSEL */
 
 /* MAIN INDEX */
 main {
-    background-color: #000000;
+    background-color: var(--Dark);
 }
 .oferta {
-    font-size: 1.5em;
-    color: skyblue;
-    margin: 5px;
+    font-size: 2.2em;
+    color: var(--Orange1);
+    padding: 95px 0 0 70px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
+
 .main-index {
-    background-color: #000000;
+    background-color: var(--Dark);
     padding-top: 10px;
 }
 .contenedor{
-    background-color: black;
+    background-color: var(--Dark);
     color: white;
     display: flex;
     width: 100%;
@@ -275,7 +305,8 @@ main {
 }
 .foto-producto{
     width: 100%;
-    border-radius: 10%;
+    border-radius: 4%;
+    box-shadow: 0.5px 0.5px 1.7px rgba(245, 245, 245, 0.671);
 }
 .detalle{
     width: 50%;
@@ -300,18 +331,19 @@ main {
 }
 .precio{
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 700;
     margin-top: 2px;
     display: inline;
 }
 .descuento{
     display: inline;
-    color: #000000;
-    font-size: .8em;
-    font-weight: bold;
-    background-color: rgb(202, 248, 133);
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    background-color: var(--Azul);
     border-radius: 2px;
     margin-left: 5px;
+    padding: 3px 5px;
 }
 #descuento{
     display: inline;
@@ -320,17 +352,20 @@ main {
     font-weight: bold;
     background-color: rgb(202, 248, 133);
     border-radius: 2px;
+    
 }
 .descripcion{
-    margin-top: 5px;
+    margin-top: 3px;
     font-size: 1em;
-    display: block
+    font-weight: 500;
+    padding-top: 4px;
+    display: block;
 }
 /* FIN MAIN INDEX */
 
 /* INICIO FOOTER*/
 .contenedor-footer {
-    background-color: #000000;
+    background-color: var(--Dark);
     display: flex;
     flex-direction: row;
     color: #FFFFFF;
@@ -347,13 +382,15 @@ main {
     display: flex;
     justify-content: flex-end;
     font-size: 1.5em;
+    margin-right: 20px;
+
 }
 .direccion {
-    background-color: #000000;
+    background-color: var(--Dark);
     color: #FFFFFF;
     display: block;
-    border-top: 10px solid #000000;
-    border-bottom: 5px solid #000000;
+    border-top: 10px solid var(--Dark);
+    border-bottom: 5px solid var(--Dark);
     padding: 5px;
 }
 footer section nav div, i{
@@ -362,29 +399,37 @@ footer section nav div, i{
 a{
     color:white;
     text-decoration: none;
+    font-size: smaller;
+    font-weight:200;
+    margin: 3px 0px;
 }
 /* FIN FOOTER*/
 
 /* INICIO PRODUCT DETAIL*/
 .product-titulo {
     padding-bottom: 15px;
-    font-size: 1.5em;
-    color: skyblue;
+    font-size: 2em;
+    color: var(--Orange1);
     margin: 5px;
     padding-top: 15px;
+    padding-left: 20px;
 }
+
 .contenedor-productDetail {
-    background-color: #000000;
+    background-color: var(--Dark);
     margin-top: 58px;
 }
 .productDetail-section {
     display: flex;
-    width: 100%;
+    width: 60%;
     height: 50%;
-    border-top: 2px solid #0099CC;
-    border-bottom: 2px solid #0099CC;
-
+    border-top: 1px solid var(--Orange3);
+    border-bottom: 1px solid var(--Orange2);
+    padding: 10px;
+    margin-left: 20px;
 }
+
+
 .productDetail-miniatura{
     display: flex;
     flex-direction: column;
@@ -572,16 +617,11 @@ li {
         display: none;
     }
     .contenedor-logo{
-        width: 15%;
+        width: 10%;
         display: flex;
         margin: 0;    
     }
-    .i_header {
-        width: 15%;
-        justify-content: space-around;
-        align-items: center;
-        padding-right: 20px;
-    }
+  
     .navbar-header{
         width: 70%;
         display: flex;
@@ -591,7 +631,8 @@ li {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-weight: bold;
+        font-weight: 500;
+        font-size:small;
     }
     ul a {
         padding: 0 20px;
@@ -605,6 +646,9 @@ li {
     }
     .direccion {
         padding-left: 70px;
+        background: var(--Azul);
+        font-size: small;
+        font-weight: 400;
     }
  
     /*INDEX PRODUCTOS*/
@@ -618,13 +662,9 @@ li {
         justify-content: center;
         width: 50%;
         padding: 40px 0;
-        border-bottom: 5px solid rgb(92, 92, 92);
+        border-bottom: 1.5px solid rgba(92, 92, 92, 0.26);
     }
-    .oferta {
-        font-size: 3em;
-        margin: 0;
-        padding: 20px 0 0 70px;
-    }
+    
     .detalle, .contenedor-foto {
         width: 80%;
     }
@@ -662,28 +702,18 @@ li {
     }
 
     /* PRODUCT DETAIL */
-    .productDetail-section {
-        padding: 10px;
-    }
+    
     .foto-chica{
         padding: 5px 10px;
     }
     .contenedor-productDetail {
         margin-top: 96px;
     }
-    .product-titulo {
-        font-size: 2em;
-        padding: 10px 0 10px 15px;
-    }
+    
     .product-destacados {
         font-size: 2.5em;
     }
-    .productDetail-section {
-        width: 60%;
-        height: 50%;
-        border-top: 4px solid #0099CC;
-        border-bottom: 4px solid #0099CC;
-    }
+    
     .producto-detalle {
         width: 40%;
         margin: 0;
