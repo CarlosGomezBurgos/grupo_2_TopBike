@@ -40,15 +40,15 @@ body{
     margin: auto;
 }
 .logo {
-    width: 95%;
-    padding: 5px;
+    width:85%;
+    padding-top: 10px;
 }
 .burger-menu {
     width: 33%;
     font-size: 2em;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 .navbar-lista {
@@ -57,11 +57,31 @@ body{
 .i_header {
     width: 15%;
     color: white;
-    font-size: 1.1em;
+    font-size: 0.9em;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-right: 50px;
+}
+.user-link{
+    color: white;
+}
+
+.user-menu{
+    margin-right: 7px;
+}
+
+.user-menu:hover{
+
+    animation: mover 500ms alternate ease-out;
+}
+@keyframes mover{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
 }
 
 
@@ -279,16 +299,16 @@ main {
     background-color: var(--Dark);
 }
 .oferta {
-    font-size: 2.2em;
+    font-size: 1.2em;
+    margin: 5px;
     color: var(--Orange1);
-    padding: 95px 0 0 70px;
+    padding: 20px 0 0 7px; 
     font-weight: 800;
     text-transform: uppercase;
 }
 
 .main-index {
     background-color: var(--Dark);
-    padding-top: 10px;
 }
 .contenedor{
     background-color: var(--Dark);
@@ -313,7 +333,7 @@ main {
     padding-top: 10px;
 }
 .precio-anterior{
-    font-size: 1.1em;
+    font-size: .8em;
     text-decoration: line-through;
     color: gray;
 }
@@ -330,7 +350,7 @@ main {
     color: white;
 }
 .precio{
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: 700;
     margin-top: 2px;
     display: inline;
@@ -338,9 +358,10 @@ main {
 .descuento{
     display: inline;
     color: white;
-    font-size: 1.2em;
+    font-size: .8em;
     font-weight: 500;
     background-color: var(--Azul);
+    border-radius: 2px;
     border-radius: 2px;
     margin-left: 5px;
     padding: 3px 5px;
@@ -356,8 +377,8 @@ main {
 }
 .descripcion{
     margin-top: 3px;
-    font-size: 1em;
-    font-weight: 500;
+    font-size: .6em;
+    font-weight: 300;
     padding-top: 4px;
     display: block;
 }
@@ -379,29 +400,53 @@ main {
 }
 .contenedor_i {
     width: 50%;
+    height: 10%;
+    font-size: 1.5em;
     display: flex;
     justify-content: flex-end;
-    font-size: 1.5em;
     margin-right: 20px;
 
 }
 .direccion {
-    background-color: var(--Dark);
-    color: #FFFFFF;
-    display: block;
-    border-top: 10px solid var(--Dark);
-    border-bottom: 5px solid var(--Dark);
-    padding: 5px;
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: var(--Azul);
+    font-size: x-small;
+    font-weight: 400;
+    color: white;
 }
 footer section nav div, i{
     padding: 0px 5px 0px;
 }
-a{
+.icon-footer{
+    color: var(--Orange1);
+    font-size: 80%;
+    padding-left: 5px;
+    
+}
+
+.icon-footer:hover{
+    color: var(--Orange3);
+    animation: mover 500ms alternate ease-out;
+}
+@keyframes mover{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+
+.link-footer{
     color:white;
     text-decoration: none;
-    font-size: smaller;
+    font-size: x-small;
     font-weight:200;
-    margin: 3px 0px;
+    margin: 3px 5px;
 }
 /* FIN FOOTER*/
 
@@ -602,6 +647,10 @@ li {
     justify-content: space-around;
 }
 /* FIN CART */
+
+
+/* Views Desktop Vista Escritorio */
+
 @media(min-width: 361px) {
     /* INDEX HEADER */
     .contenedor-header {
@@ -634,18 +683,130 @@ li {
         font-weight: 500;
         font-size:small;
     }
-    ul a {
+    .link-menu {
         padding: 0 20px;
-        font-size: 1.1em;
+        font-size: 1.25em;
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
     }
-    /*FIN INDEX HEADER*/
 
+   
+    .link-menu:hover{
+        color: var(--Orange2);
+        animation: zoomOut 600ms ease-out;
+        transition: color 300ms ease-out;
+    }
+
+    @keyframes zoomOut {
+        0%{
+            transform: translateX(0) scale(1);
+        }
+        100%{
+            transform: translateX(3px) scale(0.96);
+        }
+    }
+
+    .link-menu:active{
+        color: var(--Orange3);
+    }
+
+    .i_header {
+        width: 15%;
+        color: white;
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-right: 50px;
+    }
+    
+
+    /*FIN INDEX HEADER*/
+    /* INICIO CARRUSEL */
+.carrusel-foto{
+    width: 100%;
+    margin-top: 70px;
+}
+/* FIN CARRUSEL */
+
+/* Main Index */
+.main-index {
+    background-color: var(--Dark);
+    padding-top: 10px;
+}
+.oferta {
+    font-size: 1.8em;
+    color: var(--Orange1);
+    padding: 70px 0 0 80px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.precio-anterior{
+    font-size: 1.1em;
+    text-decoration: line-through;
+    color: gray;
+}
+.precio{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 2px;
+    display: inline;
+}
+.descuento{
+    display: inline;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    background-color: var(--Azul);
+    border-radius: 2px;
+    margin-left: 5px;
+    padding: 3px 5px;
+}
+.descripcion{
+    margin-top: 3px;
+    font-size: 1em;
+    font-weight: 500;
+    padding-top: 4px;
+    display: block;
+}
     /* FOOTER */
     .contenedor-footer {
-        padding: 40px 70px;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        padding-left: 70px;
+        padding-right: 70px;
     }
+    .icon-footer{
+        color: var(--Orange1);
+        font-size: 100%;
+        padding-left: 10px;
+        
+    }
+    .icon-footer:hover{
+        color: var(--Orange3);
+        animation: mover 500ms alternate ease-out;
+    }
+    @keyframes mover{
+        0%{
+            transform: translateY(0px);
+        }
+        100%{
+            transform: translateY(-5px);
+        }
+    }
+    .link-footer{
+        color:white;
+        text-decoration: none;
+        font-size: smaller;
+        font-weight:200;
+        margin: 3px 0px;
+    }
+    
     .direccion {
         padding-left: 70px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         background: var(--Azul);
         font-size: small;
         font-weight: 400;
