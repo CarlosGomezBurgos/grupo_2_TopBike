@@ -103,18 +103,21 @@ body{
     right:-786px; /* esconder menu*/
     width: 0;
     height: 100%;
-    background: #042331;
+    background: var(--Azul);
     transition: all .5s ease;
 }
 
 .sidebar header {
     position: relative;
-    font-size: 1em;
+    font-size: .9em;
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
-    background: rgb(46, 46, 48);
+    background:#35428cda;
     user-select: none;
     padding: 20px;
+    border-radius: 12px 12px 0px 0px;
 }
 label #cancel{
     position: absolute;
@@ -134,37 +137,65 @@ label #cancel{
 .sidebar form label{
     color: white;
     margin-top: 20px;
-    background-color: #02192799;
-    font-family: 'DM Mono', monospace;
-    font-size: 1em;
-    padding-bottom: 3px;
+    background-color: var(--Dark);
+    font-family: 'Poppins', sans-serif;
+    font-size: .8em;
+    font-weight: 400;
+    padding-bottom: 2px;
+    margin-left: 10px;
 }
 .sidebar form input{
-    height: 30px;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: var(--Dark);
+    text-indent: 20px;
+    height: 45px;
+    border-radius: 7px 0 7px;
+    background: rgba(255, 255, 255, 0.883);
 }
+
+.sidebar form input:focus-visible{
+    outline: 0;
+}
+
 .sidebar form button, .sidebar form [for="check-register"]{
     margin: auto;
     width: 90%;
-    border: #75e5f1 solid 1px;
-    border-radius: 4px;
+    border-radius: 7px;
     padding: 3px;
-    background-color: #021521;
+    background-color: var(--Azul);
     color: aliceblue;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Poppins', sans-serif;
     height: 54px;
-    font-size: 1em;
+    font-size: .9em;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
+
+.sidebar form button:hover, .sidebar form [for="check-register"]:hover{
+    background: var(--Orange1);
+    transition: 400ms ease-in;
+    outline: none
+}
+
+
+
+
+
+
+
 .sidebar form #password{
     margin-bottom: 50px;
 }
 .sidebar form h3{
-    font-family: 'Mukta', sans-serif;
-    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    font-size: .8em;
+    font-weight: 200;
     text-align: center;
-    margin: 40px 0px 20px;
+    margin: 40px 0px 10px;
     color: #FFFFFF;
 }
 button{
@@ -183,6 +214,7 @@ label #btn{
   right: 0;
   margin-top: 32px;
   width: 100%;
+  border-radius: 10px 0px 10px 0px;
 }
 #check:checked ~ #btn{
   left: 250px;
@@ -212,44 +244,63 @@ label #btn{
 }
 .sidebar-register header {
     position: relative;
-    font-size: 1em;
+    font-size: .9em;
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
-    background: rgb(46, 46, 48);
+    background:#35428cda;
     user-select: none;
     padding: 20px;
+    border-radius: 12px 12px 0px 0px;
 }
 .sidebar-register form{
     display: flex;
     flex-direction: column;
-    padding: 0px 15px 0px;
+    padding: 0px 30px;
 }
 .sidebar-register form label{
     color: white;
     margin-top: 20px;
-    background-color: #02192799;
-    font-family: 'Mukta', sans-serif;
-    font-size: 1em;
-    padding-bottom: 3px;
+    background-color: var(--Dark);
+    font-family: 'Poppins', sans-serif;
+    font-size: .8em;
+    font-weight: 400;
+    padding-bottom: 2px;
+    margin-left: 10px;
 }
 .sidebar-register form input{
-    height: 30px;
+    height: 45px;
+    border-radius: 7px 0 7px;
+    background: rgba(255, 255, 255, 0.883);
+}
+
+.sidebar-register form input:focus-visible{
+    outline: 0;
 }
 .sidebar-register form button{
     margin: auto;
     width: 90%;
-    border: #75e5f1 solid 1px;
-    border-radius: 4px;
+    border-radius: 7px;
     padding: 3px;
-    background-color: #021521;
+    background-color: var(--Azul);
     color: aliceblue;
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Poppins', sans-serif;
     height: 54px;
-    font-size: 1em;
+    font-size: .9em;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
+
+.sidebar-register form button:hover{
+    background: var(--Orange1);
+    transition: 400ms ease-in;
+    outline: none;
+}
+
 .sidebar-register form #password{
     margin-bottom: 50px;
 }
@@ -275,6 +326,7 @@ label #btn{
     right: 0;
     margin-top: 30px;
     width: 100%;
+    border-radius: 12px 12px 0 0;
 }
 #check-register:checked ~ #btn{
     left: 250px;
@@ -452,12 +504,13 @@ footer section nav div, i{
 
 /* INICIO PRODUCT DETAIL*/
 .product-titulo {
-    padding-bottom: 15px;
-    font-size: 2em;
-    color: var(--Orange1);
+    font-size: 1.2em;
     margin: 5px;
-    padding-top: 15px;
-    padding-left: 20px;
+    margin-left: 15px;
+    color: var(--Orange1);
+    padding: 20px 0 0 7px; 
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .contenedor-productDetail {
@@ -491,7 +544,7 @@ footer section nav div, i{
 }
 .foto-grande{
     width: 100%;
-    border-radius: 10%;
+    border-radius: 7%;
     padding: 5px;
 }
 .product {
@@ -505,15 +558,18 @@ footer section nav div, i{
     padding-top: 20px;
 }
 .product-destacados{
-    text-align: center;
-    font-size: 1.5em;
-    margin: 30px 5px 5px 5px;
-    color: skyblue;
+    font-size: 0.2em;
+    margin: 5px;
+    color: var(--Orange1);
+    padding: 5px 0px 5px 0px; 
+    font-weight: 800;
+    text-transform: uppercase;
     background-color: rgb(46, 46, 48);
+    text-align: center;
 }
 .producto-envio{
     display: block;
-    color: greenyellow;
+    color: var(--Orange3);
     font-size: 1em;
     font-weight: bold;
     padding: 5px 0 20px 0;
@@ -527,10 +583,9 @@ footer section nav div, i{
     color: white;
 }
 .boton-comprar, .boton-ver-carrito, .boton-pagar{
-    color: #0099CC;
-    background-color: #0099CC;
+    color: var(--Orange2);
     font-family: inherit;
-    font-size: 1em;
+    font-size: .8em;
     line-height: 2;
     margin: 2px 5px 10px 0px;
     color: white;
@@ -538,7 +593,24 @@ footer section nav div, i{
     display: inline;
     border-radius: 6px;
     background: transparent;
-    border: 2px solid #0099CC;
+    box-shadow: 2px 1px 2px var(--Azul);
+}
+
+.boton-comprar:hover, .boton-ver-carrito:hover, .boton-pagar:hover{
+    background-color: var(--Azul);
+    animation: zoomOut 600ms ease-out;
+    transition: background-color 300ms ease-out;
+    box-shadow: none;
+
+}
+
+@keyframes zoomOut {
+    0%{
+        transform: translateX(0) scale(1);
+    }
+    100%{
+        transform: translateX(3px) scale(0.96);
+    }
 }
 .producto-comprar, .producto-ver-carrito{
     width: 40%;
@@ -844,6 +916,7 @@ li {
         right: 0;
         margin-top: 68px;
         width: 50%;
+        background: #202124ed;
       }
     label #cancel{
         position: absolute;
@@ -851,7 +924,7 @@ li {
         top: 17px;
         z-index: 1111;
         font-size: 1.1em;
-        color:#75e5f1;
+        color:var(--Orange1);
         padding: 4px 9px;
         transition: all .5s ease;
     }
@@ -860,9 +933,19 @@ li {
         right: 0;
         margin-top: 68px;
         width: 50%;
+        background: var(--Dark);
+
     }
 
     /* PRODUCT DETAIL */
+    .product-titulo{
+        font-size: 1.8em;
+        color: var(--Orange1);
+        padding: 20px 0 0 40px;
+        font-weight: 800;
+        text-transform: uppercase; 
+        margin-bottom: 20px;  
+    }
     
     .foto-chica{
         padding: 5px 10px;
@@ -872,7 +955,7 @@ li {
     }
     
     .product-destacados {
-        font-size: 2.5em;
+        font-size: 1.8em;
     }
     
     .producto-detalle {
@@ -890,23 +973,34 @@ li {
         font-size: 2em;
         margin-left: 30px;
     }
+    .producto-detalle #precio-anterior{
+        font-size: 1.8em;
+    }
     .producto-precio {
         font-size: 3.5em;
         margin-left: 30px;
     }
+
+    .producto-detalle .producto-precio{
+        font-size: 2.5em;
+    }
+
     #descuento {
         display: inline;
-        color: #000000;
-        font-size: 2em;
-        font-weight: bold;
-        background-color: rgb(202, 248, 133);
-        border-radius: 10px;
-        margin-left: 20px;
-        padding: 0 10px;
-
+        color: white;
+        font-size: 1.3em;
+        font-weight: 400;
+        background-color: var(--Azul);
+        border-radius: 5px;
+        margin-left: 5px;
+        padding: 4px 6px;
     }
     .producto-descripcion {
-        font-size: 1.2em;
+        margin-top: 12px;
+        font-size: .9em;
+        font-weight: 200;
+        padding-top: 4px;
+        display: block;
     }
     .producto-envio {
         padding: 50px 0 20px 30px;
@@ -918,13 +1012,22 @@ li {
     .boton-comprar, .boton-ver-carrito, .boton-pagar {
         font-size: 1.5em;
     }
+
+
+
+
     li {
         padding: 2px 0;
         font-size: 1.1em;
         margin-left: 30px;
     }
     .boton-comprar,.boton-ver-carrito, .boton-pagar {
-        border: 4px solid #0099CC;
+        font-size: 1em;
+        padding: 3px 0px;
+        font-weight: 400;
+        border-left: 1px solid rgba(255, 255, 255, 0.226);
+        border-top: 1px solid rgba(255, 255, 255, 0.205);
+        box-shadow: 1px 1px 4px var(--Azul);
     }
 
     /* CART */
