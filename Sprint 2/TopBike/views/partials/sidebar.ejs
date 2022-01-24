@@ -1,0 +1,53 @@
+<div class="contenedor_usuario">
+    <input type="checkbox" id="check">
+    <div class="sidebar">
+        <header>
+          <h3>INICIAR SESIÓN</h3>
+          <label for="check">
+            <i class="fas fa-times" id="cancel"></i>
+          </label>
+        </header>
+        <form action="/" method="get">
+            <label for="name">NOMBRE</label>
+            <input type="text" id="name" name="user_name">
+            <label for="password">CONTRASEÑA</label>
+            <input type="password" id="password" name="user_password">
+            <button type="submit">INICIAR SESIÓN</button>
+            <h3>¿ No tenés cuenta ?</h3>
+            <label for="check-register">CREAR CUENTA</label>                
+        </form>
+    </div>
+</div>
+<div class="contenedor_register">
+    <input type="checkbox" id="check-register">
+    <div class="sidebar-register">
+        <header>
+            <h3>REGISTRARSE</h3>
+            <label for="check-register">
+              <i class="fas fa-times" id="cancel"></i>
+            </label>
+          </header>
+
+        <form action="/" method="get">
+            <label for="name">NOMBRE</label>
+            <input type="text" id="name" name="user_name">
+            <label for="mail">EMAIL</label>
+            <input type="text" id="mail" name="mail">                
+            <label for="password">CONTRASEÑA</label>
+            <input type="password" id="password" name="user_password">
+            <button type="submit">REGISTRARSE</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        check_login = document.getElementById("check")
+        check_register = document.getElementById("check-register")
+        check_register.addEventListener('change', (event) => {
+          if (!event.currentTarget.checked) {
+            check_login.checked = false
+          }
+        })
+    });    
+</script>
