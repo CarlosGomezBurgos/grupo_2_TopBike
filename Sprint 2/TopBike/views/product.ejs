@@ -23,7 +23,7 @@
           <nav class="navbar-header">
               <ul class="navbar-lista">
                 <a href="#">NOSOTROS</a>
-                <a href="/product">PRODUCTOS</a>
+                <a href="#">PRODUCTOS</a>
                 <a href="#">NOVEDADES</a>
                 <a href="#ofertas">OFERTAS</a>
                 <a href="#">EVENTOS</a>
@@ -31,7 +31,7 @@
           </nav>
           <div class="i_header">
                 <i class="fas fa-search"></i>
-                <a href="/product/cart">
+                <a href="/productCart">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
                 <label for="check">
@@ -85,32 +85,10 @@
         <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
     </div>    
     <main>
-            <h3 class="oferta" id="ofertas">Ofertas</h3>
-                    <section class="index-articulos">
-                        <% productos.forEach(unProducto => { %>
-                            <% if (unProducto.category == "Ofertas") { %>
-                                <article class="contenedor">
-                                    <div class="contenedor-foto">
-                                            <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
-                                    </div>
-                                    <div class="detalle">
-                                            <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                            <p class="precio">$ 38.869</p>
-                                            <p class="descuento"><%= unProducto.discount %>% OFF</p>
-                                            <p class="descripcion"><%= unProducto.name %></p>
-        
-                                    </div>
-                            </article>                  
-                    </section>
-
-				<% } %> 
-			<% }) %>
-
-            <h3 class="oferta" id="ofertas">Productos Destacados</h3>
-            <section class="index-articulos">
-                <% productos.forEach(unProducto => { %>
-                    <% if (unProducto.category == "productos-destacados") { %>
-                        <article class="contenedor">
+        <h3 class="oferta" id="ofertas">Todos los productos</h3>
+        <section class="index-articulos">
+            <% productos.forEach(unProducto => { %>
+                    <article class="contenedor">
                             <div class="contenedor-foto">
                                     <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
                             </div>
@@ -122,11 +100,10 @@
 
                             </div>
                     </article>                  
-            </section>
+     
+            <% }) %>         
 
-        <% } %> 
-    <% }) %>
-
+        </section>
     </main>
     <footer>
         <nav class="contenedor-footer">

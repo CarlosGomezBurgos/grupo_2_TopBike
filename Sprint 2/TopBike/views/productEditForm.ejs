@@ -1,0 +1,154 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.google.com/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../img/favicon-top-bike.ico">
+    <title>TopBike</title>
+</head>
+<body>
+    <header>
+        <div class="contenedor-header">
+           <div class="contenedor-logo">
+               <img src="../img/logo-white-top-bike.png" alt="logo" class="logo">
+             </div>
+             <div class="burger-menu">
+                 <i class="fas fa-bars"></i>
+             </div>
+             <nav class="navbar-header">
+                 <ul class="navbar-lista">
+                   <a href="#">NOSOTROS</a>
+                   <a href="#">PRODUCTOS</a>
+                   <a href="#">NOVEDADES</a>
+                   <a href="#">OFERTAS</a>
+                   <a href="#">EVENTOS</a>
+                 </ul>
+             </nav>
+             <div class="i_header">
+                   <i class="fas fa-search"></i>
+                   <a href="/productCart">
+                       <i class="fas fa-shopping-cart"></i>
+                   </a>
+                   <label for="check">
+                   <i class="fas fa-user" id="btn"></i>
+                 </label>
+             </div>
+        </div>   
+    </header>
+   
+    <div class="contenedor_usuario">
+           <input type="checkbox" id="check">
+           <div class="sidebar">
+               <header>
+                 <h3>INICIAR SESIÓN</h3>
+                 <label for="check">
+                   <i class="fas fa-times" id="cancel"></i>
+                 </label>
+               </header>
+               <form action="/" method="get">
+                   <label for="name">NOMBRE</label>
+                   <input type="text" id="name" name="user_name">
+                   <label for="password">CONTRASEÑA</label>
+                   <input type="password" id="password" name="user_password">
+                   <button type="submit">INICIAR SESIÓN</button>
+                   <h3>¿ No tenés cuenta ?</h3>
+                   <label for="check-register">CREAR CUENTA</label>                
+               </form>
+           </div>
+    </div>
+    <div class="contenedor_register">
+           <input type="checkbox" id="check-register">
+           <div class="sidebar-register">
+               <header>
+                   <h3>REGISTRARSE</h3>
+                   <label for="check">
+                     <i class="fas fa-times" id="cancel"></i>
+                   </label>
+                 </header>
+     
+               <form action="/" method="get">
+                   <label for="name">NOMBRE</label>
+                   <input type="text" id="name" name="user_name">
+                   <label for="mail">EMAIL</label>
+                   <input type="text" id="mail" name="mail">                
+                   <label for="password">CONTRASEÑA</label>
+                   <input type="password" id="password" name="user_password">
+                   <button type="submit">REGISTRARSE</button>
+               </form>
+           </div>
+    </div>
+
+    <div class="contenedor-create-form">
+		<div class="">
+			<div class="col-12">
+				<h2 class="products-title">Formulario de EDICION de productos</h2>
+			</div>
+		</div>
+		<div class="col-12">
+			<form action="/product/edit/<%= productoBuscado.id %>?_method=PATCH" method="POST">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6">
+						<label for="name" class="form-label">Nombre del producto:</label>
+						<input type="text" id="name" name="name" value="<%= productoBuscado.name %>" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="price" class="form-label">Precio del producto:</label>
+						<input type="text" id="price" name="price" value="<%= productoBuscado.price %>" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="discount" class="form-label">Descuento:</label>
+						<input type="text" id="discount" name="discount" value="<%= productoBuscado.discount %>" class="form-input">
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="category" class="form-label">Categoría:</label>
+						<select name="category" id="category" class="form-input">
+							<option value="">Elegí</option>
+							<option value="Ofertas">En oferta</option>
+							<option value="ult">Productos destacados</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label for="description" class="form-label">Descripción:</label>
+						<textarea name="description" id="description" class="form-input"><%= productoBuscado.description %></textarea>
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="image" class="form-label">Imagen del producto:</label>
+						<input type="file" id="image" name="image">
+					</div>
+
+					<div class="col-12">
+						<button type="submit" class="buy-now-button">Guardar producto</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+    <footer>
+        <nav class="contenedor-footer">
+            <div class="contenedor_a">
+                <a href="#">Terminos y condiciones</a>
+                <a href="#">Políticas de Privacidad</a>
+                <a href="#">Quiénes somos</a>
+                <a href="#">Qué hacemos</a>
+                <a href="#">Trabaja con nosotros</a>
+                
+            </div>
+            <div class="contenedor_i">
+                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </nav>
+        <div class="direccion">
+            <p>Top Bike S.A</p>
+            <p>San Martín 444 - Chaco - Argentina</p>
+        </div>
+    </footer>
+</body>
+</html>
