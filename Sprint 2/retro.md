@@ -39,7 +39,7 @@ Less of:
 Stop Doing:
 * No avisar cuando no se llega con una tarea asignada   // Solución: Avisar al equipo con tiempo en el caso de no poder realizar una tarea por cuestiones personales.
 
-<!-- Retrospectiva Sprint 3 -->
+ Retrospectiva Sprint 3
 
 Start Doing: 
 * Reuniones de Feedback   // Solución: por lo menos 2 reuniones breves en la semana para comentar avances y dificultades. 
@@ -54,3 +54,22 @@ Less of:
 * Trabajo individual:   // Solución: coincidir horarios para reunirse y realizar tareas en equipo.  
 
 Stop Doing:
+
+
+<!-- Retrospectiva Sprint 4 -->
+
+Start Doing: 
+* Trabajo colaborativo   // Solución: trabajo con todos los integrantes del equipo, y no solo un poco de los integrantes 
+
+More of:
+* Comentar las dificultades en tareas asignadas   // Solución: tratar de terminar todas las tareas a tiempo
+
+Keep Doing :
+* Trabajo Colaborativo  // Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
+
+Less of: 
+* Trabajo individual:   // Solución: coincidir horarios para reunirse y realizar tareas en equipo.  
+
+
+
+
