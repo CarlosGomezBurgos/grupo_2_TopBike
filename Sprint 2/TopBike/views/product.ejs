@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/sidebar.ejs') %>
+    <div class="carrusel">
+        <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
+    </div>
+    <main>
+        <h3 class="oferta" id="ofertas">Todos los productos</h3>
+        <section class="index-articulos">
+            <% productos.forEach(unProducto => { %>
+                    <article class="contenedor">
+                            <div class="contenedor-foto">
+                                    <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                            </div>
+                            <div class="detalle">
+                                    <p class="precio-anterior">$ <%= unProducto.price%></p>
+                                    <p class="precio">$ 38.869</p>
+                                    <p class="descuento"><%= unProducto.discount %>% OFF</p>
+                                    <p class="descripcion"><%= unProducto.name %></p>
+                            </div>
+                    </article>                  
+            <% }) %>         
+        </section>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

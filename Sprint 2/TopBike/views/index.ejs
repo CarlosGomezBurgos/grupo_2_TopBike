@@ -1,115 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <%- include('partials/head.ejs') %>
-</head>
-<body>
-    <%- include('partials/header.ejs') %>
-    <%- include('partials/sidebar.ejs') %>
-    <div class="carrusel">
-        <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
-    </div>    
-    <main>
-        <section class="main-index">
-            <h3 class="oferta" id="ofertas">Ofertas</h3>
-            <section class="index-articulos">
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article> 
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </div>
-                
-            </section>
-            <h3 class="oferta">Productos Destacados</h3>
-            <section class="index-articulos">
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article> 
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </article>
-                <article class="contenedor">
-                    <div class="contenedor-foto">
-                            <img class="foto-producto" src="./img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="detalle">
-                            <p class="precio-anterior">$ 45.729</p>
-                            <p class="precio">$ 38.869</p>
-                            <p class="descuento">15% OFF</p>
-                            <p class="descripcion">Bicicleta Nordic X1.0 By Slp R29 Shim. 21v Disco Susp</p>
-                    </div>
-                </div>
-                
-            </section>
+        <head>
+        <%- include('partials/head.ejs') %>
+        </head>
+        <body>
+                <%- include('partials/header.ejs') %>
+                <%- include('partials/sidebar.ejs') %>
+                <div class="carrusel">
+                        <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
+                </div>    
+                <main>
+                <h3 class="oferta" id="ofertas">Ofertas</h3>
+                        <section class="index-articulos">
+                                <% productos.forEach(unProducto => { %>
+                                        <% if (unProducto.category == "ofertas") { %>
+                                        <article class="contenedor">
+                                        <div class="contenedor-foto">
+                                                <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                        </div>
+                                        <div class="detalle">
+                                                <p class="precio-anterior">$ <%= unProducto.price%></p>
+                                                <p class="precio">$ 38.869</p>
+                                                <p class="descuento"><%= unProducto.discount %>% OFF</p>
+                                                <p class="descripcion"><%= unProducto.name %></p>
 
-        </section>
-    </main>
-    <%- include('partials/footer.ejs') %>
-</body>
+                                        </div>
+                                </article>                  
+                        </section>
+                                        <% } %> 
+                                <% }) %>
+
+                <h3 class="oferta" id="ofertas">Productos Destacados</h3>
+                <section class="index-articulos">
+                        <% productos.forEach(unProducto => { %>
+                        <% if (unProducto.category == "productos-destacados") { %>
+                                <article class="contenedor">
+                                <div class="contenedor-foto">
+                                        <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                </div>
+                                <div class="detalle">
+                                        <p class="precio-anterior">$ <%= unProducto.price%></p>
+                                        <p class="precio">$ 38.869</p>
+                                        <p class="descuento"><%= unProducto.discount %>% OFF</p>
+                                        <p class="descripcion"><%= unProducto.name %></p>
+                                </div>
+                        </article>                  
+                        </section>
+                        <% } %> 
+                <% }) %>
+
+                </main>
+                <%- include('partials/footer.ejs') %>
+        </body>
 </html>

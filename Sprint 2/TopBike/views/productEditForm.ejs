@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <%- include('partials/sidebar.ejs') %>
+        <div class="carrusel">
+                <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
+        </div>
+
+        <div class="contenedor-create-form">
+            <div class="">
+                <div class="col-12">
+                    <h2 class="products-title">Formulario de EDICION de productos</h2>
+                </div>
+            </div>
+            <div class="col-12">
+                <form action="/product/edit/<%= productoBuscado.id %>?_method=PATCH" method="POST">
+                    <div class="row product-detail">
+                        <div class="col-12 col-md-6">
+                            <label for="name" class="form-label">Nombre del producto:</label>
+                            <input type="text" id="name" name="name" value="<%= productoBuscado.name %>" class="form-input">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="price" class="form-label">Precio del producto:</label>
+                            <input type="text" id="price" name="price" value="<%= productoBuscado.price %>" class="form-input">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="discount" class="form-label">Descuento:</label>
+                            <input type="text" id="discount" name="discount" value="<%= productoBuscado.discount %>" class="form-input">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="category" class="form-label">Categoría:</label>
+                            <select name="category" id="category" class="form-input">
+                                <option value="">Elegí</option>
+                                <option value="ofertas">En oferta</option>
+                                <option value="productos-destacados">Productos destacados</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="description" class="form-label">Descripción:</label>
+                            <textarea name="description" id="description" class="form-input"><%= productoBuscado.description %></textarea>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="image" class="form-label">Imagen del producto:</label>
+                            <input type="file" id="image" name="image">
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="buy-now-button">Guardar producto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <%- include('partials/footer.ejs') %>
+    </body>
+</html>

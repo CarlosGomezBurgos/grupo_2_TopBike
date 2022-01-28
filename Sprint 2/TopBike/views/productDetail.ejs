@@ -1,90 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.google.com/">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="shortcut icon" href="../img/favicon-top-bike.ico">
-    <title>TopBike</title>
+    <%- include('partials/head.ejs') %>
 </head>
 <body>
-    <header>
-        <div class="contenedor-header">
-           <div class="contenedor-logo">
-               <img src="../img/logo-white-top-bike.png" alt="logo" class="logo">
-             </div>
-             <div class="burger-menu">
-                 <i class="fas fa-bars"></i>
-             </div>
-             <nav class="navbar-header">
-                 <ul class="navbar-lista">
-                    <a href="#" class="link-menu">NOSOTROS</a>
-                <a href="#" class="link-menu">PRODUCTOS</a>
-                <a href="#" class="link-menu">NOVEDADES</a>
-                <a href="#ofertas" class="link-menu">OFERTAS</a>
-                <a href="#" class="link-menu">EVENTOS</a>
-                 </ul>
-             </nav>
-             <div class="i_header">
-                <i class="user-menu fas fa-search"></i>
-                <a href="/productCart" class="user-link">
-                    <i class="user-menu fas fa-shopping-cart"></i>
-                </a>
-                <label for="check">
-                <i class="user-menu fas fa-user" id="btn"></i>
-                 </label>
-             </div>
-        </div>   
-    </header>
-   
-    <div class="contenedor_usuario">
-           <input type="checkbox" id="check">
-           <div class="sidebar">
-               <header>
-                 <h3>INICIAR SESIÓN</h3>
-                 <label for="check">
-                   <i class="fas fa-times" id="cancel"></i>
-                 </label>
-               </header>
-               <form action="/" method="get">
-                   <label for="name">NOMBRE</label>
-                   <input type="text" id="name" name="user_name">
-                   <label for="password">CONTRASEÑA</label>
-                   <input type="password" id="password" name="user_password">
-                   <button type="submit">INICIAR SESIÓN</button>
-                   <h3>¿ No tenés cuenta ?</h3>
-                   <label for="check-register">CREAR CUENTA</label>                
-               </form>
-           </div>
-       </div>
-       <div class="contenedor_register">
-           <input type="checkbox" id="check-register">
-           <div class="sidebar-register">
-               <header>
-                   <h3>REGISTRARSE</h3>
-                   <label for="check">
-                     <i class="fas fa-times" id="cancel"></i>
-                   </label>
-                 </header>
-     
-               <form action="/" method="get">
-                   <label for="name">NOMBRE</label>
-                   <input type="text" id="name" name="user_name">
-                   <label for="mail">EMAIL</label>
-                   <input type="text" id="mail" name="mail">                
-                   <label for="password">CONTRASEÑA</label>
-                   <input type="password" id="password" name="user_password">
-                   <button type="submit">REGISTRARSE</button>
-               </form>
-           </div>
-       </div>
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/sidebar.ejs') %>
+    <div class="carrusel">
+        <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
+    </div>
     <main>
         <div class="contenedor-productDetail">
-            <h3 class="product-titulo">Detalle de Producto</h3>
+            <h3 class="product-titulo">Detalle de Producto:<%= productoBuscado.id %></h3>
             <div class="contenedor-product-main">
                 <section class="productDetail-section">
                     <div class="productDetail-miniatura">
@@ -181,27 +108,7 @@
                 </section>
             </section>
     
-        </main>
-        <footer>
-            <nav class="contenedor-footer">
-                <div class="contenedor_a">
-                    <a href="#" class="link-footer">Terminos y condiciones</a>
-                    <a href="#" class="link-footer">Políticas de Privacidad</a>
-                    <a href="#" class="link-footer">Quiénes somos</a>
-                    <a href="#" class="link-footer">Qué hacemos</a>
-                    <a href="#" class="link-footer">Trabaja con nosotros</a>
-                    
-                </div>
-                <div class="contenedor_i">
-                   <a href="#" target="_blank"><i class="icon-footer fab fa-whatsapp"></i></a> 
-                   <a href="#" target="_blank"><i class="icon-footer fab fa-facebook"></i></a> 
-                   <a href="#" target="_blank"><i class="icon-footer fab fa-instagram"></i></a> 
-                </div>
-            </nav>
-            <div class="direccion">
-                <p>Top Bike S.A</p>
-                <p>San Martín 444 - Chaco - Argentina</p>
-            </div>
-        </footer>
+    </main>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>
