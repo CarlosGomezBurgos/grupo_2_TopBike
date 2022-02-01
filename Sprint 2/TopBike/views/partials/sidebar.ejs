@@ -2,15 +2,15 @@
     <input type="checkbox" id="check">
     <div class="sidebar">
         <header>
-          <h3>INICIAR SESIÓN</h3>
+          <h3>INICIO DE SESIÓN</h3>
           <label for="check">
             <i class="fas fa-times" id="cancel"></i>
           </label>
         </header>
-        <form action="/" method="get">
-            <label for="name">NOMBRE</label>
+        <form action="/" method="post">
+            <label for="name">Usuario</label>
             <input type="text" id="name" name="user_name">
-            <label for="password">CONTRASEÑA</label>
+            <label for="password">Contraseña</label>
             <input type="password" id="password" name="user_password">
             <button type="submit">INICIAR SESIÓN</button>
             <h3>¿ No tenés cuenta ?</h3>
@@ -22,19 +22,50 @@
     <input type="checkbox" id="check-register">
     <div class="sidebar-register">
         <header>
-            <h3>REGISTRARSE</h3>
+            <h3>FORMULARIO DE REGISTRO</h3>
             <label for="check-register">
               <i class="fas fa-times" id="cancel"></i>
             </label>
           </header>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="name">Nombre Completo</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="user_name" 
+              value="<%= locals.oldData ? oldData.user_name : null %>"
+            >
+            <% if (locals.errors && errors.user_name) { %>
+              <p><%= errors.user_name.msg %> </p>
+            <% } %>
 
-        <form action="/" method="get">
-            <label for="name">NOMBRE</label>
-            <input type="text" id="name" name="user_name">
-            <label for="mail">EMAIL</label>
-            <input type="text" id="mail" name="mail">                
-            <label for="password">CONTRASEÑA</label>
-            <input type="password" id="password" name="user_password">
+            <label for="email">Correo Electronico</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              value="<%= locals.oldData ? oldData.email : null %>"
+              >
+            <% if (locals.errors && errors.email) { %>
+              <p><%= errors.email.msg %> </p>
+            <% } %>
+
+            <label for="password">Contraseña</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="user_password"
+            >
+            <% if (locals.errors && errors.user_password) { %>
+              <p><%= errors.user_password.msg %> </p>
+            <% } %>
+
+            <label for="image">Imagen de perfil</label>
+            <input type="file"  id="avatar"   name="avatar">
+            <% if (locals.errors && errors.avatar) { %>
+              <p><%= errors.avatar.msg %> </p>
+            <% } %>
+
             <button type="submit">REGISTRARSE</button>
         </form>
     </div>

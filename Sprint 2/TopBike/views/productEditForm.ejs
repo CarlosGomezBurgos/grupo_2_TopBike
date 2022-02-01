@@ -33,10 +33,19 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="category" class="form-label">Categoría:</label>
-                            <select name="category" id="category" class="form-input">
+                            <select 
+                                name="category" 
+                                id="category" 
+                                class="form-input"
+                            >
                                 <option value="">Elegí</option>
-                                <option value="ofertas">En oferta</option>
-                                <option value="productos-destacados">Productos destacados</option>
+                                <% let options = ['ofertas','productos-destacados'] %> 
+                                <% for (const oneOption of options) { %>
+                                    <option 
+                                        value="<%= oneOption %>"
+                                        <%= (oneOption === productoBuscado.category) ? 'selected' : null %> 
+                                    > <%= oneOption %> </option>
+                                <% } %>
                             </select>
                         </div>
                         <div class="col-12">

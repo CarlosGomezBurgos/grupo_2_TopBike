@@ -23,7 +23,9 @@ const productController = {
      },
      edit: (req, res) => {
 		let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
-          res.render('productEditForm',{productoBuscado: productoBuscado})
+          res.render('productEditForm',{
+               productoBuscado: productoBuscado
+          })
           //console.log(productoBuscado)
 	},
      store: (req, res) => {
@@ -39,8 +41,8 @@ const productController = {
           res.redirect('/product');
      },
 	update: (req, res) => {
-		console.log(req.body);
-		console.log(req.params.id);
+		//console.log(req.body);
+		//console.log(req.params.id);
 
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
