@@ -28,6 +28,8 @@ router.post('/', upload.single('image'),productController.store);
 
 /* edit form */
 router.get('/edit/:id', productController.edit); 
-router.patch('/edit/:id', productController.update); 
+router.patch('/edit/:id', productController.update);
+
+router.delete('/delete/:id', productController.delete); 
 
 module.exports = router;

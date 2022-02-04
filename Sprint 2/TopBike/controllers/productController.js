@@ -4,18 +4,21 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const productCartFilePath = path.join(__dirname, '../data/productCartDataBase.json');
+const productCart = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const productController = {
      index: (req,res) => {
           res.render('product',{productos: products})
      },
      detail: (req,res) => {
           let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
-          console.log(productoBuscado)
+          //console.log(productoBuscado)
           res.render('productDetail',{productoBuscado:productoBuscado});
 
      },
      cart: (req,res) => {
-         res.render('productCart');
+          res.render('productCart',{carrito: productCart});
 
      },
      create: (req,res)=>{
@@ -29,14 +32,14 @@ const productController = {
           //console.log(productoBuscado)
 	},
      store: (req, res) => {
-          console.log(req.body);
+          //console.log(req.body);
           let nuevoProducto = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
                id: products[products.length -1].id +1,
                ...req.body, // completa todos los elementos de un objeto.
                image: req.file.filename
           }
           products.push(nuevoProducto);
-          console.log(nuevoProducto)
+          //console.log(nuevoProducto)
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
           res.redirect('/product');
      },
@@ -60,6 +63,16 @@ const productController = {
 		})
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/product');
-	}
+	},
+     delete:(req, res) => {
+          // Obtenemos el producto ID que hay en el boton pulsado
+          let id = req.params.id;
+          // Borramos todos los productos
+          let productsDataBase = productsDataBase.filter((unProducto) => {
+               return unProducto !== id;
+          });
+          // volvemos a renderizar
+          res.render('/product');
+     }
 }
 module.exports = productController;

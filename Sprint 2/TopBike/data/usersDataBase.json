@@ -1,0 +1,16 @@
+[
+ {
+  "id": 1,
+  "user_name": "Carlos",
+  "email": "carlos@gmail.com",
+  "user_password": "12345678",
+  "avatar": "1643918815559--251af8ab0c4751b999f265693d630e7f.jpg"
+ },
+ {
+  "id": 2,
+  "user_name": "carlos",
+  "email": "carlos@gmail.com",
+  "user_password": "carloscarlos",
+  "avatar": "1643918815559--251af8ab0c4751b999f265693d630e7f.jpg"
+ }
+]

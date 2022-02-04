@@ -15,12 +15,14 @@ const fileStorageEngine = multer.diskStorage({
 }})
 
 const upload = multer({storage: fileStorageEngine})
+
+/* Validaciones */
 const validations = [
     body('user_name').notEmpty().withMessage('Nombre incompleto'),
     body('email')
-        .notEmpty().withMessage('Email incorrecto').bail()
+        .notEmpty().withMessage('Email inválido').bail()
         .isEmail().withMessage('Debes escribir un formato de correo valido'),
-    body('user_password').notEmpty().withMessage('Contraseña no valida'),
+    body('user_password').notEmpty().isLength({min: 8}).withMessage('Contraseña debe tener minimo 8 caracteres'),
     body('avatar').custom((value, { req})=>{
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
@@ -35,10 +37,28 @@ const validations = [
         return true;
     })
 ] 
+ const validationsLogin = [
+    body('user_name').notEmpty().withMessage('Nombre incompleto'),
+    body('user_password').notEmpty().isLength({min: 8}).withMessage('Contraseña debe tener minimo 8 caracteres'),
+ ]
+
 //Formulario de registro
 router.get('/', mainController.index);
 //Procesar el registro
 router.post('/', upload.single('avatar'),validations, mainController.register);
 
+router.post('/',validationsLogin, mainController.login);
+
+router.get('/pruebaSession', function(req,res){
+    if(req.session.numeroVisitas == undefined){
+        req.session.numeroVisitas = 0;
+    }
+    req.session.numeroVisitas ++;
+    res.send('Session tiene el numero: ' + req.session.numeroVisitas)
+})
+
+router.get('/mostrarNumeroSession', function(req,res){
+    res.send('Session tiene el numero: ' + req.session.numeroVisitas)
+})
 
  module.exports = router;

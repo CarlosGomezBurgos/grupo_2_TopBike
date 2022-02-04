@@ -9,10 +9,28 @@
         </header>
         <form action="/" method="post">
             <label for="name">Usuario</label>
-            <input type="text" id="name" name="user_name">
+            <input 
+              type="text" 
+              id="name" 
+              name="user_name"
+              value="<%= locals.oldData ? oldData.user_name : null %>"
+            >
+            <% if (locals.errors && errors.user_name) { %>
+              <p style="color: red"><%= errors.user_name.msg %> </p>
+            <% } %>
+
             <label for="password">Contraseña</label>
-            <input type="password" id="password" name="user_password">
+            <input 
+              type="password" 
+              id="password" 
+              name="user_password"
+            >
+            <% if (locals.errors && errors.user_password) { %>
+              <p style="color: red"><%= errors.user_password.msg %> </p>
+            <% } %>
+
             <button type="submit">INICIAR SESIÓN</button>
+            
             <h3>¿ No tenés cuenta ?</h3>
             <label for="check-register">CREAR CUENTA</label>                
         </form>
@@ -27,47 +45,52 @@
               <i class="fas fa-times" id="cancel"></i>
             </label>
           </header>
-        <form action="/" method="post" enctype="multipart/form-data">
-            <label for="name">Nombre Completo</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="user_name" 
-              value="<%= locals.oldData ? oldData.user_name : null %>"
-            >
-            <% if (locals.errors && errors.user_name) { %>
-              <p><%= errors.user_name.msg %> </p>
-            <% } %>
-
-            <label for="email">Correo Electronico</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email"
-              value="<%= locals.oldData ? oldData.email : null %>"
+          <form action="/" method="post" enctype="multipart/form-data">
+              <label for="name">Nombre Completo</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="user_name" 
+                value="<%= locals.oldData ? oldData.user_name : null %>"
               >
-            <% if (locals.errors && errors.email) { %>
-              <p><%= errors.email.msg %> </p>
-            <% } %>
+              <% if (locals.errors && errors.user_name) { %>
+                <p style="color: red"><%= errors.user_name.msg %> </p>
+              <% } %>
 
-            <label for="password">Contraseña</label>
-            <input 
-              type="password" 
-              id="password" 
-              name="user_password"
-            >
-            <% if (locals.errors && errors.user_password) { %>
-              <p><%= errors.user_password.msg %> </p>
-            <% } %>
+              <label for="email">Correo Electronico</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                value="<%= locals.oldData ? oldData.email : null %>"
+              >
+              <% if (locals.errors && errors.email) { %>
+                <p style="color: red"><%= errors.email.msg %> </p>
+              <% } %>
 
-            <label for="image">Imagen de perfil</label>
-            <input type="file"  id="avatar"   name="avatar">
-            <% if (locals.errors && errors.avatar) { %>
-              <p><%= errors.avatar.msg %> </p>
-            <% } %>
+              <label for="password">Contraseña</label>
+              <input 
+                type="password" 
+                id="password" 
+                name="user_password"
+              >
+              <% if (locals.errors && errors.user_password) { %>
+                <p style="color: red"><%= errors.user_password.msg %> </p>
+              <% } %>
 
-            <button type="submit">REGISTRARSE</button>
-        </form>
+              <label for="image">Imagen de perfil</label>
+              <input 
+                type="file"  
+                id="avatar"   
+                name="avatar"
+              >
+              <% if (locals.errors && errors.avatar) { %>
+                <p style="color: red"><%= errors.avatar.msg %> </p>
+              <% } %>
+
+              <button type="submit">REGISTRARSE</button>
+              
+          </form>
     </div>
 </div>
 
