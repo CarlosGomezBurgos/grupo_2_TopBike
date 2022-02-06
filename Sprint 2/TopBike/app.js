@@ -21,8 +21,10 @@ app.listen(port, () => {
 
 const rutasMain = require('./routes/main');
 const rutasProduct = require('./routes/product');
+const rutasUser = require('./routes/user');
 
 app.use('/',rutasMain);
 app.use('/product',rutasProduct);
+app.use('/user',rutasUser);
 
 

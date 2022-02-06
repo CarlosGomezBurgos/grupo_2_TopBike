@@ -1,16 +1,30 @@
 [
  {
   "id": 1,
-  "user_name": "Carlos",
-  "email": "carlos@gmail.com",
-  "user_password": "12345678",
-  "avatar": "1643918815559--251af8ab0c4751b999f265693d630e7f.jpg"
+  "user_name": "Bianca Lulu",
+  "email": "biancalulu@gmail.com",
+  "user_password": "$2a$10$HA.T6OvCBWePDHqvCKa3neKFL3Q3WY6kznvCyQF/Vc7OA/XDOg/yu",
+  "avatar": "1644107913392--carlos - taller WILLY JET FIGTHER IRAK.jpg"
  },
  {
   "id": 2,
   "user_name": "carlos",
   "email": "carlos@gmail.com",
-  "user_password": "carloscarlos",
-  "avatar": "1643918815559--251af8ab0c4751b999f265693d630e7f.jpg"
+  "user_password": "$2a$10$4l4TTnL7pi6QXEl7/DGoIOVtR7djR73SGSQjKkQcn7JY5D6mnEz3S",
+  "avatar": "1644108096561--pp,840x830-pad,1000x1000,f8f8f8.jpg"
+ },
+ {
+  "id": 3,
+  "user_name": "Bianca Luna",
+  "email": "biancaluna@gmail.com",
+  "user_password": "$2a$10$W5Mf77KWqYLGrK.yDovwYO1kQ5WkmtGNqT/7WttbA/iJ1oF6qniKO",
+  "avatar": "1644150504437--pp,840x830-pad,1000x1000,f8f8f8.jpg"
+ },
+ {
+  "id": 4,
+  "user_name": "prueba",
+  "email": "prueba@gmail.com",
+  "user_password": "$2a$10$aaAVSzAAIkz0KFXJSkRmCOv./2zdBjLJy9y7.dfz6hnyEtlWl7QMC",
+  "avatar": "1644179870997--edb8865a73719594f81d4c64dec3a546.jpg"
  }
 ]

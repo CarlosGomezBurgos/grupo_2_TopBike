@@ -5,7 +5,6 @@
         </head>
         <body>
                 <%- include('partials/header.ejs') %>
-                <%- include('partials/sidebar.ejs') %>
                 <div class="carrusel">
                         <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
                 </div>    
@@ -16,7 +15,7 @@
                                         <% if (unProducto.category == "ofertas") { %>
                                         <article class="contenedor">
                                         <div class="contenedor-foto">
-                                                <a href=""><img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura"></a>
+                                                <a href="./product/detail/<%= unProducto.id %>"><img class="foto-producto" src="./img/products/<%= unProducto.image %>" alt="miniatura"></a>
                                         </div>
                                         <div class="detalle">
                                                 <p class="precio-anterior">$ <%= unProducto.price%></p>
@@ -37,7 +36,7 @@
                         <% if (unProducto.category == "productos-destacados") { %>
                                 <article class="contenedor">
                                 <div class="contenedor-foto">
-                                        <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                        <a href="./product/detail/<%= unProducto.id %>"><img class="foto-producto" src="./img/products/<%= unProducto.image %>" alt="miniatura"></a>
                                 </div>
                                 <div class="detalle">
                                         <p class="precio-anterior">$ <%= unProducto.price%></p>
