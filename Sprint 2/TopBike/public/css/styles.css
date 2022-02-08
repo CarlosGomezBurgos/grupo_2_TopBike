@@ -11,10 +11,8 @@
 
 /* Variables CSS */
 :root{
-    --Orange1: #F24C27;
-    --Orange2: #F25F29;
-    --Orange3: #F28D35;
-    --Azul: #35428C;
+    --verde: #39b54a;
+    --Azul: #1259c3;
     --Dark: #202124;
     }
     
@@ -30,25 +28,24 @@ body{
 /* INICIO HEADER */
 .contenedor-header {
     display: flex;
+    justify-content: space-around;
     position: fixed;
-    background-color: #202124e8;
+    background-color: #202124;
     
 }
 .contenedor-logo {
     width: 30%;
     display: block;
-    margin: auto;
 }
 .logo {
     width:85%;
     padding-top: 10px;
 }
 .burger-menu {
-    width: 33%;
+    margin-left: 26px;
     font-size: 2em;
     color: white;
     display: flex;
-    justify-content: left;
     align-items: center;
 }
 .navbar-lista {
@@ -57,11 +54,9 @@ body{
 .i_header {
     width: 15%;
     color: white;
-    font-size: 0.9em;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding-right: 50px;
+    padding-right: 84px;
 }
 .user-link{
     color: white;
@@ -352,9 +347,11 @@ main {
 }
 .oferta {
     font-size: 1.2em;
-    margin: 5px;
+    text-align: center;
+    color: #39b54a;
+    letter-spacing: 14px;
+    margin: 33px 0px 19px;
     color: var(--Orange1);
-    padding: 20px 0 0 7px; 
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -383,7 +380,7 @@ main {
 }
 .detalle{
     width: 50%;
-    padding-top: 10px;
+    padding-top: 6px;
 }
 .precio-anterior{
     font-size: .8em;
@@ -410,13 +407,12 @@ main {
 }
 .descuento{
     display: inline;
-    color: white;
+    color: #000000;
     font-size: .8em;
-    font-weight: 500;
-    background-color: var(--Azul);
+    font-weight: bold;
+    background-color: var(--verde);
     border-radius: 2px;
-    border-radius: 2px;
-    margin-left: 5px;
+    margin-left: 13px;
     padding: 3px 5px;
 }
 #descuento{
@@ -432,7 +428,7 @@ main {
     margin-top: 3px;
     font-size: .6em;
     font-weight: 300;
-    padding-top: 4px;
+    padding-top: 13px;
     display: block;
 }
 /* FIN MAIN INDEX */
@@ -724,7 +720,7 @@ li {
 
 /* Views Desktop Vista Escritorio */
 
-@media(min-width: 361px) {
+@media(min-width: 768px) {
     /* INDEX HEADER */
     .contenedor-header {
         display: flex;
@@ -809,10 +805,11 @@ li {
     padding-top: 10px;
 }
 .oferta {
-    font-size: 1.8em;
-    color: var(--Orange1);
+    font-size: 1.3em;
+    text-align: center;
+    color: var(--verde);
+    margin: 33px 0px 10px;
     padding: 70px 0 0 80px;
-    font-weight: 800;
     text-transform: uppercase;
 }
 .precio-anterior{
