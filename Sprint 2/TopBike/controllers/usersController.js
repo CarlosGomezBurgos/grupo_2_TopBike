@@ -44,13 +44,12 @@ const usersController = {
                });
           } else {
                for(let i = 0; i < users.length; i ++){
-                    if(users[i].user_name == req.body.user_name && bcryptjs.compareSync(users[i].user_password == req.body.user_password)){
-                         console.log('Usuario Valido')
+                    if(users[i].user_name == req.body.user_name && bcryptjs.compareSync(req.body.user_password, users[i].user_password)){
+                         res.send('index')
                     } else {
-                         console.log('Error')
+                         res.render('login')
                     }
                }
-               res.render('register')
           }
      }
 }

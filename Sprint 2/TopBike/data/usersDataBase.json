@@ -26,5 +26,12 @@
   "email": "prueba@gmail.com",
   "user_password": "$2a$10$aaAVSzAAIkz0KFXJSkRmCOv./2zdBjLJy9y7.dfz6hnyEtlWl7QMC",
   "avatar": "1644179870997--edb8865a73719594f81d4c64dec3a546.jpg"
+ },
+ {
+  "id": 5,
+  "user_name": "carlos",
+  "email": "gomezburgos.jc@hotmail.com",
+  "user_password": "$2a$10$IWPa/jAxQ3CIi2LaBABSjuRBWBDBu2w9JSrqDfPNbXS/rZvfXwXcu",
+  "avatar": "1644181875508--oso-panda-kawaii-1.jpg"
  }
 ]
