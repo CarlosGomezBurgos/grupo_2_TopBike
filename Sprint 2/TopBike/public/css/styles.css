@@ -735,7 +735,7 @@ li {
 /* FIN CART */
 
 
-/* Views Desktop Vista Escritorio */
+/* Views Desktop Vista Tablet */
 
 @media(min-width: 768px) {
     /* INDEX HEADER */
@@ -904,30 +904,24 @@ li {
         transition: all .5s ease;
     }
     #check:checked ~ .sidebar{
-        right: 0;
-        margin-top: 68px;
+        margin-top: 36px;
+        background: var(--Dark);
         width: 50%;
-        background: #202124ed;
+        border: 2px solid;
+        border-radius: 0%;
+        height: 91.8%;
       }
     label #cancel{
-        position: absolute;
-        left: 625px;
-        top: 17px;
-        z-index: 1111;
-        font-size: 1.1em;
-        color:var(--Orange1);
-        padding: 4px 9px;
         transition: all .5s ease;
     }
     /* REGISTER */
     #check-register:checked ~ .sidebar-register{
-        right: 0;
-        margin-top: 68px;
+        margin-top: 36px;
         width: 50%;
-        background: var(--Dark);
-
+        border: 2px solid;
+        border-radius: 0%;
+        height: 91.8%;
     }
-
     /* PRODUCT DETAIL */
     .product-titulo{
         font-size: 1.8em;
@@ -1003,10 +997,6 @@ li {
     .boton-comprar, .boton-ver-carrito, .boton-pagar {
         font-size: 1.5em;
     }
-
-
-
-
     li {
         padding: 2px 0;
         font-size: 1.1em;
@@ -1078,5 +1068,48 @@ li {
         padding:20px;
         margin: 0;
         border-top: solid 2px rgb(92, 92, 92);
+    }
+}
+
+/* Views Desktop: 1440 */
+
+@media(min-width: 1440px) {
+    .logo {
+        width: 65%;
+    }
+    .navbar-header {
+        letter-spacing: 5px;
+    }
+    .link-menu {
+        margin-left: 35px;
+    }
+    .user-menu {
+        margin-right: 20px;
+    }
+    .sidebar {
+        height: 89.5%;
+    }
+    #check:checked ~ .sidebar {
+        margin-top: 55px;
+        border: 3px solid;
+        border-radius: 0;
+    }
+    #check-register:checked ~ .sidebar-register {
+        margin-top: 54px;
+        border: 3px solid;
+        border-radius: 0;
+        height: 89.5%;
+    }
+    .oferta {
+        font-size: 2em;
+        letter-spacing: 30px;
+    }
+    .productos-destacados {
+        letter-spacing: 17px;
+        word-spacing: 29px;
+        font-size: 2em;
+    }
+    .direccion {
+        letter-spacing: 6px;
     }
 }
