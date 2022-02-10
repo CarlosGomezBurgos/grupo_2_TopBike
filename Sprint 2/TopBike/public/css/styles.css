@@ -31,7 +31,7 @@ body{
     justify-content: space-around;
     position: fixed;
     background-color: #202124;
-    
+    padding-bottom: 1px;
 }
 .contenedor-logo {
     width: 30%;
@@ -43,7 +43,7 @@ body{
 }
 .burger-menu {
     margin-left: 26px;
-    font-size: 2em;
+    font-size: 1.6em;
     color: var(--Verde);
     display: flex;
     align-items: center;
@@ -99,36 +99,34 @@ body{
     right:-786px; /* esconder menu*/
     width: 0;
     height: 100%;
-    background: var(--Azul);
+    background: var(--Dark);
     transition: all .5s ease;
 }
 
 .sidebar header {
     position: relative;
     font-size: .9em;
-    font-weight: 200;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: var(--Verde);
     text-align: center;
-    background:#35428cda;
+    background: #000000;
     user-select: none;
-    padding: 20px;
-    border-radius: 12px 12px 0px 0px;
+    padding: 18px 20px 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 label #cancel{
-    position: absolute;
-    left: 310px;
-    top: 17px;
-    z-index: 1111;
-    font-size: 1.1em;
+    font-size: 17px;
     color:var(--Orange1);
-    padding: 4px 9px;
     transition: all .5s ease;
+    margin-left: 15px;
 }
 .sidebar form{
     display: flex;
     flex-direction: column;
     padding: 0px 30px;
+    background: var(--Dark);
 }
 .sidebar form label{
     color: white;
@@ -158,9 +156,8 @@ label #cancel{
     margin: auto;
     width: 90%;
     border-radius: 7px;
-    padding: 3px;
-    background-color: var(--Azul);
-    color: aliceblue;
+    background-color: #000000;
+    color: var(--Verde);
     font-family: 'Poppins', sans-serif;
     height: 54px;
     font-size: .9em;
@@ -176,13 +173,6 @@ label #cancel{
     transition: 400ms ease-in;
     outline: none
 }
-
-
-
-
-
-
-
 .sidebar form #password{
     margin-bottom: 50px;
 }
@@ -199,7 +189,6 @@ button{
     font-weight: bold;
 }
 label #btn,label #cancel{
-  border-radius: 3px;
   cursor: pointer;
 }
 label #btn{
@@ -235,7 +224,7 @@ label #btn{
   right: -786px; /* esconder menu*/
   width: 0;
   height: 100%;
-  background: #042331;
+  background: var(--Dark);
   transition: all .5s ease;
 }
 .sidebar-register header {
@@ -243,12 +232,14 @@ label #btn{
     font-size: .9em;
     font-weight: 200;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: var(--Verde);
     text-align: center;
-    background:#35428cda;
+    background:#000000;
     user-select: none;
     padding: 20px;
-    border-radius: 12px 12px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 .sidebar-register form{
     display: flex;
@@ -279,8 +270,8 @@ label #btn{
     width: 90%;
     border-radius: 7px;
     padding: 3px;
-    background-color: var(--Azul);
-    color: aliceblue;
+    background-color: #000000;
+    color: var(--Verde);
     font-family: 'Poppins', sans-serif;
     height: 54px;
     font-size: .9em;
@@ -311,7 +302,6 @@ label #btn{
     display: none;
 }
 label #btn,label #cancel{
-    border-radius: 3px;
     cursor: pointer;
 }
 label #btn{
@@ -387,13 +377,15 @@ main {
     color: white;
     display: flex;
     width: 100%;
-    border-bottom: solid 2px rgb(92, 92, 92);
-    padding: 5px 0;
-    padding-top: 21px;
+    border-bottom: solid 4px #000000;
+    padding: 23px 0px 10px;
+}
+article:nth-last-child(1){
+    border-bottom: none;
 }
 .contenedor-foto{
     width: 50%;
-    margin: 5px;
+    margin: 5px 25px 2px 21px;
 }
 .foto-producto{
     width: 100%;
@@ -746,40 +738,36 @@ li {
 
 @media(min-width: 768px) {
     /* INDEX HEADER */
-    .contenedor-header {
-        display: flex;
-        width: 100vw;
-        justify-content: flex-end;
+    .contenedor-header{
+        padding: 5px 0px 5px;
     }
-    .logo {
-        margin-left: 0;
-        padding: 10px;
+    article:nth-last-child(2){
+        border-bottom: none;
     }
     .burger-menu {
         display: none;
         color: var(--Verde);
     }
     .contenedor-logo{
-        width: 10%;
-        display: flex;
-        margin: 0;    
+        width: 15%;
+        text-align: center;   
     }
   
     .navbar-header{
         width: 70%;
         display: flex;
         justify-content: center;
+        line-height: 0;
     }
     .navbar-lista {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-weight: 500;
         font-size:small;
     }
     .link-menu {
-        padding: 0 20px;
-        font-size: 1.25em;
+        padding: 0 8px;
+        font-size: 1.20em;
         font-weight: 700;
         text-decoration: none;
         color: white;
@@ -806,13 +794,9 @@ li {
     }
 
     .i_header {
-        width: 15%;
-        color: white;
         font-size: 1.1em;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding-right: 50px;
+        padding: 0;
+        justify-content: center;
     }
     
 
@@ -830,12 +814,9 @@ li {
     padding-top: 10px;
 }
 .oferta {
-    font-size: 1.3em;
-    text-align: center;
-    color: var(--verde);
-    margin: 33px 0px 10px;
-    padding: 70px 0 0 80px;
-    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: 54px 0px 3px;
+    padding: 25px 0px 13px;
 }
 .precio-anterior{
     font-size: 1.1em;
@@ -843,39 +824,31 @@ li {
     color: gray;
 }
 .precio{
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-top: 2px;
-    display: inline;
+    font-size: 1.3em;
 }
 .descuento{
-    display: inline;
-    color: white;
-    font-size: 1.2em;
-    font-weight: 500;
-    background-color: var(--Azul);
-    border-radius: 2px;
-    margin-left: 5px;
-    padding: 3px 5px;
+    font-size: 1.1em;
 }
 .descripcion{
-    margin-top: 3px;
+    margin-top: 12px;
     font-size: 1em;
     font-weight: 500;
-    padding-top: 4px;
     display: block;
 }
     /* FOOTER */
     .contenedor-footer {
-        padding-top: 40px;
-        padding-bottom: 10px;
-        padding-left: 70px;
-        padding-right: 70px;
+        padding: 22px 70px 22px;
+        margin-top: 15px;
+    }
+    .contenedor_i{
+        margin-right: 40px;
+        display: flex;
+        justify-content: space-between;
+        height: auto;
     }
     .icon-footer{
-        color: var(--Orange1);
+        color: var(--Verde);
         font-size: 100%;
-        padding-left: 10px;
         
     }
     .icon-footer:hover{
@@ -891,7 +864,7 @@ li {
         }
     }
     .link-footer{
-        color:white;
+        color: var(--Verde);
         text-decoration: none;
         font-size: smaller;
         font-weight:200;
@@ -899,13 +872,8 @@ li {
     }
     
     .direccion {
-        padding-left: 70px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background: var(--Dark);
-        line-height: 2;
+        background: #000000;
         font-size: small;
-        font-weight: 400;
     }
  
     /*INDEX PRODUCTOS*/
@@ -914,12 +882,10 @@ li {
         flex-wrap: wrap;
     }
     .contenedor {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         width: 50%;
         padding: 40px 0;
-        border-bottom: 1.5px solid rgba(92, 92, 92, 0.26);
     }
     
     .detalle, .contenedor-foto {
@@ -1112,8 +1078,4 @@ li {
         margin: 0;
         border-top: solid 2px rgb(92, 92, 92);
     }
-}
-
-article:nth-last-child(1){
-    border-bottom: none;
 }
