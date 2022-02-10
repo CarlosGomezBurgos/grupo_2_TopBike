@@ -59,19 +59,14 @@ body{
     align-items: center;
     padding-right: 84px;
 }
-.user-link{
-    color: white;
-}
-
 .user-menu{
     margin-right: 7px;
     color: var(--Verde);
 }
-
 .user-menu:hover{
-
     animation: mover 500ms alternate ease-out;
 }
+
 @keyframes mover{
     0%{
         transform: translateY(0px);
@@ -80,9 +75,6 @@ body{
         transform: translateY(-5px);
     }
 }
-
-
-
 
 /* FIN HEADER */
 
@@ -735,8 +727,7 @@ li {
 /* FIN CART */
 
 
-/* Views Desktop Vista Tablet */
-
+/* Views Tablet */
 @media(min-width: 768px) {
     /* INDEX HEADER */
     .contenedor-header{
@@ -753,7 +744,6 @@ li {
         width: 15%;
         text-align: center;   
     }
-  
     .navbar-header{
         width: 70%;
         display: flex;
@@ -773,111 +763,28 @@ li {
         text-decoration: none;
         color: white;
     }
-
-   
     .link-menu:hover{
         color: var(--Orange2);
         animation: zoomOut 600ms ease-out;
         transition: color 300ms ease-out;
     }
-
-    @keyframes zoomOut {
-        0%{
-            transform: translateX(0) scale(1);
-        }
-        100%{
-            transform: translateX(3px) scale(0.96);
-        }
-    }
-
-    .link-menu:active{
-        color: var(--Orange3);
-    }
-
     .i_header {
         font-size: 1.1em;
         padding: 0;
         justify-content: center;
     }
-    
-
     /*FIN INDEX HEADER*/
-    /* INICIO CARRUSEL */
-.carrusel-foto{
-    width: 100%;
-    margin-top: 70px;
-}
-/* FIN CARRUSEL */
-
-/* Main Index */
-.main-index {
-    background-color: var(--Dark);
-    padding-top: 10px;
-}
-.oferta {
-    font-size: 1.5em;
-    margin: 54px 0px 3px;
-    padding: 25px 0px 13px;
-}
-.precio-anterior{
-    font-size: 1.1em;
-    text-decoration: line-through;
-    color: gray;
-}
-.precio{
-    font-size: 1.3em;
-}
-.descuento{
-    font-size: 1.1em;
-}
-.descripcion{
-    margin-top: 12px;
-    font-size: 1em;
-    font-weight: 500;
-    display: block;
-}
-    /* FOOTER */
-    .contenedor-footer {
-        padding: 22px 70px 22px;
-        margin-top: 15px;
+    /* Main Index */
+    .main-index {
+        background-color: var(--Dark);
+        padding-top: 10px;
     }
-    .contenedor_i{
-        margin-right: 40px;
-        display: flex;
-        justify-content: space-between;
-        height: auto;
+    .oferta {
+        font-size: 1.5em;
+        margin: 54px 0px 3px;
+        padding: 25px 0px 13px;
     }
-    .icon-footer{
-        color: var(--Verde);
-        font-size: 100%;
-        
-    }
-    .icon-footer:hover{
-        color: var(--Orange3);
-        animation: mover 500ms alternate ease-out;
-    }
-    @keyframes mover{
-        0%{
-            transform: translateY(0px);
-        }
-        100%{
-            transform: translateY(-5px);
-        }
-    }
-    .link-footer{
-        color: var(--Verde);
-        text-decoration: none;
-        font-size: smaller;
-        font-weight:200;
-        margin: 3px 0px;
-    }
-    
-    .direccion {
-        background: #000000;
-        font-size: small;
-    }
- 
-    /*INDEX PRODUCTOS*/
+     /*INDEX PRODUCTOS*/
     .index-articulos {
         display: flex;
         flex-wrap: wrap;
@@ -888,31 +795,50 @@ li {
         width: 50%;
         padding: 40px 0;
     }
-    
     .detalle, .contenedor-foto {
         width: 80%;
     }
-
-    /* LOGIN */
-    .sidebar {
-        position: fixed;
-        top: 28px;
-        right:-786px; /* esconder menu*/
-        width: 0;
-        height: 100%;
-        background: #042331;
-        transition: all .5s ease;
+    .precio-anterior{
+        font-size: 1.1em;
+    }
+    .precio{
+        font-size: 1.3em;
+    }
+    .descuento{
+        font-size: 1.1em;
+    }
+    .descripcion{
+        margin-top: 12px;
+        font-size: 1em;
+        font-weight: 500;
+    }
+    /* FOOTER */
+    .contenedor-footer {
+        padding: 22px 70px 22px;
+        margin-top: 15px;
+    }
+    .contenedor_i{
+        margin-right: 40px;
+        justify-content: space-between;
+        height: auto;
+    }
+    .icon-footer{
+        font-size: 100%; 
+    }
+    .link-footer{
+        font-size: smaller;
+        font-weight:200;
+        margin: 3px 0px;
+    }
+    .direccion {
+        font-size: small;
     }
     #check:checked ~ .sidebar{
         margin-top: 36px;
-        background: var(--Dark);
         width: 50%;
         border: 2px solid;
         border-radius: 0%;
         height: 91.8%;
-      }
-    label #cancel{
-        transition: all .5s ease;
     }
     /* REGISTER */
     #check-register:checked ~ .sidebar-register{
@@ -922,157 +848,9 @@ li {
         border-radius: 0%;
         height: 91.8%;
     }
-    /* PRODUCT DETAIL */
-    .product-titulo{
-        font-size: 1.8em;
-        color: var(--Orange1);
-        padding: 20px 0 0 40px;
-        font-weight: 800;
-        text-transform: uppercase; 
-        margin-bottom: 20px;  
-    }
-    
-    .foto-chica{
-        padding: 5px 10px;
-    }
-    .contenedor-productDetail {
-        margin-top: 96px;
-    }
-    
-    .product-destacados {
-        font-size: 1.8em;
-    }
-    
-    .producto-detalle {
-        width: 40%;
-        margin: 0;
-        padding-top: 30px;
-        
-    }
-    .contenedor-product-main {
-        display: flex;
-    }
-    #precio-anterior{
-        text-decoration: line-through;
-        color: gray;    
-        font-size: 2em;
-        margin-left: 30px;
-    }
-    .producto-detalle #precio-anterior{
-        font-size: 1.8em;
-    }
-    .producto-precio {
-        font-size: 3.5em;
-        margin-left: 30px;
-    }
-
-    .producto-detalle .producto-precio{
-        font-size: 2.5em;
-    }
-
-    #descuento {
-        display: inline;
-        color: white;
-        font-size: 1.3em;
-        font-weight: 400;
-        background-color: var(--Azul);
-        border-radius: 5px;
-        margin-left: 5px;
-        padding: 4px 6px;
-    }
-    .producto-descripcion {
-        margin-top: 12px;
-        font-size: .9em;
-        font-weight: 200;
-        padding-top: 4px;
-        display: block;
-    }
-    .producto-envio {
-        padding: 50px 0 20px 30px;
-        font-size: 1.5em;
-    }
-    .producto-botones {
-        padding: 20px 0 40px 0;
-    }
-    .boton-comprar, .boton-ver-carrito, .boton-pagar {
-        font-size: 1.5em;
-    }
-    li {
-        padding: 2px 0;
-        font-size: 1.1em;
-        margin-left: 30px;
-    }
-    .boton-comprar,.boton-ver-carrito, .boton-pagar {
-        font-size: 1em;
-        padding: 3px 0px;
-        font-weight: 400;
-        border-left: 1px solid rgba(255, 255, 255, 0.226);
-        border-top: 1px solid rgba(255, 255, 255, 0.205);
-        box-shadow: 1px 1px 4px var(--Azul);
-    }
-
-    /* CART */
-    .cart-main {
-        margin-top: 95px;
-    }
-    .cart-contenedor {
-        display: flex;
-        justify-content: space-around;
-        border-top: solid 2px rgb(92, 92, 92);
-        padding: 20px 30px;
-        margin: 0 100px;
-    }
-    .cart-contenedor-foto {
-        width: 10%;
-    }
-    .cart-detalle {
-        display: flex;
-        flex-direction: row;
-        width: 90%;
-        font-size: 1.5em;
-    }
-    .cart-producto-botones {
-        display: flex;
-        align-items: flex-end;
-        align-self: center;
-        width: 60%;
-        padding: 0;
-    }
-    .cart-detalle-precios {
-        width: 40%;
-        display: flex;
-        flex-wrap: wrap;
-        align-self: center;
-    }
-    .cart-precio-anterior {
-        margin: 5px 0 0 15px;
-        font-size: 0.8em;
-    }
-    .cart-descripcion {
-        display: flex;
-        width: 100%;
-    }
-    .cart-titulo {
-        padding-left: 100px;
-        font-size: 2.5em;
-    }
-    .cart-texto-gral, .cart-monto-gral {
-        font-size: 2em;
-        padding: 5px 80px;
-    }
-    .cart-envio {
-        font-size: 2em;
-        padding: 20px 0 0 100px;
-    }
-    .cart-total-resumen {
-        padding:20px;
-        margin: 0;
-        border-top: solid 2px rgb(92, 92, 92);
-    }
 }
 
 /* Views Desktop: 1440 */
-
 @media(min-width: 1440px) {
     .logo {
         width: 65%;
