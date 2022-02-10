@@ -10,11 +10,30 @@
                         <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
                 </div>    
                 <main>
-                <h3 class="oferta" id="ofertas">Ofertas</h3>
-                        <section class="index-articulos">
-                                <% productos.forEach(unProducto => { %>
-                                        <% if (unProducto.category == "ofertas") { %>
+                <h3 class="oferta" >Ofertas</h3>
+                <section class="index-articulos">
+                        <% productos.forEach(unProducto => { %>
+                                <% if (unProducto.category == "ofertas") { %>
                                         <article class="contenedor">
+                                                <div class="contenedor-foto">
+                                                        <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                                </div>
+                                                <div class="detalle">
+                                                        <p class="precio-anterior">$ <%= unProducto.price%></p>
+                                                        <p class="precio">$ 38.869</p>
+                                                        <p class="descuento"><%= unProducto.discount %>% OFF</p>
+                                                        <p class="descripcion"><%= unProducto.name %></p>
+
+                                                </div>
+                                        </article>                  
+                                <% } %> 
+                        <% }) %>
+                </section>
+                <h3 class="productos-destacados">Productos Destacados</h3>
+                <section class="index-articulos">
+                <% productos.forEach(unProducto => { %>
+                        <% if (unProducto.category == "productos-destacados") { %>
+                                <article class="contenedor">
                                         <div class="contenedor-foto">
                                                 <a href=""><img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura"></a>
                                         </div>
@@ -23,31 +42,11 @@
                                                 <p class="precio">$ 38.869</p>
                                                 <p class="descuento"><%= unProducto.discount %>% OFF</p>
                                                 <p class="descripcion"><%= unProducto.name %></p>
-
                                         </div>
                                 </article>                  
-                        </section>
-                                        <% } %> 
-                                <% }) %>
-
-                <h3 class="oferta" id="ofertas">Productos Destacados</h3>
-                <section class="index-articulos">
-                        <% productos.forEach(unProducto => { %>
-                        <% if (unProducto.category == "productos-destacados") { %>
-                                <article class="contenedor">
-                                <div class="contenedor-foto">
-                                        <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
-                                </div>
-                                <div class="detalle">
-                                        <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                        <p class="precio">$ 38.869</p>
-                                        <p class="descuento"><%= unProducto.discount %>% OFF</p>
-                                        <p class="descripcion"><%= unProducto.name %></p>
-                                </div>
-                        </article>                  
-                        </section>
                         <% } %> 
                 <% }) %>
+                </section>
 
                 </main>
                 <%- include('partials/footer.ejs') %>
