@@ -32,6 +32,7 @@ body{
     position: fixed;
     background-color: #202124;
     padding-bottom: 1px;
+    width: 100%;
 }
 .contenedor-logo {
     width: 30%;
