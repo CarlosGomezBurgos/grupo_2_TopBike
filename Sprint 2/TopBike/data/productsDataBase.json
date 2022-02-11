@@ -52,5 +52,14 @@
   "category": "productos-destacados",
   "description": "Bicicleta de montaña Hardtail de Aluminio, 21 Marchas Shimano 26, 27.5, 29\" Pulgadas | Mountainbike con Frenos de Disco Cuadro 16, 17, 18\" MTB",
   "image": "1643374865253--bicicleta-hardtail-alum.jpg"
+ },
+ {
+  "id": 7,
+  "name": "hermosa zapa",
+  "price": "2000",
+  "discount": "87",
+  "category": "productos-destacados",
+  "description": "hermoso zapatito lindo lindo",
+  "image": "1644538554907--bicicleta-nevada-29_178.jpg"
  }
 ]

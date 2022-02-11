@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <div class="carrusel">
+        <img src="/img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
+    </div>    
+
+    <div class="contenedor_register">
+        <h3>FORMULARIO DE REGISTRO</h3>
+        <label for="check-register">
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <form action="/user/register" method="post" enctype="multipart/form-data">
+            <label for="name">Nombre Completo</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="user_name" 
+                value="<%= locals.oldData ? oldData.user_name : null %>"
+            >
+            <% if (locals.errors && errors.user_name) { %>
+                <p style="color: red"><%= errors.user_name.msg %> </p>
+            <% } %>
+
+            <label for="email">Correo Electronico</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email"
+                value="<%= locals.oldData ? oldData.email : null %>"
+            >
+            <% if (locals.errors && errors.email) { %>
+                <p style="color: red"><%= errors.email.msg %> </p>
+            <% } %>
+
+            <label for="password">Contraseña</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="user_password"
+            >
+            <% if (locals.errors && errors.user_password) { %>
+                <p style="color: red"><%= errors.user_password.msg %> </p>
+            <% } %>
+
+            <label for="image">Imagen de perfil</label>
+            <input 
+                type="file"  
+                id="avatar"   
+                name="avatar"
+            >
+            <% if (locals.errors && errors.avatar) { %>
+                <p style="color: red"><%= errors.avatar.msg %> </p>
+            <% } %>
+
+            <button type="submit">REGISTRARSE</button>
+        </form>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
