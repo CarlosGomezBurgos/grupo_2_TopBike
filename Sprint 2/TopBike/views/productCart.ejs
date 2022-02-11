@@ -6,111 +6,39 @@
     <body>
         <%- include('partials/header.ejs') %>
         <div class="carrusel">
-            <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
+            <img src="/img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
         </div>
         <main>
             <section class="cart-main">
                 <h3 class="cart-titulo">Carrito de Compras</h3>
+                <% carrito.forEach(unProducto => { %>
                 <div class="cart-contenedor">
-                    <div class="cart-contenedor-foto">
-                        <img class="foto-producto" src="../img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="cart-detalle">
-                        <div class="cart-detalle-precios">
-                            <p class="cart-precio">$ 38.869</p>
-                            <p class="cart-precio-anterior">$ 45.729</p>
-                            <p class="cart-descripcion">Bicicleta Nordic X1.0</p>     
+                        <div class="cart-contenedor-foto">
+                            <img class="foto-producto" src="/img/products/<%= unProducto.image %>" alt="miniatura">
                         </div>
-                        <div class="cart-producto-botones">
-                                <div class="cart-stock-comprar">
-                                    <select name="select">
-                                        <option value="value1" selected>1 </option>
-                                        <option value="value2" >2</option>
-                                        <option value="value3">3</option>
-                                    </select>
-                                </div>
-                                <p class="cart-subtotal">Subtotal = $ 38.869</p>
-                                <div>
-                                    <i class="fas fa-trash-alt"></i>
-                                </div>
+                        <div class="cart-detalle">
+                            <div class="cart-detalle-precios">
+                                <p class="cart-precio">$ <%= unProducto.price * (1 - (unProducto.discount/100)) %></p>
+                                <p class="cart-precio-anterior">$ <%= unProducto.price%></p>
+                                <p class="cart-descripcion"><%= unProducto.name %></p>     
+                            </div>
+
+                            <div class="cart-producto-botones">
+                                    <div class="cart-stock-comprar">
+                                        <select name="select">
+                                            <option value="value1" selected>1 </option>
+                                            <option value="value2" >2</option>
+                                            <option value="value3">3</option>
+                                        </select>
+                                    </div>
+                                    <p class="cart-subtotal">Subtotal = $ 38.869</p>
+                                    <div>
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
                             </div>
                         </div>
                 </div>
-                <div class="cart-contenedor">
-                    <div class="cart-contenedor-foto">
-                        <img class="foto-producto" src="../img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="cart-detalle">
-                        <div class="cart-detalle-precios">
-                            <p class="cart-precio">$ 38.869</p>
-                            <p class="cart-precio-anterior">$ 45.729</p>
-                            <p class="cart-descripcion">Bicicleta Nordic X1.0</p>     
-                        </div>
-                        <div class="cart-producto-botones">
-                                <div class="cart-stock-comprar">
-                                    <select name="select">
-                                        <option value="value1" selected>1 </option>
-                                        <option value="value2" >2</option>
-                                        <option value="value3">3</option>
-                                    </select>
-                                </div>
-                                <p class="cart-subtotal">Subtotal = $ 38.869</p>
-                                <div>
-                                    <i class="fas fa-trash-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                </div>               
-                <div class="cart-contenedor">
-                    <div class="cart-contenedor-foto">
-                        <img class="foto-producto" src="../img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="cart-detalle">
-                        <div class="cart-detalle-precios">
-                            <p class="cart-precio">$ 38.869</p>
-                            <p class="cart-precio-anterior">$ 45.729</p>
-                            <p class="cart-descripcion">Bicicleta Nordic X1.0</p>     
-                        </div>
-                        <div class="cart-producto-botones">
-                                <div class="cart-stock-comprar">
-                                    <select name="select">
-                                        <option value="value1" selected>1 </option>
-                                        <option value="value2" >2</option>
-                                        <option value="value3">3</option>
-                                    </select>
-                                </div>
-                                <p class="cart-subtotal">Subtotal = $ 38.869</p>
-                                <div>
-                                    <i class="fas fa-trash-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <div class="cart-contenedor">
-                    <div class="cart-contenedor-foto">
-                        <img class="foto-producto" src="../img/producto1-0.jpg" alt="miniatura">
-                    </div>
-                    <div class="cart-detalle">
-                        <div class="cart-detalle-precios">
-                            <p class="cart-precio">$ 38.869</p>
-                            <p class="cart-precio-anterior">$ 45.729</p>
-                            <p class="cart-descripcion">Bicicleta Nordic X1.0</p>     
-                        </div>
-                        <div class="cart-producto-botones">
-                                <div class="cart-stock-comprar">
-                                    <select name="select">
-                                        <option value="value1" selected>1 </option>
-                                        <option value="value2" >2</option>
-                                        <option value="value3">3</option>
-                                    </select>
-                                </div>
-                                <p class="cart-subtotal">Subtotal = $ 38.869</p>
-                                <div>
-                                    <i class="fas fa-trash-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                </div>               
+                <% }) %>
             </section>
             <div class="cart-total-resumen">
                 <p class="cart-texto-gral">Total General</p>

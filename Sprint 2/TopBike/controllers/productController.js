@@ -15,7 +15,7 @@ const productController = {
 
      },
      cart: (req,res) => {
-         res.render('productCart');
+         res.render('productCart',{carrito: products});
 
      },
      create: (req,res)=>{
@@ -60,6 +60,9 @@ const productController = {
 		})
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/product');
-	}
+	},
+     delete: (req, res) => {
+
+     }
 }
 module.exports = productController;
