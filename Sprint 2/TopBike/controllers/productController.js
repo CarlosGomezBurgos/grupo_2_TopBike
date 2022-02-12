@@ -6,7 +6,13 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productController = {
      index: (req,res) => {
-          res.render('product',{productos: products})
+		let products_formato = products.map(product =>{
+               product.actual_price = product.price * (1 - (product.discount/100));
+               product.actual_price = product.actual_price.toFixed(2);
+			product.price = parseFloat(product.price).toFixed(2);
+			return product;
+		})
+          res.render('product',{productos: products_formato})
      },
      detail: (req,res) => {
           let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);

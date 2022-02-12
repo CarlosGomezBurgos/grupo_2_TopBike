@@ -19,7 +19,7 @@
                                 </a>                            </div>
                             <div class="detalle">
                                     <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                    <p class="precio">$ <%= unProducto.price * (1 - (unProducto.discount/100)) %></p>
+                                    <p class="precio">$ <%= unProducto.actual_price %></p>
                                     <p class="descuento"><%= unProducto.discount %>% OFF</p>
                                     <p class="descripcion"><%= unProducto.name %></p>
                             </div>
