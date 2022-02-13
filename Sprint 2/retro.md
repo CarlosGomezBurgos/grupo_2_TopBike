@@ -84,7 +84,10 @@ Keep Doing :
 * Comentar las dificultades en tareas asignadas   // Solución: tratar de terminar todas las tareas a tiempo
 
 Less of: 
-* Trabajo individual:   // Solución: coincidir horarios para reunirse y realizar tareas en equipo.  
+* Trabajo individual:   // Solución: coincidir horarios para reunirse y realizar tareas en equipo. 
+* no modificar tareas realizadas en sprint anteriores.
+
+* no pisar las tareas asignadas a otro compañero, //Solución: en todo caso hacer una sugerencia para el que tiene la actividad a cargo lo tenga presenta y de esta manera evitar retrabajo. 
 
 
 
