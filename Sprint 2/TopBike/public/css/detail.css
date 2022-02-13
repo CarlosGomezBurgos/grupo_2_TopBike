@@ -50,7 +50,11 @@
     font-size: 1em;
     color: #ffffff;
 }
-
+.producto-descripcion{
+    font-weight: 300;
+    font-size: .8em;
+    padding-right: 30px;
+}
 .boton-comprar, .boton-ver-carrito, .boton-pagar{
     font-size: 0.6em;
     margin: 2px 5px 10px 0px;
@@ -99,7 +103,7 @@
     .producto-descripcion{
         font-weight: 400;
         font-size: 1.1em;
-        padding-right: 30px;
+        
     }
 
     #precio-anterior{
