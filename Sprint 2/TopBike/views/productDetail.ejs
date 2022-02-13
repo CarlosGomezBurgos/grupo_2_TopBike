@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/detail.css">
 </head>
 <body>
     <%- include('partials/header.ejs') %>
@@ -10,7 +11,7 @@
     </div>
     <main>
         <div class="contenedor-productDetail">
-            <h3 class="product-titulo">Detalle de Producto:<%= productoBuscado.id %></h3>
+            <h3 class="product-titulo"><!-- Detalle de Producto: --> <%= productoBuscado.name %></h3>
             <div class="contenedor-product-main">
                 <section class="productDetail-section">
                     <div class="productDetail-foto">
