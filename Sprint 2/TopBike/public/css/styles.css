@@ -605,7 +605,6 @@ footer section nav div, i{
     box-shadow: none;
 
 }
-
 @keyframes zoomOut {
     0%{
         transform: translateX(0) scale(1);
@@ -797,6 +796,9 @@ li {
         display: block;
         font-size: 1em;
     }
+    .foto-producto{
+        height: 198px;
+    }
     .precio-anterior{
         font-size: 1.1em;
     }
@@ -882,6 +884,9 @@ li {
     .oferta {
         font-size: 2.3em;
         letter-spacing: 30px;
+    }
+    .foto-producto{
+        height: 295px;
     }
     .productos-destacados {
         letter-spacing: 17px;
