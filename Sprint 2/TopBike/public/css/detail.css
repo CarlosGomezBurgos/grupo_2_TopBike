@@ -12,7 +12,7 @@
     color: var(--verde);
     letter-spacing: 5px;
     margin: 33px 0px 1px;
-    margin-left: 30px;
+    margin-left: 38px;
     color: var(--Verde);
     font-weight: 700;
     text-transform: uppercase;
@@ -21,6 +21,7 @@
 .contenedor-product-main{
     display: block;
     width: 95vw;
+    margin-bottom: 33px;
 }
 
 #descuento{
@@ -96,7 +97,12 @@
 
 /* Views Desktop: 1440 */
 @media(min-width: 1440px){
-   
+    .product-titulo{
+        margin-left: 11%;
+    }
+    .productDetail-section{
+        margin-left: 10%;
+    }
     .foto-grande{
         min-width: 600px;
     }
