@@ -373,7 +373,6 @@ article:nth-last-child(1){
 }
 .contenedor-foto{
     width: 50%;
-    margin: 5px 25px 2px 21px;
 }
 .foto-producto{
     width: 100%;
@@ -531,8 +530,6 @@ footer section nav div, i{
     padding: 10px;
     margin-left: 20px;
 }
-
-
 .productDetail-miniatura{
     display: flex;
     flex-direction: column;
