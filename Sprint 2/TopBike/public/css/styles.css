@@ -61,7 +61,8 @@ body{
     align-items: center;
 }
 .user-menu{
-    margin-left: -28px;
+    margin: 0px;
+    padding: 0;
     color: var(--Verde);
 }
 .user-menu:hover{
@@ -96,7 +97,6 @@ body{
     background: var(--Dark);
     transition: all .5s ease;
 }
-
 .sidebar header {
     position: relative;
     font-size: .9em;
@@ -141,11 +141,9 @@ label #cancel{
     border-radius: 7px 0 7px;
     background: rgba(255, 255, 255, 0.883);
 }
-
 .sidebar form input:focus-visible{
     outline: 0;
 }
-
 .sidebar form button, .sidebar form [for="check-register"]{
     margin: auto;
     width: 90%;
@@ -161,7 +159,6 @@ label #cancel{
     justify-content: center;
     border: none;
 }
-
 .sidebar form button:hover, .sidebar form [for="check-register"]:hover{
     background: var(--Orange1);
     transition: 400ms ease-in;
@@ -255,7 +252,6 @@ label #btn{
     border-radius: 7px 0 7px;
     background: rgba(255, 255, 255, 0.883);
 }
-
 .sidebar-register form input:focus-visible{
     outline: 0;
 }
@@ -275,13 +271,11 @@ label #btn{
     justify-content: center;
     border: none;
 }
-
 .sidebar-register form button:hover{
     background: var(--Orange1);
     transition: 400ms ease-in;
     outline: none;
 }
-
 .sidebar-register form #password{
     margin-bottom: 50px;
 }
@@ -342,7 +336,6 @@ main {
     font-weight: 800;
     text-transform: uppercase;
 }
-
 .productos-destacados {
     font-size: 1.2em;
     text-align: center;
@@ -356,11 +349,10 @@ main {
     text-shadow: -5px 1px 0px #000000;
     padding: 11px 0px 3px;
 }
-
 .main-index {
     background-color: var(--Dark);
 }
-.contenedor{
+section .contenedor{
     background-color: var(--Dark);
     color: white;
     display: flex;
@@ -371,8 +363,9 @@ main {
 article:nth-last-child(1){
     border-bottom: none;
 }
-.contenedor-foto{
+section article .contenedor-foto{
     width: 50%;
+    margin-left: 22px;
 }
 .foto-producto{
     width: 100%;
@@ -380,10 +373,11 @@ article:nth-last-child(1){
     box-shadow: 0.5px 0.5px 1.7px rgba(245, 245, 245, 0.671);
     background-color: #FFFFFF;
 }
-.detalle{
-    width: 50%;
-    padding-top: 6px;
+section article .detalle{
+    width: 40%;
+    margin-left: 12px;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
 }
 .precio-anterior{
@@ -767,7 +761,7 @@ li {
         justify-content: center;
     }
     .user-menu{
-        margin-left: 0px;
+        margin: 0px;
     }
     /*FIN INDEX HEADER*/
     /* Main Index */
