@@ -848,7 +848,7 @@ li {
     }
 }
 
-/* Views Desktop: 1440 */
+/* Views Desktop 1200 */
 @media(min-width: 1200px) {
     .logo {
         width: 65%;

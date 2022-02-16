@@ -125,3 +125,22 @@
         margin: auto;
     }
 }
+
+/* Views Desktop 1200 */
+@media(min-width: 1200px) {
+    .cart-contenedor{
+        margin-bottom: 35px;
+    }
+    .cart-contenedor-foto{
+        width: 13%;
+    }
+    .cart-detalle{
+        width: 50%;
+    }
+    .cart-envio{
+        margin: 5px 0px 23px 253px;
+    }
+    .producto-botones{
+        width: 70%;
+    }
+}
