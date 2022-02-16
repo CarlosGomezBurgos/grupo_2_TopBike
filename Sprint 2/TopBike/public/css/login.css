@@ -1,0 +1,78 @@
+/* USUARIO */
+h3{
+    text-align: center;
+    color: rgb(70, 160, 238);
+    margin: 33px 0px 15px;
+    font-size: 1.4em;
+}
+form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+form label{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: var(--Dark);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 14px;
+}
+form input{
+    font-size: 1.1em;
+    font-weight: 300;
+    color: var(--Dark);
+    text-indent: 20px;
+    height: 33px;
+    border-radius: 7px 0 7px;
+    background: rgba(255, 255, 255, 0.883);
+    margin-bottom: 35px;
+}
+form button{
+    margin: auto;
+    width: 44%;
+    height: 34px;
+    font-weight: bold;
+}
+form a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.crear-cuenta{
+    font-size: 1em;
+    color: lightskyblue;
+    background-color: black;
+    width: 50%;
+    height: 28px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Views Tablet */
+@media(min-width: 768px) {
+    h3{
+        margin: 36px 0px 30px;
+    }
+    .crear-cuenta{
+        width: 44%;
+        margin-bottom: 40px;
+        height: 35px;
+        justify-content: center;
+    }
+}
+
+/* Views Desktop */
+@media(min-width: 1200px) {
+    form label{
+        font-size: 1.4em;
+    }
+    form input{
+        width: 44%;
+    }
+}
