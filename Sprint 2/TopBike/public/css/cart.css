@@ -97,3 +97,31 @@
     width: 100%;
     justify-content: space-around;
 }
+
+/* Views Tablet */
+@media(min-width: 768px) {
+    .cart-titulo{
+        padding: 22px 0px 30px;
+        font-size: 1.7em;
+    }
+    .cart-contenedor{
+        justify-content: center;
+    }
+    .cart-contenedor-foto {
+        width: 20%;
+    }
+    .cart-detalle{
+        padding-left: 21px;
+    }
+    .cart-total-resumen{
+        justify-content: space-around;
+        margin: 35px 0px 0px;
+    }
+    .cart-envio{
+        margin: 5px 0px 22px 148px;
+    }
+    .producto-botones{
+        width: 90%;
+        margin: auto;
+    }
+}
