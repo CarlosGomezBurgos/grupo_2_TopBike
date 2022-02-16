@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <%- include('partials/head.ejs') %>
-        
+        <link rel="stylesheet" href="/css/edit.css">
     </head>
     <body>
         <%- include('partials/header.ejs') %>
@@ -13,25 +13,25 @@
         <div class="contenedor-create-form">
             <div class="">
                 <div class="col-12">
-                    <h2 class="products-title">Formulario de EDICION de productos</h2>
+                    <h2 class="products-title">Editar Producto</h2>
                 </div>
             </div>
             <div class="col-12">
                 <form action="/product/edit/<%= productoBuscado.id %>?_method=PATCH" method="POST">
                     <div class="row product-detail">
-                        <div class="col-12 col-md-6">
+                        <div class="area col-12 col-md-6">
                             <label for="name" class="form-label">Nombre del producto:</label>
                             <input type="text" id="name" name="name" value="<%= productoBuscado.name %>" class="form-input">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="area col-12 col-md-6">
                             <label for="price" class="form-label">Precio del producto:</label>
                             <input type="text" id="price" name="price" value="<%= productoBuscado.price %>" class="form-input">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="area col-12 col-md-6">
                             <label for="discount" class="form-label">Descuento:</label>
                             <input type="text" id="discount" name="discount" value="<%= productoBuscado.discount %>" class="form-input">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="area col-12 col-md-6">
                             <label for="category" class="form-label">Categoría:</label>
                             <select 
                                 name="category" 
