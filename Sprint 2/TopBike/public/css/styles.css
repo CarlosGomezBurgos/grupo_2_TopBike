@@ -87,7 +87,7 @@ body{
 }
 #check{
     display: none;
-  }
+}
 .sidebar {
     position: fixed;
     top: 28px;
@@ -477,7 +477,6 @@ footer section nav div, i{
     padding-left: 5px;
     
 }
-
 .icon-footer:hover{
     color: var(--Orange3);
     animation: mover 500ms alternate ease-out;
@@ -617,7 +616,7 @@ li {
 }
 /* FIN PRODUCT DETAIL*/
 
-/* INICIO CART */
+/* INICIO CART 
 .cart-main {
     margin-top: 60px;
 }
@@ -712,7 +711,7 @@ li {
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-}
+} */
 /* FIN Mobile */
 
 
