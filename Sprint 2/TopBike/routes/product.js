@@ -30,6 +30,6 @@ router.post('/', upload.single('image'),productController.store);
 router.get('/edit/:id', productController.edit); 
 router.patch('/edit/:id', productController.update); 
 
-router.delete('/delete/:id', productController.delete);
+router.get('/delete/:id', productController.delete);
 
 module.exports = router;

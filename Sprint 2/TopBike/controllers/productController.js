@@ -67,8 +67,11 @@ const productController = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/product');
 	},
-     delete: (req, res) => {
-
+     delete : (req, res) => {
+          let id = req.params.id;
+          let finalProducts = products.filter(product => product.id != id);
+          fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+          res.render('productCart',{carrito: products});
      }
 }
 module.exports = productController;

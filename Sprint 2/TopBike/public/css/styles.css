@@ -679,7 +679,7 @@ li {
         display: flex;
         flex-wrap: wrap;
     }
-    .contenedor {
+    section .contenedor {
         flex-wrap: wrap;
         justify-content: center;
         width: 50%;
