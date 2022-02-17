@@ -134,7 +134,7 @@ section article .detalle{
     width: 40%;
     margin-left: 12px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: column;
 }
 .precio-anterior{
@@ -447,9 +447,6 @@ li {
         display: block;
         font-size: 1em;
     }
-    .foto-producto{
-        height: 198px;
-    }
     .precio-anterior{
         font-size: 1.1em;
     }
@@ -457,8 +454,7 @@ li {
         font-size: 1.3em;
     }
     .descuento{
-        font-size: 1em;
-        padding: 1px 5px;
+        font-size: 0.8em;
     }
     .descripcion{
         margin-top: 12px;
@@ -535,9 +531,6 @@ li {
     .oferta {
         font-size: 2.3em;
         letter-spacing: 30px;
-    }
-    .foto-producto{
-        height: 295px;
     }
     .productos-destacados {
         letter-spacing: 17px;

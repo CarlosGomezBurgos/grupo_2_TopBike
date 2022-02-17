@@ -1,15 +1,6 @@
 [
  {
-  "id": 5,
-  "name": "110X",
-  "price": "1236641",
-  "discount": "15",
-  "category": "productos-destacados",
-  "description": "Ruedas: MICHE 966 - TUBELESS\r\nCuadro: 110X - CARBON MONOCOQUE 46TON*\r\nPeso del cuadro: 1070 G +/- 5%\r\nHorquilla: ROCK SHOX SID ULTIMATE SL, 100MM (AZUL)\r\nManillar: RITCHEY WCS ALU\r\nStem: RITCHEY WCS ALU C220\r\nJuego de dirección: FSA 121-0004000010\r\nManijas de freno: SHIMANO SLX ",
-  "image": "1643124822651--bicicleta-110x.jpg"
- },
- {
-  "id": 6,
+  "id": 1,
   "name": "una bici mtb ",
   "price": "200000",
   "discount": "50",
@@ -18,12 +9,48 @@
   "image": "1643374865253--bicicleta-hardtail-alum.jpg"
  },
  {
-  "id": 7,
+  "id": 2,
   "name": "hermosa zapa",
   "price": "2000",
   "discount": "87",
   "category": "ofertas",
   "description": "hermoso zapatito lindo lindo",
   "image": "1644538554907--bicicleta-nevada-29_178.jpg"
- }
+ },
+ {
+    "id": 3,
+    "name": "una bici mtb ",
+    "price": "200000",
+    "discount": "50",
+    "category": "productos-destacados",
+    "description": "Bicicleta de montaña Hardtail de Aluminio, 21 Marchas Shimano 26, 27.5, 29\" Pulgadas | Mountainbike con Frenos de Disco Cuadro 16, 17, 18\" MTB",
+    "image": "1643374865253--bicicleta-hardtail-alum.jpg"
+   },
+   {
+    "id": 4,
+    "name": "hermosa zapa",
+    "price": "2000",
+    "discount": "87",
+    "category": "ofertas",
+    "description": "hermoso zapatito lindo lindo",
+    "image": "1644538554907--bicicleta-nevada-29_178.jpg"
+   },
+   {
+    "id": 5,
+    "name": "una bici mtb ",
+    "price": "200000",
+    "discount": "50",
+    "category": "productos-destacados",
+    "description": "Bicicleta de montaña Hardtail de Aluminio, 21 Marchas Shimano 26, 27.5, 29\" Pulgadas | Mountainbike con Frenos de Disco Cuadro 16, 17, 18\" MTB",
+    "image": "1643374865253--bicicleta-hardtail-alum.jpg"
+   },
+   {
+    "id": 6,
+    "name": "hermosa zapa",
+    "price": "2000",
+    "discount": "87",
+    "category": "ofertas",
+    "description": "hermoso zapatito lindo lindo",
+    "image": "1644538554907--bicicleta-nevada-29_178.jpg"
+   }
 ]

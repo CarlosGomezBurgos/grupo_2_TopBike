@@ -21,7 +21,7 @@
 .contenedor-product-main{
     display: block;
     width: 95vw;
-    margin-bottom: 33px;
+    margin: auto;
 }
 
 #descuento{
@@ -45,6 +45,7 @@
 
 .foto-grande{
     min-width: 300px;
+    background-color: #FFFFFF;
 }
 
 .producto-envio{
@@ -69,6 +70,17 @@
 
 .boton-comprar:hover, .boton-ver-carrito:hover, .boton-pagar:hover {
     background-color: var(--Verde);
+}
+.producto-botones {
+    display: flex;
+    justify-content: space-between;
+}
+.productDetail-section {
+    display: flex;
+    border-top: 1px solid var(--Orange3);
+    border-bottom: 1px solid var(--Orange2);
+    padding: 10px;
+    margin-left: 20px;
 }
 
 /* Views Tablet */
