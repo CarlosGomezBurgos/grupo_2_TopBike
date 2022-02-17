@@ -196,6 +196,7 @@ label #btn{
 
 /* REGISTRO DE USUARIO */
 /* USUARIO */
+/*
 .contenedor_register{
     display: flex;
     align-content: flex-end;
@@ -203,7 +204,7 @@ label #btn{
 .sidebar-register {
   position: fixed;
   top: 28px;
-  right: -786px; /* esconder menu*/
+  right: -786px;
   width: 0;
   height: 100%;
   background: var(--Dark);
@@ -302,7 +303,7 @@ label #btn{
 #check-register:checked ~ label #cancel{
     display: block;
 }
-/* TERMINA REGISTRO USUARIO */
+ TERMINA REGISTRO USUARIO */
 
 /* INICIO CARRUSEL */
 .carrusel-foto{
