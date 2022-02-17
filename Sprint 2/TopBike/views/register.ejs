@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
     <%- include('partials/header.ejs') %>
@@ -11,9 +12,6 @@
 
     <div class="contenedor_register">
         <h3>FORMULARIO DE REGISTRO</h3>
-        <label for="check-register">
-            <i class="fas fa-times" id="cancel"></i>
-        </label>
         <form action="/user/register" method="post" enctype="multipart/form-data">
             <label for="name">Nombre Completo</label>
             <input 

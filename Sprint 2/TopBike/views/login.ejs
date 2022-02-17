@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/login.css">
     </head>
     <body>
         <%- include('partials/header.ejs') %>
@@ -10,27 +11,27 @@
         </div>
 
         <h3>INICIO DE SESIÓN</h3>
-        <label for="check">
-            <i class="fas fa-times" id="cancel"></i>
-        </label>
         <form action="/user/login" method="post">
-            <label for="name">Usuario</label>
-            <input 
-            type="text" 
-            id="name" 
-            name="user_name"
-            value="<%= locals.oldData ? oldData.user_name : null %>"
-            >
-            <% if (locals.errors && errors.user_name) { %>
-                <p style="color: red"><%= errors.user_name.msg %> </p>
+            <label for="name">Usuario
+
+                <input 
+                type="text" 
+                id="name" 
+                name="user_name"
+                value="<%= locals.oldData ? oldData.user_name : null %>"
+                >
+            </label>
+                <% if (locals.errors && errors.user_name) { %>
+                    <p style="color: red"><%= errors.user_name.msg %> </p>
             <% } %>
 
-            <label for="password">Contraseña</label>
-            <input 
-            type="password" 
-            id="password" 
-            name="user_password"
-            >
+            <label for="password">Contraseña
+                <input 
+                type="password" 
+                id="password" 
+                name="user_password"
+                >
+            </label>
             <% if (locals.errors && errors.user_password) { %>
                 <p style="color: red"><%= errors.user_password.msg %> </p>
             <% } %>
@@ -39,7 +40,7 @@
 
             <h3>¿ No tenés cuenta ?</h3>
             <a href="/user/register">
-                <label for="check-register">CREAR CUENTA</label>
+                <label class="crear-cuenta" for="check-register">CREAR CUENTA</label>
             </a>                
         </form>
         <%- include('partials/footer.ejs') %>
