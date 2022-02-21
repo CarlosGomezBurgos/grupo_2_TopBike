@@ -12,50 +12,57 @@
         <main>
             <section class="cart-main">
                 <h3 class="cart-titulo">Carrito de Compras</h3>
-                <% carrito.forEach(unProducto => { %>
-                <div class="cart-contenedor">
-                        <div class="cart-contenedor-foto">
-                            <img class="foto-producto" src="/img/products/<%= unProducto.image %>" alt="miniatura">
-                        </div>
-                        <div class="cart-detalle">
-                            <div class="cart-detalle-precios">
-                                <p class="cart-precio">$ <%= unProducto.price * (1 - (unProducto.discount/100)) %></p>
-                                <p class="cart-precio-anterior">$ <%= unProducto.price%></p>
-                                <p class="cart-descripcion"><%= unProducto.name %></p>     
-                            </div>
-
-                            <div class="cart-producto-botones">
-                                    <div class="cart-stock-comprar">
-                                        <select name="select">
-                                            <option value="value1" selected>1 </option>
-                                            <option value="value2" >2</option>
-                                            <option value="value3">3</option>
-                                        </select>
+                <% if (carrito.length == 0) { %>
+                    <p style="color: red;">'Carrito Vacio'</p>
+                
+                <% } else { %>
+                    <% carrito.forEach(unProducto => { %>
+                        <div class="cart-contenedor">
+                                <div class="cart-contenedor-foto">
+                                    <img class="foto-producto" src="/img/products/<%= unProducto.image %>" alt="miniatura">
+                                </div>
+                                <div class="cart-detalle">
+                                    <div class="cart-detalle-precios">
+                                        <p class="cart-precio">$ <%= unProducto.price * (1 - (unProducto.discount/100)) %></p>
+                                        <p class="cart-precio-anterior">$ <%= unProducto.price%></p>
+                                        <p class="cart-descripcion"><%= unProducto.name %></p>     
                                     </div>
-                                    <p class="cart-subtotal">Subtotal = $ 38.869</p>
-                                    <div>
-                                        <a href="/product/delete/<%= unProducto.id %> ">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
+        
+                                    <div class="cart-producto-botones">
+                                            <div class="cart-stock-comprar">
+                                                <select name="select">
+                                                    <option value="value1" selected>1 </option>
+                                                    <option value="value2" >2</option>
+                                                    <option value="value3">3</option>
+                                                </select>
+                                            </div>
+                                            <p class="cart-subtotal">Subtotal = $ 38.869</p>
+                                            <div>
+                                                <a href="/product/delete/<%= unProducto.id %> ">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                            </div>
                                     </div>
-                            </div>
+                                </div>
                         </div>
-                </div>
-                <% }) %>
+                        <% }) %>
+                        <div class="cart-total-resumen">
+                            <p class="cart-texto-gral">Total General</p>
+                            <p class="cart-monto-gral">$ 123.456</p>   
+                        </div>
+                        <p class="cart-envio">Envío Gratis</p>
+                        <div class="producto-botones">
+                            <div class="producto-comprar"> 
+                                <input  class="boton-pagar" type="button" value="Pagar">
+                            </div>
+                            <div class="producto-ver-carrito">
+                                <a href="/product/deleteAll">
+                                    <input  class="boton-ver-carrito" type="button" value="Vaciar Carrito">
+                                </a> 
+                            </div>
+                        </div>  
+                <% } %>
             </section>
-            <div class="cart-total-resumen">
-                <p class="cart-texto-gral">Total General</p>
-                <p class="cart-monto-gral">$ 123.456</p>   
-            </div>
-            <p class="cart-envio">Envío Gratis</p>
-            <div class="producto-botones">
-                <div class="producto-comprar"> 
-                    <input  class="boton-pagar" type="button" value="Pagar">
-                </div>
-                <div class="producto-ver-carrito"> 
-                    <input  class="boton-ver-carrito" type="button" value="Vaciar Carrito">
-                </div>
-            </div>  
         </main>
         <%- include('partials/footer.ejs') %>
     </body>

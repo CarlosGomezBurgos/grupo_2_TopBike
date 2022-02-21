@@ -32,4 +32,10 @@ router.patch('/edit/:id', productController.update);
 
 router.get('/delete/:id', productController.delete);
 
+router.get('/deleteAll', productController.deleteAll);
+
+router.get('/add', productController.add);
+
+
+
 module.exports = router;

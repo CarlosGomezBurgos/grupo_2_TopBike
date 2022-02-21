@@ -4,6 +4,9 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const productsCartFilePath = path.join(__dirname, '../data/productsCartDataBase.json');
+const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
+
 const productController = {
      index: (req,res) => {
 		let products_formato = products.map(product =>{
@@ -12,7 +15,7 @@ const productController = {
 			product.price = parseFloat(product.price).toFixed(2);
 			return product;
 		})
-          res.render('product',{productos: products_formato})
+          res.render('product',{productos: products});
      },
      detail: (req,res) => {
           let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
@@ -21,7 +24,7 @@ const productController = {
 
      },
      cart: (req,res) => {
-         res.render('productCart',{carrito: products});
+         res.render('productCart',{carrito: productsCart});
 
      },
      create: (req,res)=>{
@@ -67,11 +70,19 @@ const productController = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/product');
 	},
-     delete : (req, res) => {
+     delete: (req, res) => {
           let id = req.params.id;
-          let finalProducts = products.filter(product => product.id != id);
-          fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-          res.render('productCart',{carrito: products});
+          let finalProducts = productsCart.filter(product => product.id != id);
+          fs.writeFileSync(productsCartFilePath, JSON.stringify(finalProducts, null, ' '));
+          res.render('productCart',{carrito: finalProducts});
+     },
+     deleteAll: (req, res) => {
+          let finalProducts = [];
+          fs.writeFileSync(productsCartFilePath, JSON.stringify(finalProducts, null, ' '));
+          res.render('productCart',{carrito: finalProducts});
+     },
+     add: (req, res) => {
+          
      }
 }
 module.exports = productController;

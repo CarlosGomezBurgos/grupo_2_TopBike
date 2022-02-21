@@ -15,7 +15,9 @@
                                         <% if (unProducto.category == "ofertas") { %>
                                                 <article class="contenedor">
                                                         <div class="contenedor-foto">
-                                                                <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                                                <a href="./product/detail/<%= unProducto.id %>">
+                                                                        <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                                                </a>                            
                                                         </div>
                                                         <div class="detalle">
                                                                 <p class="precio-anterior">$ <%= unProducto.price%></p>
@@ -34,11 +36,13 @@
                                 <% if (unProducto.category == "productos-destacados") { %>
                                         <article class="contenedor">
                                                 <div class="contenedor-foto">
-                                                        <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                                        <a href="./product/detail/<%= unProducto.id %>">
+                                                                <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                                        </a>                                                        
                                                 </div>
                                                 <div class="detalle">
                                                         <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                                        <p class="precio">$ 38.869</p>
+                                                        <p class="precio">$ <%= unProducto.price * (1 - (unProducto.discount/100)) %></p>
                                                         <p class="descuento"><%= unProducto.discount %>% OFF</p>
                                                         <p class="descripcion"><%= unProducto.name %></p>
                                                 </div>
