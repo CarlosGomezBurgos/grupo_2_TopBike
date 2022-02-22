@@ -190,11 +190,12 @@ section article .detalle{
 
 /* INICIO FOOTER*/
 .contenedor-footer {
-    background-color: var(--Naranja);
+    color: var(--Naranja);
     display: flex;
     flex-direction: row;
     margin-top: 30px;
     padding: 15px 5px 15px 5px;
+    border-top: 3px solid #FF9900;
 }
 .contenedor_a {
     width: 50%;
@@ -227,7 +228,7 @@ footer section nav div, i{
     padding: 0px 5px 0px;
 }
 .icon-footer{
-    color: var(--Negro);
+    color: var(--Naranja);
     font-size: 80%;
     padding-left: 5px;
     
