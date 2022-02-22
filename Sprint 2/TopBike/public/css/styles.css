@@ -117,6 +117,9 @@ section .contenedor{
     border-bottom: solid 1px var(--Naranja);
     padding: 23px 0px 10px;
 }
+article:nth-child(3n){
+    border-bottom: none;
+}
 section article .contenedor-foto{
     width: 50%;
 }
@@ -189,10 +192,12 @@ section article .detalle{
 /* INICIO FOOTER*/
 .contenedor-footer {
     background-color: var(--Dark);
+    color: var(--Naranja);
     display: flex;
     flex-direction: row;
     margin-top: 10px;
     padding: 15px 5px 15px 5px;
+    border-top: 1px solid #FF9900;
 }
 .contenedor_a {
     width: 50%;

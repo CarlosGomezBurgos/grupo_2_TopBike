@@ -1,9 +1,13 @@
 <!-- Retrospectiva Sprint 1 -->
 
-Start Doing: 
-* Trabajo Colaborativo  // Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
+Start Doing:
+* Organizar horarios de trabajo.
+// Solucion: Cada integrante del grupo avisa los horarios disponibles para una posible reunion, a fin de coordinar los horarios de cada meet semanal.
 
-* Comunicación      // Solución: encender las cámaras en las reuniones para interactuar y de alguna manera disminuir el distanciamiento de la virtualidad. 
+* Realizar un trabajo colaborativo  
+// Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
+
+* Comunicación // Solución: encender las cámaras en las reuniones para interactuar y de alguna manera disminuir el distanciamiento de la virtualidad. 
 
 More of:
 
