@@ -23,7 +23,7 @@ body{
     align-items: center;
     position: fixed;
     text-align: center;
-    background-color: #202124;
+    background-color: var(--Dark);
     padding-bottom: 1px;
     width: 100%;
 }
@@ -52,6 +52,7 @@ body{
     color: var(--Naranja);
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding-right: 7px;
 }
 .user-menu{
@@ -84,7 +85,7 @@ main {
 }
 .oferta {
     font-size: 1.4em;
-    text-shadow: -5px 1px 0px #000000;
+    text-shadow: -5px 1px 0px var(--Negro);
     padding: 11px 0px 3px;
     text-align: center;
     color: var(--Naranja);
@@ -191,13 +192,12 @@ section article .detalle{
 
 /* INICIO FOOTER*/
 .contenedor-footer {
-    background-color: var(--Dark);
+    background-color: var(--Negro);
     color: var(--Naranja);
     display: flex;
     flex-direction: row;
     margin-top: 10px;
     padding: 15px 5px 15px 5px;
-    border-top: 1px solid #FF9900;
 }
 .contenedor_a {
     width: 50%;
@@ -225,6 +225,7 @@ section article .detalle{
     display: flex;
     justify-content: center;
     letter-spacing: 2px;
+    border-top: 1px solid var(--Dark);
 }
 footer section nav div, i{
     padding: 0px 5px 0px;
@@ -236,7 +237,7 @@ footer section nav div, i{
     
 }
 .icon-footer:hover{
-    color: var(--Orange3);
+    color: var(--Naranja);
     animation: mover 500ms alternate ease-out;
 }
 @keyframes mover{
@@ -262,7 +263,6 @@ footer section nav div, i{
     font-size: 1.2em;
     margin: 5px;
     margin-left: 15px;
-    color: var(--Orange1);
     padding: 20px 0 0 7px; 
     font-weight: 800;
     text-transform: uppercase;
@@ -276,8 +276,6 @@ footer section nav div, i{
     display: flex;
     width: 60%;
     height: 50%;
-    border-top: 1px solid var(--Orange3);
-    border-bottom: 1px solid var(--Orange2);
     padding: 10px;
     margin-left: 20px;
 }
@@ -313,16 +311,14 @@ footer section nav div, i{
 .product-destacados{
     font-size: 0.2em;
     margin: 5px;
-    color: var(--Orange1);
     padding: 5px 0px 5px 0px; 
     font-weight: 800;
     text-transform: uppercase;
-    background-color: rgb(46, 46, 48);
+    background-color: var(--Dark);
     text-align: center;
 }
 .producto-envio{
     display: block;
-    color: var(--Orange3);
     font-size: 1em;
     font-weight: bold;
     padding: 5px 0 20px 0;
@@ -336,21 +332,18 @@ footer section nav div, i{
     color: white;
 }
 .boton-comprar, .boton-ver-carrito, .boton-pagar{
-    color: var(--Orange2);
     font-family: inherit;
     font-size: .8em;
     line-height: 2;
     margin: 2px 5px 10px 0px;
-    color: white;
+    color: var(--Blanco);
     width: 100%; 
     display: inline;
     border-radius: 6px;
     background: transparent;
-    box-shadow: 2px 1px 2px var(--Azul);
 }
 
 .boton-comprar:hover, .boton-ver-carrito:hover, .boton-pagar:hover{
-    background-color: var(--Azul);
     animation: zoomOut 600ms ease-out;
     transition: background-color 300ms ease-out;
     box-shadow: none;
@@ -388,7 +381,8 @@ li {
     }
     .contenedor-logo{
         width: 15%;
-        text-align: center;   
+        justify-content: center;
+        padding-left: 0;   
     }
     .navbar-header{
         width: 70%;
@@ -406,10 +400,10 @@ li {
         font-size: 1.20em;
         font-weight: 700;
         text-decoration: none;
-        color: white;
+        color: var(--Blanco);
     }
     .link-menu:hover{
-        color: var(--Orange2);
+        color: var(--Naranja);
         animation: zoomOut 600ms ease-out;
         transition: color 300ms ease-out;
     }
@@ -444,13 +438,12 @@ li {
         width: 50%;
         padding: 40px 0;
     }
-    .detalle, .contenedor-foto {
-        width: 80%;
-        display: block;
-        font-size: 1em;
+    section article .contenedor-foto {
+        width: 50%;
     }
-    section article .detalle{
+    section article .detalle {
         width: 40%;
+        display: flex;
     }
     .precio-anterior{
         font-size: 1.1em;
@@ -462,8 +455,7 @@ li {
         font-size: 0.8em;
     }
     .descripcion{
-        margin-top: 12px;
-        font-size: 1em;
+        font-size: 0.7em;
         font-weight: 500;
     }
     .productos-destacados{
@@ -473,7 +465,6 @@ li {
     .contenedor-footer {
         padding: 22px 70px 22px;
         margin-top: 15px;
-        border-top: solid 1px var(--Naranja);
     }
     .contenedor_i{
         margin-right: 40px;
@@ -511,7 +502,7 @@ li {
 /* Views Desktop 1200 */
 @media(min-width: 1200px) {
     .logo {
-        width: 65%;
+        width: 115px;
     }
     .link-menu {
         letter-spacing: 3px;
@@ -537,6 +528,9 @@ li {
     .oferta {
         font-size: 2.3em;
         letter-spacing: 30px;
+    }
+    .descripcion {
+        font-size: 0.8em;
     }
     .productos-destacados {
         letter-spacing: 17px;
