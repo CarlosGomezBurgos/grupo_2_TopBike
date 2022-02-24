@@ -2,60 +2,60 @@
     {
      "id": 1,
      "name": "Mountain bike FUYI Sensah MX7",
-     "price": "80000",
+     "price": "80000.00",
      "discount": "10",
      "category": "productos-destacados",
      "description": "Bicicleta de montaña Hardtail de Aluminio, 21 Marchas Shimano 26, 27.5, 29\" Pulgadas | Mountainbike con Frenos de Disco Cuadro 16, 17, 18\" MTB",
-     "image": "1643374865253--bicicleta-hardtail-alum.jpg"
+     "image": "1643374865253--bicicleta-hardtail-alum.jpg",
+     "actual_price": "72000.00"
     },
     {
      "id": 2,
      "name": "Mountain bike FUYI Wish 290 18K",
-     "price": "85000",
+     "price": "85000.00",
      "discount": "17",
      "category": "ofertas",
-     "description": "hermoso zapatito lindo lindo",
+     "description": "Bicicleta de montaña Hardtail de Aluminio, 21 Marchas Shimano 26, 27.5, 29\" Pulgadas | Mountainbike con Frenos de Disco Cuadro 16, 17, 18\" MTB",
      "image": "1644538554907--bicicleta-nevada-29_178.jpg",
-     "actual_price": "260.00"
+     "actual_price": "70550.00"
     },
     {
      "id": 3,
      "name": "Mountain bike Silverfox 2021 M",
-     "price": "90000",
+     "price": "90000.00",
      "discount": "25",
-     "category": "productos-destacados",
+     "category": "ofertas",
      "description": "Mountain bike Silverfox FM18SI29AM211 2021 M frenos de disco mecánico cambios 3 Velocidades y 7 Velocidades color negro",
      "image": "1643374865253--bicicleta-hardtail-alum.jpg",
-     "actual_price": "100000.00"
+     "actual_price": "67500.00"
     },
     {
      "id": 4,
      "name": "Mountain Bike Fierce R29 21v",
-     "price": "92000",
+     "price": "92000.00",
      "discount": "15",
-     "category": "ofertas",
+     "category": "productos-destacados",
      "description": "Bicicleta Mountain Bike Fierce R29 21v Mtb Aluminio Color Negro/celeste",
-     "image": "1644538554907--bicicleta-nevada-29_178.jpg",
-     "actual_price": "260.00"
+     "image": "1644538554907--bicicleta-nevada-29_178.jpg"
     },
     {
      "id": 5,
      "name": "Mountain bike Futura Lynce R29",
-     "price": "60000",
+     "price": "60000.00",
      "discount": "5",
-     "category": "productos-destacados",
+     "category": "ofertas",
      "description": "Mountain bike Futura Lynce R29 frenos v-brakes cambios Shimano color negro/amarillo con pie de apoyo",
      "image": "1643374865253--bicicleta-hardtail-alum.jpg",
-     "actual_price": "100000.00"
+     "actual_price": "57000.00"
     },
     {
      "id": 6,
      "name": "Mountain bike TopMega Sunshine R29 M 21v",
-     "price": "72000",
+     "price": "72000.00",
      "discount": "8",
-     "category": "ofertas",
+     "category": "productos-destacados",
      "description": "Mountain bike TopMega Sunshine R29 M 21v frenos de disco mecánico cambios Shimano Tourney TZ31 y Shimano Tourney color blanco",
      "image": "1644538554907--bicicleta-nevada-29_178.jpg",
-     "actual_price": "260.00"
+     "actual_price": "66240.00"
     }
    ]
