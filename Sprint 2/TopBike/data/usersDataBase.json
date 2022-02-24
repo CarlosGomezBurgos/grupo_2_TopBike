@@ -29,9 +29,16 @@
  },
  {
   "id": 5,
-  "user_name": "carlos",
+  "user_name": "carlos2",
   "email": "gomezburgos.jc@hotmail.com",
   "user_password": "$2a$10$4BtgPIoxXcULD5hV.Hg5Pe7qsYXNZh09E8xpz9k8vYEe7IxTKd4r.",
   "avatar": "1644538342812--carlos - autodefensa.jpg"
+ },
+ {
+  "id": 6,
+  "user_name": "nacho",
+  "email": "nacho@gmail.com",
+  "user_password": "$2a$10$pbBmNJkP.c0qsvTpSxtkOuukVphXWJwZ6Svjz3emhpY7VgygK5Ki6",
+  "avatar": "1645570691380--20220220_105619.jpg"
  }
 ]
