@@ -12,35 +12,32 @@
 
         <h3>INICIO DE SESIÓN</h3>
         <form action="/user/login" method="post">
-            <label for="name">Usuario
-
-                <input 
+            <label for="name">Usuario</label>
+            <input 
                 type="text" 
                 id="name" 
                 name="user_name"
                 value="<%= locals.oldData ? oldData.user_name : null %>"
-                >
-            </label>
+            >
                 <% if (locals.errors && errors.user_name) { %>
-                    <p style="color: red"><%= errors.user_name.msg %> </p>
+                    <p><%= errors.user_name.msg %> </p>
             <% } %>
 
-            <label for="password">Contraseña
-                <input 
+            <label for="password">Contraseña</label>
+            <input 
                 type="password" 
                 id="password" 
                 name="user_password"
-                >
-            </label>
+            >
             <% if (locals.errors && errors.user_password) { %>
-                <p style="color: red"><%= errors.user_password.msg %> </p>
+                <p><%= errors.user_password.msg %> </p>
             <% } %>
 
             <button type="submit">INICIAR SESIÓN</button>
 
-            <h3>¿ No tenés cuenta ?</h3>
+            <h4>¿ No tenés cuenta ?</h4>
             <a href="/user/register">
-                <label class="crear-cuenta" for="check-register">CREAR CUENTA</label>
+                <label for="check-register"></label>CREAR CUENTA
             </a>                
         </form>
         <%- include('partials/footer.ejs') %>

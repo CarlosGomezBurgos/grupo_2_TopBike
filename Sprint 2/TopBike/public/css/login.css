@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--Dark);
+}
+:root{
+    --Naranja: #FF9900;
+    --Dark: #202124;
+    --Negro: #000000;
+    --Blanco: #fff;
+}
 /* USUARIO */
 h3{
     text-align: center;
-    color: rgb(70, 160, 238);
-    margin: 33px 0px 15px;
+    color: var(--Naranja);
+    margin: 33px 0px 0px;
     font-size: 1.4em;
+    text-shadow: -5px 1px 0px var(--Negro);
+    letter-spacing: 4px;
 }
 form{
     width: 90%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: auto;
 }
 form label{
@@ -24,48 +37,66 @@ form label{
     font-size: 1.2em;
     font-weight: 400;
     margin-bottom: 14px;
+    margin-top: 35px;
 }
 form input{
+    width: 90%;
     font-size: 1.1em;
     font-weight: 300;
+    border-style: none;
     color: var(--Dark);
     text-indent: 20px;
     height: 33px;
     border-radius: 7px 0 7px;
     background: rgba(255, 255, 255, 0.883);
-    margin-bottom: 35px;
+}
+form p{
+    color: var(--Naranja);
 }
 form button{
+    width: 90%;
     margin: auto;
-    width: 44%;
     height: 34px;
-    font-weight: bold;
+    background-color: black;
+    color: #ff9900;
+    border-style: none;
+    border-radius: 4px;
+    font-weight: 800;
+    margin-top: 43px;
 }
 form a{
+    width: 90%;
     display: flex;
     justify-content: center;
     text-decoration: none;
-}
-.crear-cuenta{
+    background-color: var(--Negro);
     font-size: 1em;
-    color: lightskyblue;
-    background-color: black;
-    width: 50%;
-    height: 28px;
-    border-radius: 5px;
+    color: var(--Naranja);
+    height: 34px;
+    font-size: 0.9em;
+    border-radius: 4px;
     align-items: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+h4{
+    text-align: center;
+    color: var(--Blanco);
+    margin: 33px 0px 15px;
+    font-size: 1em;
+    font-weight: 300;
 }
 
 /* Views Tablet */
 @media(min-width: 768px) {
     h3{
-        margin: 36px 0px 30px;
+        margin: 36px 0px 0px;
     }
-    .crear-cuenta{
-        width: 44%;
-        margin-bottom: 40px;
-        height: 35px;
-        justify-content: center;
+    form button{
+        height: 43px;
+    }
+    form a{
+        height: 43px;
     }
 }
 
@@ -75,6 +106,12 @@ form a{
         font-size: 1.4em;
     }
     form input{
-        width: 44%;
+        width: 60%;
+    }
+    form button{
+        width: 60%;
+    }
+    form a{
+        width: 60%;
     }
 }
