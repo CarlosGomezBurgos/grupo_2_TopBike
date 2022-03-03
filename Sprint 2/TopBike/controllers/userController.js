@@ -43,11 +43,13 @@ const usersController = {
                     oldData: req.body,
                });
           } else {
-               let userNames = users.map(user => user.user_name);
-               const reqUser = users[userNames.lastIndexOf(req.body.user_name)];
+               let userEmails = users.map(user => user.email);
+               const reqUser = users[userEmails.lastIndexOf(req.body.email)];
                if(reqUser && bcryptjs.compareSync(req.body.user_password,reqUser.user_password)){
+                    console.log('encontrado')
                     res.redirect('/');
                } else {
+                    console.log('no encontrado')
                     res.render('login')
                }
           }

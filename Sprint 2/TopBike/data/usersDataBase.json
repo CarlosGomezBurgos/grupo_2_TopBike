@@ -40,5 +40,12 @@
   "email": "nacho@gmail.com",
   "user_password": "$2a$10$pbBmNJkP.c0qsvTpSxtkOuukVphXWJwZ6Svjz3emhpY7VgygK5Ki6",
   "avatar": "1645570691380--20220220_105619.jpg"
+ },
+ {
+  "id": 7,
+  "user_name": "nachodh",
+  "email": "nachodh@gmail.com",
+  "user_password": "$2a$10$TIrBnvNsTDkb9pWKJONtKespOn2.pSGF/PK1cmoLOiCQEJpsRSqqC",
+  "avatar": "1646314140970--s-l400.jpg"
  }
 ]

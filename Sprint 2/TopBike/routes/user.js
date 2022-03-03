@@ -38,7 +38,9 @@ const validations = [
     })
 ] 
  const validationsLogin = [
-    body('user_name').notEmpty().withMessage('Nombre incompleto'),
+    body('email')
+        .notEmpty().withMessage('Email inválido').bail()
+        .isEmail().withMessage('Debes escribir un formato de correo valido'),
     body('user_password').notEmpty().isLength({min: 8}).withMessage('Contraseña debe tener minimo 8 caracteres'),
  ]
 
