@@ -6,9 +6,6 @@
     </head>
     <body>
         <%- include('partials/header.ejs') %>
-        <div class="carrusel">
-            <img src="/img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
-        </div>
 
         <h3>INICIO DE SESIÓN</h3>
         <form action="/user/login" method="post">
@@ -22,7 +19,7 @@
             >
                 <% if (locals.errors && errors.email) { %>
                     <p><%= errors.email.msg %> </p>
-            <% } %>
+                <% } %>
 
             <label for="password">Contraseña</label>
             <input 
@@ -34,7 +31,9 @@
             <% if (locals.errors && errors.user_password) { %>
                 <p><%= errors.user_password.msg %> </p>
             <% } %>
-
+            
+            <label for="">--> Recordame <--</label>
+            <input type="checkbox" name="recordame">
             <button type="submit">INICIAR SESIÓN</button>
 
             <h4>¿ No tenés cuenta ?</h4>

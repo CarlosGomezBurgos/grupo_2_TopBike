@@ -47,5 +47,12 @@
   "email": "nachodh@gmail.com",
   "user_password": "$2a$10$TIrBnvNsTDkb9pWKJONtKespOn2.pSGF/PK1cmoLOiCQEJpsRSqqC",
   "avatar": "1646314140970--s-l400.jpg"
+ },
+ {
+  "id": 8,
+  "user_name": "Buen Tipo",
+  "email": "buentipo@gmail.com",
+  "user_password": "$2a$10$2wlGyYKvtZH1IS92s35Y1uHS.tCc6nf.hhRfJtuvYk0bCEfpWTola",
+  "avatar": "1646526512038--s-l400.jpg"
  }
 ]

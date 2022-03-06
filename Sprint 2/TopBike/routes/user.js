@@ -3,6 +3,8 @@ const path = require('path');
 const router = express.Router();
 const usersController  = require('../controllers/userController')
 const {body} = require('express-validator');
+const authMiddleware = require('../middlewares/authMiddleware')
+const guestMiddleware = require('../middlewares/guestMiddleware')
 
 const multer = require('multer');
 /* Multer config */
@@ -44,11 +46,15 @@ const validations = [
     body('user_password').notEmpty().isLength({min: 8}).withMessage('Contraseña debe tener minimo 8 caracteres'),
  ]
 
-router.get('/register',usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', upload.single('avatar'),validations, usersController.processRegister);
 
-router.get('/login',usersController.login);
-router.post('/login',validationsLogin, usersController.processLogin);
+router.get('/login',guestMiddleware, usersController.login);
+router.post('/login', validationsLogin, usersController.processLogin);
+
+router.get('/profile',authMiddleware, usersController.profile);
+
+router.get('/logout', usersController.logout);
 
 router.get('/pruebaSession', function(req,res){
     if(req.session.numeroVisitas == undefined){
@@ -58,8 +64,11 @@ router.get('/pruebaSession', function(req,res){
     res.send('Session tiene el numero: ' + req.session.numeroVisitas)
 })
 
-router.get('/mostrarNumeroSession', function(req,res){
-    res.send('Session tiene el numero: ' + req.session.numeroVisitas)
+router.get('/check', function(req,res){
+    if (req.session.usuarioLogueado == undefined){
+        res.send('No estas logueado')
+    } else {
+        res.send('El usuario logueado es: ' + req.session.usuarioLogueado.email)
+    }
 })
-
  module.exports = router;
