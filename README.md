@@ -1,6 +1,6 @@
 # grupo_2_TopBike
-En Top Bike nos dedicamos hace 10 años a la venta y distribucion de bicicletas nacionales e importadas con diseños únicos, versátiles y audaces.
-Apuntamos a ofrecer un producto de calidad, durabilidad y seguridad para la satisfaccion de nuestros clientes.
+En Top Bike nos dedicamos hace 10 años a la venta y distribucion E-commerce de bicicletas nacionales e importadas con diseños únicos, versátiles y audaces.
+Apuntamos a ofrecer un producto de calidad, durabilidad y seguridad para la satisfaccion de nuestros clientes, los cuales pueden ver y solicitar los modelos a traves del sitio.
 Contamos con una amplia variedad de modelos para atender la demanda tanto de niños, adolescentes y adultos, tanto amateurs o profesionales.
 
 Paginas de referencias para este proyecto:
@@ -13,6 +13,8 @@ Paginas de referencias para este proyecto:
 -https://www.topmega.com.ar/
 -https://www.amazon.com/ 
 -https://www.mercadolibre.com.ar/
+-https://www.lirasport.com.ar/
+
 
 Roles de equipo:
 

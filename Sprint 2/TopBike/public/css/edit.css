@@ -1,0 +1,105 @@
+/* view mobile */
+main{
+    width: 95vw;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+    color:#ffffff;
+    }
+    
+    
+    
+    form{
+        text-align: left;
+        margin-left: 12%;
+        margin-bottom: 33px;
+    }
+    
+    
+    .products-title{
+        font-size: 1.2em;
+        text-shadow: -1px 1px 2px #000000;
+        padding: 11px 0px 3px;
+        text-align: center;
+        color: var(--verde);
+        letter-spacing: 5px;
+        margin: 33px 0px 1px;
+        color: var(--Verde);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    .form-label{
+        color: #ffffff;
+        font-size: .8em;
+        font-weight: 200;
+        padding-left: 10px;
+     
+    }
+
+    .area{
+        padding: 10px 0px;
+    }
+    
+    input{
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        width: 80%;
+    }
+    
+    .buy-now-button{
+        font-size: .7em;
+        font-weight: 300;
+        margin: 10px 5px 10px 0px;
+        color: white;
+        width: 50%;
+        display: inline;
+        border-radius: 6px;
+        background: transparent;
+        box-shadow: 1px 1px 2px var(--Verde);
+        padding: 5px 0px;
+        border-top: 1px solid rgba(255, 255, 255, .5);
+        border-left: 1px solid rgba(255, 255, 255, .5);
+    }
+    
+    .boton-comprar:hover, .boton-ver-carrito:hover, .boton-pagar:hover {
+        background-color: var(--Verde);
+    }
+    
+    .area{
+        padding: 3px 0px;
+        margin: 3px 0px;
+    }
+    
+    /* view tablet */
+    @media(min-width: 768px){
+        input{
+            width: 40%;
+        }
+    
+        .form-label{
+            padding-right: 7px;
+        }
+    
+        .buy-now-button{
+            width: 30%;
+        }
+    
+        form{
+            margin-left: 23%;
+        }
+    }
+    
+    /* view desktop */
+    @media(min-width: 1440px){
+        form{
+            margin-left: 33%;
+        }
+    
+        input{
+            width: 30%;
+        }
+    }

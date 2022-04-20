@@ -1,0 +1,143 @@
+:root {
+    --Verde: #00ccb9;
+    --Azul: #1259c3;
+    --Dark: #202124;
+}
+
+.product-titulo{
+    
+    font-size: 1.2em;
+    text-shadow: -1px 1px 2px #000000;
+    padding: 11px 0px 3px;
+    color: var(--verde);
+    letter-spacing: 5px;
+    margin: 33px 0px 1px;
+    margin-left: 38px;
+    color: var(--Verde);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.contenedor-product-main{
+    display: block;
+    width: 95vw;
+    margin: auto;
+}
+
+#descuento{
+    display: inline;
+   color: #000000;
+   font-size: .8em;
+   font-weight: bold;
+   background-color: var(--Verde);
+   border-radius: 2px;
+   text-align: center;
+   margin-top: 8px;
+   padding: 3px 5px;
+   width: 65px;
+
+   }
+
+
+.producto-detalle{
+    padding: 0px 30px;
+}
+
+.foto-grande{
+    min-width: 300px;
+    background-color: #FFFFFF;
+}
+
+.producto-envio{
+    font-size: 1em;
+    color: #ffffff;
+}
+.producto-descripcion{
+    font-weight: 300;
+    font-size: .8em;
+    padding-right: 30px;
+}
+.boton-comprar, .boton-ver-carrito, .boton-pagar{
+    font-size: 0.6em;
+    margin: 2px 5px 10px 0px;
+    color: white;
+    width: 100%;
+    display: inline;
+    border-radius: 6px;
+    background: transparent;
+    box-shadow: 1px 1px 2px var(--Verde);
+}
+
+.boton-comprar:hover, .boton-ver-carrito:hover, .boton-pagar:hover {
+    background-color: var(--Verde);
+}
+.producto-botones {
+    display: flex;
+    justify-content: space-between;
+}
+.productDetail-section {
+    display: flex;
+    border-top: 1px solid var(--Orange3);
+    border-bottom: 1px solid var(--Orange2);
+    padding: 10px;
+    margin-left: 20px;
+}
+
+/* Views Tablet */
+@media(min-width: 768px){
+    .contenedor-product-main{
+        display: flex;
+       
+    }
+    .productDetail-section{
+        width: 50%;
+        
+    }
+    .producto-detalle{
+        width: 50%;
+        padding-left: 50px;
+    }
+    .foto-grande{
+        min-width: 400px;
+    }
+    .producto-descripcion{
+        font-weight: 300;
+        font-size: small;
+        
+    }
+}
+
+/* Views Desktop: 1440 */
+@media(min-width: 1440px){
+    .product-titulo{
+        margin-left: 11%;
+    }
+    .productDetail-section{
+        margin-left: 10%;
+    }
+    .foto-grande{
+        min-width: 600px;
+    }
+    .producto-descripcion{
+        font-weight: 400;
+        font-size: 1.1em;
+        
+    }
+
+    #precio-anterior{
+        font-size: 1.4em;
+    }
+
+    .producto-precio{
+        font-size: 1.8em;
+    }
+
+    #descuento{
+    font-size: 1em;
+
+    }
+
+    .boton-comprar, .boton-ver-carrito, .boton-pagar{
+        font-size: 1.2em;
+    }
+}

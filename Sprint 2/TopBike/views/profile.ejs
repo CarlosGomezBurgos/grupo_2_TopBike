@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <br>
+        <h1 style="color: white;">PERFIL</h1>
+        <h1 style="color: white;">PERFIL</h1>
+        <h3 style="color: skyblue;"><%= user.user_name %> </h3>
+        <h3 style="color: skyblue;"><%= user.email %> </h3>
+        <div class="productDetail-foto">
+            <img style="width:30%" src="/img/avatars/<%= user.avatar %> " alt="miniatura">
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+    </body>
+</html>
+

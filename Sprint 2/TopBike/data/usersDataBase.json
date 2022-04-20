@@ -29,9 +29,30 @@
  },
  {
   "id": 5,
-  "user_name": "carlos",
+  "user_name": "carlos2",
   "email": "gomezburgos.jc@hotmail.com",
-  "user_password": "$2a$10$IWPa/jAxQ3CIi2LaBABSjuRBWBDBu2w9JSrqDfPNbXS/rZvfXwXcu",
-  "avatar": "1644181875508--oso-panda-kawaii-1.jpg"
+  "user_password": "$2a$10$4BtgPIoxXcULD5hV.Hg5Pe7qsYXNZh09E8xpz9k8vYEe7IxTKd4r.",
+  "avatar": "1644538342812--carlos - autodefensa.jpg"
+ },
+ {
+  "id": 6,
+  "user_name": "nacho",
+  "email": "nacho@gmail.com",
+  "user_password": "$2a$10$pbBmNJkP.c0qsvTpSxtkOuukVphXWJwZ6Svjz3emhpY7VgygK5Ki6",
+  "avatar": "1645570691380--20220220_105619.jpg"
+ },
+ {
+  "id": 7,
+  "user_name": "nachodh",
+  "email": "nachodh@gmail.com",
+  "user_password": "$2a$10$TIrBnvNsTDkb9pWKJONtKespOn2.pSGF/PK1cmoLOiCQEJpsRSqqC",
+  "avatar": "1646314140970--s-l400.jpg"
+ },
+ {
+  "id": 8,
+  "user_name": "Buen Tipo",
+  "email": "buentipo@gmail.com",
+  "user_password": "$2a$10$2wlGyYKvtZH1IS92s35Y1uHS.tCc6nf.hhRfJtuvYk0bCEfpWTola",
+  "avatar": "1646526512038--s-l400.jpg"
  }
 ]

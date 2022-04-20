@@ -2,33 +2,30 @@
 <html lang="es">
 <head>
     <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/detail.css">
 </head>
 <body>
     <%- include('partials/header.ejs') %>
     <div class="carrusel">
-        <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
+        <img src="/img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
     </div>
     <main>
         <div class="contenedor-productDetail">
-            <h3 class="product-titulo">Detalle de Producto:<%= productoBuscado.id %></h3>
+            <h3 class="product-titulo"><!-- Detalle de Producto: --> <%= productoBuscado.name %></h3>
             <div class="contenedor-product-main">
                 <section class="productDetail-section">
                     <div class="productDetail-foto">
-                        <img class="foto-grande" src="../img/producto1-0.jpg" alt="miniatura">
+                        <img class="foto-grande" src="/img/products/<%= productoBuscado.image %> " alt="miniatura">
                     </div>              
                 </section>
                 <div class="producto-detalle">
-                    <p id="precio-anterior">$ 45.729</p>
-                    <p class="producto-precio">$ 38.869</p>
-                    <p id="descuento">OFF 15%</p>
+                    <p id="precio-anterior">$ <%= productoBuscado.price %></p>
+                    <p class="producto-precio">$ <%= productoBuscado.price * (1 - (productoBuscado.discount/100)) %></p>
+                    <p id="descuento">OFF <%= productoBuscado.discount %> %</p>
                     <div class="producto-descripcion">
-                        <ul>
-                            <li>Bicicleta Nordic X1.0 By Slp R29 Shim.21v Disco</i>
-                            <li>Lorem ipsum dolor sit amet consect adipisicing.</i>
-                            <li>Animi eum tenetur quidem rem non eius alias</i>
-                            <li>quia possimus blanditiis iureconsequatur veritatis</li>
-                            <li>nulla itaque consequuntur, iste porro?</li>
-                        </ul>
+                        <p>
+                            <%= productoBuscado.description %>
+                        </p>
                     </div>
                     <div>
                         <p class="producto-envio">Envío Gratis</p>
@@ -36,8 +33,10 @@
                             <div class="producto-comprar"> 
                                 <input  class="boton-comprar" type="button" value="Comprar">
                             </div>
-                            <div class="producto-ver-carrito"> 
-                                <input  class="boton-ver-carrito" type="button" value="Agregar al Carrito">
+                            <div class="producto-ver-carrito">
+                                <a href="product/add">
+                                    <input  class="boton-ver-carrito" type="button" value="Agregar al Carrito">
+                                </a> 
                             </div>
                         </div>
                     </div>
