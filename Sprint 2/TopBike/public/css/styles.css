@@ -23,7 +23,7 @@ body{
     align-items: center;
     position: fixed;
     text-align: center;
-    background-color: var(--Dark);
+    background-color: var(--Negro);
     padding-bottom: 1px;
     width: 100%;
 }

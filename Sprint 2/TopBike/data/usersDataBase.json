@@ -40,5 +40,19 @@
   "email": "nacho@gmail.com",
   "user_password": "$2a$10$pbBmNJkP.c0qsvTpSxtkOuukVphXWJwZ6Svjz3emhpY7VgygK5Ki6",
   "avatar": "1645570691380--20220220_105619.jpg"
+ },
+ {
+  "id": 7,
+  "user_name": "nachodh",
+  "email": "nachodh@gmail.com",
+  "user_password": "$2a$10$TIrBnvNsTDkb9pWKJONtKespOn2.pSGF/PK1cmoLOiCQEJpsRSqqC",
+  "avatar": "1646314140970--s-l400.jpg"
+ },
+ {
+  "id": 8,
+  "user_name": "Buen Tipo",
+  "email": "buentipo@gmail.com",
+  "user_password": "$2a$10$2wlGyYKvtZH1IS92s35Y1uHS.tCc6nf.hhRfJtuvYk0bCEfpWTola",
+  "avatar": "1646526512038--s-l400.jpg"
  }
 ]

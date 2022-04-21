@@ -3,7 +3,7 @@
       <a href="/"><img src="/img/logo.png" alt="logo" class="logo"></a>
     </div>
     <div class="burger-menu">
-        <i class="fas fa-bars"></i>
+      <i class="fas fa-bars"></i>
     </div>
     <nav class="navbar-header">
         <ul class="navbar-lista">
@@ -19,10 +19,19 @@
           <a href="/product/cart" class="user-link">
               <i class="user-menu fas fa-shopping-cart"></i>
           </a>
+        <% if (locals.isLogged) { %>
           <label for="check">
-            <a href="/user/login">
-              <i class="user-menu fas fa-user" id="btn"></i>
+            <a href="/user/logout">
+              <i style="color:red;" class="user-menu fas fa-user" id="btn"></i>
             </a>
-        </label>
-    </div> 
+            <a href="/user/profile" style="font-size: 10px; color: red;"><%= locals.userLogged.email %> </a>
+            <% } else { %>
+              <label for="check">
+                <a href="/user/login">
+                  <i class="user-menu fas fa-user" id="btn"></i>
+                </a>
+              </label>
+              <% } %>
+             
+      </div> 
 </header>
