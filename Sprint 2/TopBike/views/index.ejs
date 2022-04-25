@@ -33,22 +33,6 @@
                         <h3 class="productos-destacados">Productos Destacados</h3>
                         <section class="index-articulos">
                         <% productos.forEach(unProducto => { %>
-<<<<<<< HEAD
-                        <% if (unProducto.category == "productos-destacados") { %>
-                                <article class="contenedor">
-                                <div class="contenedor-foto">
-                                        <a href="./product/detail/<%= unProducto.id %>"><img class="foto-producto" src="./img/products/<%= unProducto.image %>" alt="miniatura"></a>
-                                </div>
-                                <div class="detalle">
-                                        <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                        <p class="precio">
-                                        $ <%= unProducto.price * (1 - (unProducto.discount/100)) %>
-                                        </p>
-                                        <p class="descuento"><%= unProducto.discount %>% OFF</p>
-                                        <p class="descripcion"><%= unProducto.name %></p>
-                                </div>
-                        </article>                  
-=======
                                 <% if (unProducto.category == "productos-destacados") { %>
                                         <article class="contenedor">
                                                 <div class="contenedor-foto">
@@ -65,7 +49,6 @@
                                         </article>                  
                                 <% } %> 
                         <% }) %>
->>>>>>> origin
                         </section>
 
                 </main>

@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const {validationResult} = require('express-validator');
+
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -27,8 +29,10 @@ const productController = {
          res.render('productCart',{carrito: productsCart});
 
      },
-     create: (req,res)=>{
-         res.render('productCreateForm')
+     create: (req,res) => {
+         res.render('productCreateForm',{
+              oldData: req.body
+         })
      },
      edit: (req, res) => {
 		let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
@@ -38,37 +42,59 @@ const productController = {
           //console.log(productoBuscado)
 	},
      store: (req, res) => {
-          console.log(req.body);
-          let nuevoProducto = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
-               id: products[products.length -1].id +1,
-               ...req.body, // completa todos los elementos de un objeto.
-               image: req.file.filename
+          //console.log(req.body);
+          const resultValidation = validationResult(req);
+          //console.log(resultValidation);
+          if(resultValidation.errors.length > 0){
+               return res.render('productCreateForm',{
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+               })
+          } else {
+               let nuevoProducto = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
+                    id: products[products.length -1].id +1,
+                    ...req.body, // completa todos los elementos de un objeto.
+                    image: req.file.filename
+               }
+               products.push(nuevoProducto); 
+               console.log(nuevoProducto)
+  
           }
-          products.push(nuevoProducto);
-          console.log(nuevoProducto)
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
           res.redirect('/product');
      },
 	update: (req, res) => {
-		//console.log(req.body);
-		//console.log(req.params.id);
-
 		let id = req.params.id;
 		let productToEdit = products.find(product => product.id == id);
 
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,// los nuevos datos que recibe del form
-			image: productToEdit.image
-		}
-		let newProducts = products.map(product =>{
-			if(product.id == productToEdit.id) {
-				return product = {...productToEdit}
-			}
-			return product;
-		})
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
+          const resultValidation = validationResult(req);
+          console.log(resultValidation)
+
+          if(resultValidation.errors.length > 0){
+               let id = req.params.id;
+               console.log(id)
+               return res.render('productEditForm',{
+                    errors: resultValidation.mapped(),
+                    //oldData: req.body,
+                    //productoBuscado: productToEdit
+                    productoBuscado: req.body
+               })
+          } else {
+               productToEdit = {
+                    id: productToEdit.id,
+                    ...req.body,// los nuevos datos que recibe del form
+                    image: productToEdit.image
+               }
+               let newProducts = products.map(product =>{
+                    if(product.id == productToEdit.id) {
+                         return product = {...productToEdit}
+                    }
+                    return product;
+               })
+               fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+               res.redirect('/')
+          }
+          
 	},
      delete: (req, res) => {
           let id = req.params.id;

@@ -19,47 +19,43 @@ const fileStorageEngine = multer.diskStorage({
 const upload = multer({storage: fileStorageEngine})
 
 /* Validaciones */
-const validations = [
-    body('user_name').notEmpty().withMessage('Nombre incompleto'),
+const validationsRegister = [
+    body('user_name').notEmpty().withMessage('Debe ingresar el "Nombre Completo"')
+    .isLength({min: 2}).withMessage('El "Nombre Completo" debe tener un minimo 2 caracteres'),
     body('email')
-        .notEmpty().withMessage('Email inválido').bail()
-        .isEmail().withMessage('Debes escribir un formato de correo valido'),
-    body('user_password').notEmpty().isLength({min: 8}).withMessage('Contraseña debe tener minimo 8 caracteres'),
-    body('avatar').custom((value, { req})=>{
-        let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif'];
-        if (!file) {
-            throw new Error ('Tienes que subir una imagen');
-        } else {
-            let fileExtension = path.extname(file.originalname);
-            if (! acceptedExtensions.includes(fileExtension)) {
-                throw new Error (`Las extenciones de archivos permitidas son: ${acceptedExtensions.join(', ')}`);
+        .notEmpty().withMessage('El "Correo Electronico" es inválido').bail()
+        .isEmail().withMessage('Debes escribir un formato de correo válido'),
+    body('user_password')
+        .notEmpty().withMessage('Debe ingresar la "Contraseña"')
+        .isLength({min: 8}).withMessage('La "Contraseña" debe tener mínimo 8 caracteres'),
+    // ver validacion de password (mayuscula, minuscula, numero y caracter especial)
+    body('avatar')
+        .custom((value, {req})=>{
+            let file = req.file;
+            let acceptedExtensions = ['.jpg', '.png', '.gif'];
+            if (!file) {
+                throw new Error ('Tienes que subir una imagen');
+            } else {
+                let fileExtension = path.extname(file.originalname);
+                if (! acceptedExtensions.includes(fileExtension)) {
+                    throw new Error (`Las extenciones de archivos permitidas son: ${acceptedExtensions.join(', ')}`);
+                }
             }
-        }
-        return true;
-    })
+            return true;
+        })
 ] 
  const validationsLogin = [
-<<<<<<< HEAD
-    body('user_name').notEmpty().withMessage('Nombre incompleto'),
-    body('user_password').notEmpty().isLength({min: 8}).withMessage('Contraseña debe tener minimo 8 caracteres'),
- ]
-
-router.get('/register',usersController.register);
-router.post('/register', upload.single('avatar'),validations, usersController.processRegister);
-
-router.get('/login',usersController.login);
-router.post('/login',validationsLogin, usersController.processLogin);
-
-=======
     body('email')
-        .notEmpty().withMessage('Email inválido').bail()
+        .notEmpty().withMessage('Debe ingresar el correo electrónico').bail()
         .isEmail().withMessage('Debes escribir un formato de correo valido'),
-    body('user_password').notEmpty().isLength({min: 8}).withMessage('Contraseña debe tener minimo 8 caracteres'),
+        //ver mail , deberá existir en la bd.
+    body('user_password')
+        .notEmpty().withMessage('Debe ingresar la contraseña')
+        .isLength({min: 8}).withMessage('La contraseña debe tener minimo 8 caracteres'),
  ]
 
 router.get('/register', guestMiddleware, usersController.register);
-router.post('/register', upload.single('avatar'),validations, usersController.processRegister);
+router.post('/register', upload.single('avatar'),validationsRegister, usersController.processRegister);
 
 router.get('/login',guestMiddleware, usersController.login);
 router.post('/login', validationsLogin, usersController.processLogin);
@@ -83,5 +79,4 @@ router.get('/check', function(req,res){
         res.send('El usuario logueado es: ' + req.session.usuarioLogueado.email)
     }
 })
->>>>>>> origin
  module.exports = router;

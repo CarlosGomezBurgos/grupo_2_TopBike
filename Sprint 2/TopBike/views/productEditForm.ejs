@@ -13,7 +13,7 @@
         <div class="contenedor-create-form">
             <div class="">
                 <div class="col-12">
-                    <h2 class="products-title">Editar Producto</h2>
+                    <h2 style="color: white" class="products-title">Editar Producto</h2>
                 </div>
             </div>
             <div class="col-12">
@@ -23,6 +23,9 @@
                             <label for="name" class="form-label">Nombre del producto:</label>
                             <input type="text" id="name" name="name" value="<%= productoBuscado.name %>" class="form-input">
                         </div>
+                        <% if (locals.errors && errors.name) { %>
+                            <p style="color: red"><%= errors.name.msg %> </p>
+                        <% } %>
                         <div class="area col-12 col-md-6">
                             <label for="price" class="form-label">Precio del producto:</label>
                             <input type="text" id="price" name="price" value="<%= productoBuscado.price %>" class="form-input">
@@ -52,10 +55,7 @@
                             <label for="description" class="form-label">Descripción:</label>
                             <textarea name="description" id="description" class="form-input"><%= productoBuscado.description %></textarea>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <label for="image" class="form-label">Imagen del producto:</label>
-                            <input type="file" id="image" name="image">
-                        </div>
+                        <img style="width: 30%" class="foto-producto" src="/img/products/<%= productoBuscado.image %> " alt="miniatura">
 
                         <div class="col-12">
                             <button type="submit" class="buy-now-button">Guardar producto</button>

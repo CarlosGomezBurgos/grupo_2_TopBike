@@ -54,5 +54,19 @@
   "email": "buentipo@gmail.com",
   "user_password": "$2a$10$2wlGyYKvtZH1IS92s35Y1uHS.tCc6nf.hhRfJtuvYk0bCEfpWTola",
   "avatar": "1646526512038--s-l400.jpg"
+ },
+ {
+  "id": 9,
+  "user_name": "nacho2",
+  "email": "nacho2@gmail.com",
+  "user_password": "$2a$10$NNP2XflyXXukgdQicqHtuOxIFCtYNGn9eGGU6XvWnKxnHhkMdHAQu",
+  "avatar": "1650583640243--Credencial Sancor - Bianca Luna, Gomez Fernandez.jpg"
+ },
+ {
+  "id": 10,
+  "user_name": "nacho3",
+  "email": "nacho3@gmail.com",
+  "user_password": "$2a$10$fO512s61ceTe2k5B4e3LBOHSNq7GpwWSALvMiTQQ1KMEpozhovSWi",
+  "avatar": "1650587583039--hola-me-gusta-el-dinero.jpg"
  }
 ]

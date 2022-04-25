@@ -1,13 +1,12 @@
 [
  {
   "id": 1,
-  "name": "Mountain bike FUYI Sensah MX7",
+  "name": "carlos",
   "price": "80000.00",
   "discount": "10",
   "category": "productos-destacados",
   "description": "Bicicleta de montaña Hardtail de Aluminio, 21 Marchas Shimano 26, 27.5, 29\" Pulgadas | Mountainbike con Frenos de Disco Cuadro 16, 17, 18\" MTB",
-  "image": "1643374865253--bicicleta-hardtail-alum.jpg",
-  "actual_price": "72000.00"
+  "image": "1643374865253--bicicleta-hardtail-alum.jpg"
  },
  {
   "id": 2,
@@ -36,7 +35,8 @@
   "discount": "15",
   "category": "productos-destacados",
   "description": "Bicicleta Mountain Bike Fierce R29 21v Mtb Aluminio Color Negro/celeste",
-  "image": "1644538554907--bicicleta-nevada-29_178.jpg"
+  "image": "1644538554907--bicicleta-nevada-29_178.jpg",
+  "actual_price": "78200.00"
  },
  {
   "id": 5,
@@ -57,5 +57,84 @@
   "description": "Mountain bike TopMega Sunshine R29 M 21v frenos de disco mecánico cambios Shimano Tourney TZ31 y Shimano Tourney color blanco",
   "image": "1644538554907--bicicleta-nevada-29_178.jpg",
   "actual_price": "66240.00"
+ },
+ {
+  "id": 7,
+  "name": "carlos",
+  "price": "100.00",
+  "discount": "15",
+  "category": "Ofertas",
+  "description": "wwww",
+  "image": "1650715585956--clase 38 - Eventos de Teclado.pdf",
+  "actual_price": "85.00"
+ },
+ {
+  "id": 8,
+  "name": "carlos",
+  "price": "100.00",
+  "discount": "90000000",
+  "category": "productos-destacados",
+  "description": "qqqqq",
+  "image": "1650717269796--clase 40 - Object Location.pdf",
+  "actual_price": "-89999900.00"
+ },
+ {
+  "id": 9,
+  "name": "carlos",
+  "price": "100.00",
+  "discount": "90000000",
+  "category": "productos-destacados",
+  "description": "qqqqq",
+  "image": "1650717299040--clase 40 - Object Location.pdf",
+  "actual_price": "-89999900.00"
+ },
+ {
+  "id": 10,
+  "name": "",
+  "price": "NaN",
+  "discount": "",
+  "category": "",
+  "description": "",
+  "image": "1650717635627--clase 40 - Object Location.pdf",
+  "actual_price": "0.00"
+ },
+ {
+  "id": 11,
+  "name": "carlos",
+  "price": "100.00",
+  "discount": "15",
+  "category": "Ofertas",
+  "description": "nnnnn",
+  "image": "1650719053931--hola-me-gusta-el-dinero.jpg",
+  "actual_price": "85.00"
+ },
+ {
+  "id": 12,
+  "name": "",
+  "price": "NaN",
+  "discount": "20",
+  "category": "",
+  "description": "",
+  "image": "1650719103930--hola-me-gusta-el-dinero.jpg",
+  "actual_price": "0.00"
+ },
+ {
+  "id": 13,
+  "name": "carlos2022",
+  "price": "100.00",
+  "discount": "66666",
+  "category": "ofertas",
+  "description": "                                                                                fdhfsdfsbcdfbcb\r\n                                    \r\n                                    ",
+  "image": "1650739459382--hola-me-gusta-el-dinero.jpg"
+ },
+ {
+  "id": 14,
+  "name": "carlos chachacha",
+  "price": "5.00",
+  "discount": "0",
+  "category": "ofertas",
+  "description": "                                                                                                                        222222222222222222\r\n                                    \r\n                                    \r\n                                    \r\n                                    ",
+  "image": "1650746915247--hola-me-gusta-el-dinero.jpg",
+  "actual_price": "5.00"
  }
 ]
