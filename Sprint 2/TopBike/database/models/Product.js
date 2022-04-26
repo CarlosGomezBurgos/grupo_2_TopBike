@@ -48,12 +48,12 @@ module.exports = (sequelize, dataTypes) => {
     
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
     
-        Product.associate = function (models) {
-            Product.belongsTo(models.Category, { 
-                as: "productscategories",
+    Product.associate = function (models) {
+        Product.hasMany(models.Category, { 
+                as: "productCategory",
                 foreignKey: "id_category"
             })
-        
+    
     
         }
     
