@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
+//CRUD
+const db = require("../database/models");
+
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -28,7 +31,11 @@ const productController = {
 
      },
      create: (req,res)=>{
-         res.render('productCreateForm')
+         /* res.render('productCreateForm') */
+         db.Product.findAll()
+               .then(function(products){
+                    return res.render("productCreateForm",{products:products});
+               })         
      },
      edit: (req, res) => {
 		let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
@@ -38,7 +45,7 @@ const productController = {
           //console.log(productoBuscado)
 	},
      store: (req, res) => {
-          console.log(req.body);
+         /*  console.log(req.body);
           let nuevoProducto = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
                id: products[products.length -1].id +1,
                ...req.body, // completa todos los elementos de un objeto.
@@ -47,7 +54,20 @@ const productController = {
           products.push(nuevoProducto);
           console.log(nuevoProducto)
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-          res.redirect('/product');
+          res.redirect('/product'); */
+
+          db.Product.create({
+               /* id:, */
+               name: req.body.name,
+               price: req.body.price,
+               discount: req.body.discount ,
+               /* id_category: , */
+          });
+
+          res.redirect("/product");
+
+
+
      },
 	update: (req, res) => {
 		//console.log(req.body);

@@ -6,6 +6,7 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.INTEGER,
                 primaryKey: true,
                 allowNull: false,
+                autoIncrement: true
                     
             },
     
@@ -46,8 +47,8 @@ module.exports = (sequelize, dataTypes) => {
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
     
     User.associate = function (models) {
-        User.belongsTo(models.Cart, { 
-                as: "userCart",
+        User.hasMany(models.Cart, { 
+                as: "cart",
                 foreignKey: "id_user"
             })
     

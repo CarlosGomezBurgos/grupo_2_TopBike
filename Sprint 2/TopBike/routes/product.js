@@ -28,17 +28,13 @@ router.post('/', upload.single('image'),productController.store);
 
 /* edit form */
 router.get('/edit/:id', productController.edit); 
-router.patch('/edit/:id', productController.update); 
+router.patch('/eldit/:id', productController.update); 
 
 router.get('/delete/:id', productController.delete);
 
 router.get('/deleteAll', productController.deleteAll);
 
 router.get('/add', productController.add);
-
-//creación
-
-/* router.get('/crear', productController.crear) */
 
 
 

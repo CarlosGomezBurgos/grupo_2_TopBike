@@ -1,3 +1,4 @@
+
 use topbike;
 
 insert into user (id, name, email, password, picture) values (1, 'Alma', 'aretchford0@constantcontact.com', 'NasbTJFI', 'http://dummyimage.com/208x100.png/5fa2dd/ffffff');
