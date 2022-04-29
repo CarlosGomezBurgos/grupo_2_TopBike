@@ -22,6 +22,8 @@ CREATE TABLE product(
     price float unsigned NOT NULL DEFAULT '0',
     discount int not null DEFAULT '0',
     id_category int not null,
+    description varchar(200) not null,
+    image varchar(100),
     primary key(id),
     foreign key(id_category) references category(id)
 );
