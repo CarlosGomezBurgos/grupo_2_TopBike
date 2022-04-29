@@ -68,5 +68,47 @@
   "email": "nacho3@gmail.com",
   "user_password": "$2a$10$fO512s61ceTe2k5B4e3LBOHSNq7GpwWSALvMiTQQ1KMEpozhovSWi",
   "avatar": "1650587583039--hola-me-gusta-el-dinero.jpg"
+ },
+ {
+  "id": 11,
+  "user_name": "carlos",
+  "email": "gomezburgos.jc@hotmail.com",
+  "user_password": "$2a$10$28C39VZGeCJJLOpngG8w3OKsRygOvC6u0JtVpbNqT.h8XCbSRyjBe",
+  "avatar": "1650925364144--hola-me-gusta-el-dinero.jpg"
+ },
+ {
+  "id": 12,
+  "user_name": "carlosGB",
+  "email": "gomezburgos.jc@hotmail.com",
+  "user_password": "$2a$10$QDkwSNz92lw0nyTGH9F8O.9jqkyjYaAyovS1l3h7coa4hJPUaPsdy",
+  "avatar": "1650925508227--hola-me-gusta-el-dinero.jpg"
+ },
+ {
+  "id": 13,
+  "user_name": "carlosgbgb",
+  "email": "carlosgb@gmail.com",
+  "user_password": "$2a$10$MjZkmhYXzuNOqP39/zHveeN0iWMJzOn6GO6gVC7qfeR71au7345bW",
+  "avatar": "1650925590891--hola-me-gusta-el-dinero.jpg"
+ },
+ {
+  "id": 14,
+  "user_name": "carlos",
+  "email": "gbremerasestampadas@gmail.com",
+  "user_password": "$2a$10$KJ5lg5M07IZmUsaS6cMCa.6j/59jGbdL35Hy4IOKrVlIyND2J6q2S",
+  "avatar": "1650932003755--hola-me-gusta-el-dinero.jpg"
+ },
+ {
+  "id": 15,
+  "user_name": "nacho",
+  "email": "gomezburgos.jc@hotmail.com",
+  "user_password": "$2a$10$30YM1/hZMrZIXUZqXhZP0.yD908XbRhn7WgkPz3CNd7uANKbuOnDG",
+  "avatar": "1650932348023--hola-me-gusta-el-dinero.jpg"
+ },
+ {
+  "id": 16,
+  "user_name": " carlosssss",
+  "email": "nacho2@gmail.com",
+  "user_password": "$2a$10$SBm/94mqn/H7UKeiDIRi4.HhVIa/C1gFyaFlrx/spY51qUbdReQZ2",
+  "avatar": "1651013705276--hola-me-gusta-el-dinero.jpg"
  }
 ]

@@ -12,15 +12,16 @@ const usersController = {
           res.render('register')
      },
      processRegister: (req,res) => {
-        //res.render('index');
-         const resultValidation = validationResult(req);
-         if (resultValidation.errors.length > 0){
-              return res.render('register',{
-                   errors: resultValidation.mapped(),
-                   oldData: req.body,
-              });
-         } else {
-              let nuevoUsuario = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
+          //res.render('index');
+          console.log(req.body)
+          const resultValidation = validationResult(req);
+          if (resultValidation.errors.length > 0){
+               return res.render('register',{
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+               });
+          } else {
+               let nuevoUsuario = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
                     id: users[users.length -1].id +1,
                     user_name: req.body.user_name,
                     email: req.body.email,
@@ -31,7 +32,8 @@ const usersController = {
                console.log(nuevoUsuario);
                fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
                res.render('login');
-         }
+          }
+
      },
      login: (req,res) => {
           res.render('login')

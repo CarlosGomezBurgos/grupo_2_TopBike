@@ -4,12 +4,12 @@ window.addEventListener('load',function(){
 
         let email = document.querySelector('input#email').value
         if (email == "") {
-            errorsList.push('el campo de "Usuario" tiene que estar completo')
+            errorsList.push('el campo de "Usuario" --> está incompleto')
         }
 
         let password = document.querySelector('input#password').value
         if (password == "") {
-            errorsList.push('el campo de "Contraseña" tiene que estar completo')
+            errorsList.push('el campo de "Contraseña" --> está incompleto')
         }
 
         if(errorsList.length > 0){
@@ -17,6 +17,7 @@ window.addEventListener('load',function(){
         }
         
         let ulErrors = document.querySelector('div.errors ul')
+        ulErrors.innerHTML = "";
         for (let i = 0; i < errorsList.length; i++) {
             ulErrors.innerHTML += '<li>' + errorsList[i] + '</li>'
         }

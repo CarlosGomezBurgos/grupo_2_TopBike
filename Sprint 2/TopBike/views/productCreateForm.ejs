@@ -89,8 +89,12 @@
                                 </div>
                                 <div class="area col-12">
                                     <label for="description" class="form-label">Descripción:</label>
-                                    <textarea name="description" id="description" class="form-input">
-                                        <%= oldData.description %>
+                                    <textarea 
+                                        name="description" 
+                                        id="description" 
+                                        class="form-input"
+                                        value="<%= locals.oldData ? oldData.description : null %>"
+                                    >
                                     </textarea>
                                     <% if (locals.errors && errors.description) { %>
                                         <p style="color: red"><%= errors.description.msg %> </p>
@@ -98,7 +102,12 @@
                                 </div>
                                 <div class="area col-12 col-md-6">
                                     <label for="image" class="form-label">Imagen del producto:</label>
-                                    <input type="file" id="image" name="image">
+                                    <input 
+                                        type="file" 
+                                        id="file" 
+                                        name="image"
+                                        value="<%= locals.oldData ? oldData.image : null %>"
+                                    >   
                                     <% if (locals.errors && errors.image) { %>
                                         <p style="color: red"><%= errors.image.msg %> </p>
                                     <% } %>
@@ -114,6 +123,6 @@
                 </div>
             </main>
             <%- include('partials/footer.ejs') %>
-            <script src="/js/productCreateFormValidation.js"></script>
+            <script src="/js/productCreateFormValidations.js"></script>
     </body>
 </html>

@@ -42,7 +42,7 @@ const productController = {
           //console.log(productoBuscado)
 	},
      store: (req, res) => {
-          //console.log(req.body);
+          console.log(req.body);
           const resultValidation = validationResult(req);
           //console.log(resultValidation);
           if(resultValidation.errors.length > 0){
