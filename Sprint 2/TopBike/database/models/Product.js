@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     
     let cols = {
             id: {
-                type: DataTypes.INTEGER,
+                type: dataTypes.INTEGER,
                 primaryKey: true,
                 allowNull: false,
                 autoIncrement: true
@@ -28,18 +28,17 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.INTEGER,
                 allowNull: false,   
             },
-            description: dataTypes.STRING(200),
-            image: dataTypes.STRING(100),
+            /* description: dataTypes.STRING(200),
+            image: dataTypes.STRING(100), */
 
             
     
         };
     
         let config = {
-            tableName: 'products',
-            timestamps: true,
-            createdAt: true,
-            updatedAt: true,
+            tableName: 'product',
+            timestamps: false,
+             
     
         };
     
@@ -49,8 +48,8 @@ module.exports = (sequelize, dataTypes) => {
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
     
     Product.associate = function (models) {
-        Product.hasMany(models.Category, { 
-                as: "productCategory",
+        Product.belongsTo(models.Category, { 
+                as: "category",
                 foreignKey: "id_category"
             })
     

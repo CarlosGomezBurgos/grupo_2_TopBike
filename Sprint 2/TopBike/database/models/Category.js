@@ -17,9 +17,8 @@ module.exports = (sequelize, dataTypes) => {
     
         let config = {
             tableName: 'category',
-            timestamps: true,
-            createdAt: true,
-            updatedAt: true,
+            timestamps: false,
+            
     
         };
     
@@ -29,10 +28,11 @@ module.exports = (sequelize, dataTypes) => {
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
     
     Category.associate = function (models) {
-        Category.belongsTo(models.Product, { 
-                as: "categoryProduct",
+        Category.hasMany(models.Product, { 
+                as: "products",
                 foreignKey: "id_category"
-            })
+                
+            })  
     
     
         }

@@ -28,9 +28,7 @@ module.exports = (sequelize, dataTypes) => {
     
         let config = {
             tableName: 'cart',
-            timestamps: true,
-            createdAt: true,
-            updatedAt: true,
+            timestamps: false,
     
         };
     
@@ -43,6 +41,7 @@ module.exports = (sequelize, dataTypes) => {
         Cart.hasMany(models.User, { 
                 as: "cartUser",
                 foreignKey: "id_user"
+
             })
     
     
@@ -50,3 +49,5 @@ module.exports = (sequelize, dataTypes) => {
     
         return Cart
     }
+
+    
