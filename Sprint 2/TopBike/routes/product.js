@@ -26,6 +26,7 @@ router.get('/cart', productController.cart);
 router.get('/create',productController.create);
 router.post('/', upload.single('image'),productController.store);
 
+
 /* edit form */
 router.get('/edit/:id', productController.edit); 
 router.patch('/eldit/:id', productController.update); 
