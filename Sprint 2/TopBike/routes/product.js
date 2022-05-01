@@ -104,6 +104,10 @@ router.get('/deleteAll', productController.deleteAll);
 
 router.get('/add', productController.add);
 
+//creación
+
+/* router.get('/crear', productController.crear) */
+
 
 
 module.exports = router;

@@ -28,10 +28,9 @@ form{
 }
 form label{
     display: flex;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: var(--Blanco);
     background-color: var(--Dark);
     font-family: 'Poppins', sans-serif;
     font-size: 1.2em;
@@ -48,14 +47,13 @@ form input{
     text-indent: 20px;
     height: 33px;
     border-radius: 7px 0 7px;
-    background: rgba(255, 255, 255, 0.883);
+    background: var(--Blanco);
 }
 form p{
     color: var(--Naranja);
 }
 form button{
     width: 90%;
-    margin: auto;
     height: 34px;
     background-color: black;
     color: #ff9900;

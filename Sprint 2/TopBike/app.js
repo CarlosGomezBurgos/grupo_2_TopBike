@@ -5,6 +5,8 @@ const session = require('express-session')
 const recordameMiddleware = require('./middlewares/recordameMiddleware')
 const userLoggedMiddelware = require('./middlewares/userLoggedMiddleware')
 
+const apiRouter = require('./routes/api')
+
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
@@ -35,3 +37,4 @@ const req = require('express/lib/request');
 app.use('/',rutasMain);
 app.use('/product',rutasProduct);
 app.use('/user',rutasUser);
+app.use('/api', apiRouter)
