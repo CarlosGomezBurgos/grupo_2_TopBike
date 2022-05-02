@@ -2,19 +2,16 @@ const db = require("../../database/models")
 module.exports = {
     getAll: async (req,res) => {
         try {
-            const products = await db.Product.findAll({
-                include:['category']
-            })
-            res.json(products)
+            const users = await db.User.findAll()
+            res.json(users)
         } catch (error) {
             return res.status(500).json(error)
         }
     },
-    
     getOne: async (req,res) => {
         try {
-            const product = await db.Product.findByPk(req.params.id)
-            res.json(product)
+            const user = await db.User.findByPk(req.params.id)
+            res.json(user)
         } catch (error) {
             return res.status(500).json(error)
         }
