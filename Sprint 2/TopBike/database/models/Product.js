@@ -28,8 +28,11 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.INTEGER,
                 allowNull: false,   
             },
-            /* description: dataTypes.STRING(200),
-            image: dataTypes.STRING(100), */
+            description:  {
+                type: dataTypes.STRING(200),
+                allowNull: false,   
+            },
+            image: dataTypes.STRING(100),
 
             
     
@@ -51,6 +54,11 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsTo(models.Category, { 
                 as: "category",
                 foreignKey: "id_category"
+            }),
+
+            Product.hasMany(models.Cart, { 
+                as: "cart",
+                foreignKey: "id_product"
             })
     
     

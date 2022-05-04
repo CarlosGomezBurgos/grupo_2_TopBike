@@ -1,14 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
-const {validationResult, body} = require('express-validator');
+const { validationResult, body } = require('express-validator');
 const User = require('../models/User');
+
+const db = require("../database/models");
+
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
-     register:(req,res) => {
+     register: (req, res) => {
           res.render('register')
      },
      processRegister: (req,res) => {
@@ -35,35 +38,41 @@ const usersController = {
           }
 
      },
-     login: (req,res) => {
+     login: (req, res) => {
           res.render('login')
      },
-     processLogin: (req,res) => {
-          let userToLogin = User.findByField('email', req.body.email)
-          
+     processLogin: async (req, res) => {
+          // let userToLogin = User.findByField('email', req.body.email)
+
+          const userToLogin = await db.User.findOne({
+               where: {
+                    email: req.body.email
+               }
+          })
           if (userToLogin) {
-               let isOkThePassword = bcryptjs.compareSync(req.body.user_password,userToLogin.user_password)
+               // let isOkThePassword = await bcryptjs.compareSync(req.body.user_password, userToLogin.dataValues.password)
+               const isOkThePassword = req.body.user_password === userToLogin.password;
                if (isOkThePassword) {
-                    delete userToLogin.user_password;
+                    delete userToLogin.password;
                     req.session.userLogged = userToLogin;
 
-                    if(req.body.recordame){
-                         res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60) * 2})
+                    if (req.body.recordame) {
+                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
                     }
 
                     return res.redirect('/user/profile')
                }
-               return res.render('login',{
-                    errors:{
-                         email:{
+               return res.render('login', {
+                    errors: {
+                         email: {
                               msg: 'Las credenciales con invalidas'
                          }
                     }
                })
           }
-          return res.render('login',{
-               errors:{
-                    email:{
+          return res.render('login', {
+               errors: {
+                    email: {
                          msg: 'No se encuenta este email en nuestra base de datos'
                     }
                }
@@ -88,21 +97,21 @@ const usersController = {
           //      } else {
           //           console.log('no encontrado')
           //           res.render('login')
-                    
+
           //      }
      },
-     profile: (req,res) => {
+     profile: (req, res) => {
           console.log(req.cookies.userEmail)
-          res.render('profile',{
+          res.render('profile', {
                user: req.session.userLogged
           })
      },
-     logout: (req,res) => {
+     logout: (req, res) => {
           res.clearCookie('userEmail');
           req.session.destroy();
           return res.redirect('/')
      }
-     
+
 }
 
 module.exports = usersController;

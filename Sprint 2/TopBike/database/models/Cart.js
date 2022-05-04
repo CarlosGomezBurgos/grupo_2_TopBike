@@ -4,8 +4,8 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
             id: {
                 type: dataTypes.INTEGER,
-                allowNull: false,
                 primaryKey: true,
+                allowNull: false,
                 autoIncrement: true
             },
 
@@ -41,6 +41,12 @@ module.exports = (sequelize, dataTypes) => {
         Cart.belongsTo(models.User, { 
                 as: "cartUser",
                 foreignKey: "id_user"
+
+            }),
+
+            Cart.belongsTo(models.Product, { 
+                as: "product",
+                foreignKey: "id_product"
 
             })
     
