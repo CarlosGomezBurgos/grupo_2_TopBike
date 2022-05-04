@@ -2,45 +2,43 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Product'; // esto debería estar en singular
     
     let cols = {
-            id: {
-                type: dataTypes.INTEGER,
-                primaryKey: true,
-                allowNull: false,
-                autoIncrement: true
-            },
-            name: {
-                type: dataTypes.STRING(50),
-                allowNull: false
-            },
-            price: {
-                type: dataTypes.FLOAT.UNSIGNED,
-                allowNull: false,
-                defaultValue: 0
-            },
-            discount: {
-                type: dataTypes.INTEGER.UNSIGNED,
-                allowNull: false,
-                defaultValue: 0
-            },
-            id_category: {
-                type: dataTypes.INTEGER,
-                allowNull: false,   
-            },
-            description: {
-                type: dataTypes.STRING(200)   
-            },
-            image: {
-                type: dataTypes.STRING(50),
-                allowNull: false 
-            }            
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true
+        },
+        name: {
+            type: dataTypes.STRING(50),
+            allowNull: false
+        },
+        price: {
+            type: dataTypes.FLOAT.UNSIGNED,
+            allowNull: false,
+            defaultValue: 0
+        },
+        discount: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false,
+            defaultValue: 0
+        },
+        id_category: {
+            type: dataTypes.INTEGER,
+            allowNull: false,   
+        },
+        description: {
+            type: dataTypes.STRING(200)   
+        },
+        image: {
+            type: dataTypes.STRING(50),
+            allowNull: false 
+        }            
     
     };
     
     let config = {
         tableName: 'product',
         timestamps: false,
-            
-
     };
 
     
@@ -50,8 +48,8 @@ module.exports = (sequelize, dataTypes) => {
     
     Product.associate = function (models) {
         Product.belongsTo(models.Category, { 
-                as: "category",
-                foreignKey: "id_category"
+            as: "category",
+            foreignKey: "id_category"
         })
     
     

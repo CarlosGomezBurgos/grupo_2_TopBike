@@ -12,39 +12,52 @@ const usersController = {
           res.render('register')
      },
      processRegister: (req,res) => {
-          //res.render('index');
-          console.log(req.body)
           const resultValidation = validationResult(req);
-          if (resultValidation.errors.length > 0){
+          if (resultValidation.errors.length > 0){ //validacion de errores
                return res.render('register',{
                     errors: resultValidation.mapped(),
                     oldData: req.body,
-               });
+               })
+           
           } else {
-               let nuevoUsuario = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
-                    id: users[users.length -1].id +1,
-                    user_name: req.body.user_name,
-                    email: req.body.email,
-                    user_password: bcryptjs.hashSync(req.body.user_password, 10),
-                    avatar: req.file.filename
-               }
-               users.push(nuevoUsuario);
-               console.log(nuevoUsuario);
-               fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-               res.render('login');
-          }
+               db.User.findOne({ where: { email: req.body.email } }) // busca mail en bd
 
+               .then((userInDB) => {
+                    if (userInDB) { // El mail se encuantra en bd
+                         res.render('register', {
+                              errors: {
+                                   email: {
+                                        msg: 'Este correo electronico ya esta registrado'
+               
+                                   }
+                         },
+                         oldData: req.body
+                         })
+     
+                    } else { // El mail ni se encuentra en bd
+                         const newUser = {
+                              name: req.body.user_name,
+                              email: req.body.email,
+                              password: bcryptjs.hashSync(req.body.password, 10),
+                              avatar: req.file.filename
+                         }
+                         db.User.create(newUser)
+                    }
+               })
+          }
+     
      },
      login: (req,res) => {
           res.render('login')
      },
+
      processLogin: (req,res) => {
           let userToLogin = User.findByField('email', req.body.email)
           
           if (userToLogin) {
-               let isOkThePassword = bcryptjs.compareSync(req.body.user_password,userToLogin.user_password)
+               let isOkThePassword = bcryptjs.compareSync(req.body.user_password,userToLogin.password)
                if (isOkThePassword) {
-                    delete userToLogin.user_password;
+                    delete userToLogin.password;
                     req.session.userLogged = userToLogin;
 
                     if(req.body.recordame){
@@ -68,28 +81,6 @@ const usersController = {
                     }
                }
           })
-          // const resultValidation = validationResult(req);
-          // if (resultValidation.errors.length > 0){
-          //      return res.render('login',{
-          //           errors: resultValidation.mapped(),
-          //           oldData: req.body,
-          //      });
-          // } else {
-          //      let userEmails = users.map(user => user.email);
-          //      const reqUser = users[userEmails.lastIndexOf(req.body.email)];
-
-          //      if(reqUser && bcryptjs.compareSync(req.body.user_password,reqUser.user_password)){
-          //           console.log('encontrado')
-          //           req.session.usuarioLogueado = reqUser;
-          //           if(req.body.recordame != undefined){
-          //               res.cookie('recordame', reqUser.email, {expire : new Date() + 9999});
-          //           }
-          //           res.redirect('/');
-          //      } else {
-          //           console.log('no encontrado')
-          //           res.render('login')
-                    
-          //      }
      },
      profile: (req,res) => {
           console.log(req.cookies.userEmail)
@@ -104,5 +95,164 @@ const usersController = {
      }
      
 }
+
+// const userController = {
+//      register: (req, res) => {
+//          res.render('users/register');
+//      },
+//      processRegister: (req, res) => {
+//          const resultValidation = validationResult(req);
+ 
+//          if (resultValidation.errors.length > 0) {
+//              res.render('users/register', {
+//                  errors: resultValidation.mapped(),
+//                  oldData: req.body
+//              });
+//          } else {
+//              db.User.findOne({ where: { email: req.body.email } })
+//                  .then((userInDB) => {
+//                      if (userInDB) {
+//                          res.render('users/register', {
+//                              errors: {
+//                                  email: {
+//                                      msg: 'Este correo electronico ya esta registrado'
+//                                  }
+//                              },
+//                              oldData: req.body
+//                          })
+//                      } else if (req.body.imgDefault) {
+//                          db.User.create({
+//                              first_name: req.body.first_name,
+//                              last_name: req.body.last_name,
+//                              email: req.body.email,
+//                              password: bcryptjs.hashSync(req.body.password, 10),
+//                              adress: req.body.adress,
+//                              avatar: "default.png",
+//                              category_id: 1,
+//                          })
+ 
+//                      } else {
+//                          db.User.create({
+//                              first_name: req.body.first_name,
+//                              last_name: req.body.last_name,
+//                              email: req.body.email,
+//                              password: bcryptjs.hashSync(req.body.password, 10),
+//                              adress: req.body.adress,
+//                              avatar: req.file.filename,
+//                              category_id: 1,
+//                          })
+ 
+//                      }
+//                      return res.redirect('/users/login')
+//                  }).catch(err => { console.log(err) })
+//          }
+//      },
+ 
+//      login: (req, res) => {
+ 
+//          res.render('users/loginEmail')
+//      },
+ 
+//      loginProcess: (req, res) => {
+ 
+//          db.User.findOne({ where: { email: req.body.email } })
+ 
+//          .then((userToLogin) => {
+ 
+//              const resultValidation = validationResult(req);
+ 
+//              if (resultValidation.errors.length > 0) {
+//                  res.render('users/loginEmail', {
+//                      errors: resultValidation.mapped(),
+//                      oldData: req.body
+//                  });
+//              } else if (!userToLogin) {
+ 
+//                  return res.render('users/loginEmail', {
+//                      errors: {
+//                          email: {
+//                              msg: 'El correo electronico no esta registrado'
+//                          }
+//                      },
+ 
+//                  })
+//              } else {
+//                  res.render('users/loginPass', {
+//                      oldData: req.body
+//                  })
+//              }
+//          }).catch(err => { console.log(err) })
+//      },
+ 
+//      loginPass: (req, res) => {
+ 
+//          if (req.body.email) {
+//              db.User.findOne({ where: { email: req.body.email } })
+//                  .then((userToLogin) => {
+ 
+//                      let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+ 
+//                      if (isOkThePassword) {
+//                          delete userToLogin.password;
+ 
+//                          req.session.userLogged = userToLogin;
+ 
+//                          if (req.body.remember_user) {
+//                              res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+//                              return res.redirect('/users/profile')
+//                          }
+//                          return res.render('users/loginPass', {
+//                              errors: {
+//                                  email: {
+//                                      msg: 'Debe recordar su usuario'
+//                                  }
+//                              },
+//                              oldData: req.body
+//                          })
+//                      } else {
+//                          return res.render('users/loginPass', {
+//                              errors: {
+//                                  email: {
+//                                      msg: 'La contraseña es errónea'
+//                                  }
+//                              },
+//                              oldData: req.body
+//                          })
+//                      };
+//                  })
+//                  .catch(err => { console.log(err) })
+//          }
+//      },
+ 
+//      profile: (req, res) => {
+//          db.Product.findAll()
+ 
+//          .then((products) => {
+ 
+//              return res.render('users/profile', {
+//                  user: req.session.userLogged,
+ 
+//              });
+//          })
+//      },
+ 
+//      logout: (req, res) => {
+//          res.clearCookie('userEmail');
+//          req.session.destroy();
+//          return res.redirect('/');
+//      },
+ 
+//      deleteUser: (req, res) => {
+//          let id = req.params.id
+//          req.session.destroy();
+//          res.clearCookie('userEmail');
+//          db.User.destroy({
+//              where: {
+//                  id: id
+//              }
+//          }).catch(err => { console.log(err) })
+//          res.redirect("/")
+//      },
+
 
 module.exports = usersController;
