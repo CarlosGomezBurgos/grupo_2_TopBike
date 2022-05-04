@@ -6,32 +6,25 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.INTEGER,
                 primaryKey: true,
                 allowNull: false,
-                    
             },
-    
             name: {
                 type: dataTypes.STRING(50),
                 allowNull: false
             },
-
             email: {
                 type: dataTypes.STRING(50),
                 unique: true,
                 allowNull: false
-
             },
-
             password: {
                 type: dataTypes.STRING(50),
                 allowNull: false
             },
-
             picture:{
                 type: dataTypes.STRING(50),
                 allowNull: false
             }
-
-        };
+    };
     
         let config = {
             tableName: 'user',

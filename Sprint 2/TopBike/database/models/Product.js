@@ -8,12 +8,10 @@ module.exports = (sequelize, dataTypes) => {
                 allowNull: false,
                 autoIncrement: true
             },
-    
             name: {
                 type: dataTypes.STRING(50),
                 allowNull: false
             },
-
             price: {
                 type: dataTypes.FLOAT.UNSIGNED,
                 allowNull: false,
@@ -28,22 +26,25 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.INTEGER,
                 allowNull: false,   
             },
-            /* description: dataTypes.STRING(200),
-            image: dataTypes.STRING(100), */
-
+            description: {
+                type: dataTypes.STRING(200)   
+            },
+            image: {
+                type: dataTypes.STRING(50),
+                allowNull: false 
+            }            
+    
+    };
+    
+    let config = {
+        tableName: 'product',
+        timestamps: false,
             
+
+    };
+
     
-        };
-    
-        let config = {
-            tableName: 'product',
-            timestamps: false,
-             
-    
-        };
-    
-    
-     const Product = sequelize.define(alias,cols,config);
+    const Product = sequelize.define(alias,cols,config);
     
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
     
@@ -51,11 +52,10 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsTo(models.Category, { 
                 as: "category",
                 foreignKey: "id_category"
-            })
+        })
     
     
-        }
-    
-    
-        return Product
     }
+    
+    return Product
+}

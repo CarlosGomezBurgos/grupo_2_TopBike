@@ -2,28 +2,26 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Category'; // esto debería estar en singular
     
     let cols = {
-            id: {
-                type: dataTypes.INTEGER,
-                primaryKey: true,
-                allowNull: false,
-                autoIncrement: true
-            },
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true
+        },
+
+        name: {
+            type: dataTypes.STRING(50),
+            allowNull: false
+        }
+    };
     
-            name: {
-                type: dataTypes.STRING(50),
-                allowNull: false
-            }
-        };
-    
-        let config = {
-            tableName: 'category',
-            timestamps: false,
+    let config = {
+        tableName: 'category',
+        timestamps: false,
             
+    };
     
-        };
-    
-    
-     const Category = sequelize.define(alias,cols,config);
+    const Category = sequelize.define(alias,cols,config);
     
     //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
     
@@ -32,10 +30,8 @@ module.exports = (sequelize, dataTypes) => {
                 as: "products",
                 foreignKey: "id_category"
                 
-            })  
-    
-    
-        }
-    
-        return Category
+        })      
     }
+    
+    return Category
+}
