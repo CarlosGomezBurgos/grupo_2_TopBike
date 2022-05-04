@@ -30,6 +30,7 @@ router.get('/cart', productController.cart);
 router.get('/create',productController.create);
 router.post('/', upload.single('image'), productCreateValidations, productController.store);
 
+
 /* edit form */
 router.get('/edit/:id', productController.edit); 
 router.patch('/edit/:id', productEditValidations, productController.update);
@@ -41,10 +42,6 @@ router.get('/delete/:id', productController.delete);
 router.get('/deleteAll', productController.deleteAll);
 
 router.get('/add', productController.add);
-
-//creación
-
-/* router.get('/crear', productController.crear) */
 
 
 

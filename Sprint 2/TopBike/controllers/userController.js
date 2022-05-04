@@ -37,7 +37,8 @@ const usersController = {
                          const newUser = {
                               name: req.body.user_name,
                               email: req.body.email,
-                              password: bcryptjs.hashSync(req.body.user_password, 10),
+                              // password: bcryptjs.hashSync(req.body.user_password, 10),
+                              password: req.body.user_password,
                               picture: req.file.filename
                          };
                          
@@ -54,12 +55,17 @@ const usersController = {
      login: (req, res) => {
           res.render('login')
      },
+     processLogin: async (req, res) => {
+          // let userToLogin = User.findByField('email', req.body.email)
 
-     processLogin: (req, res) => {
-          let userToLogin = User.findByField('email', req.body.email)
-
+          const userToLogin = await db.User.findOne({
+               where: {
+                    email: req.body.email
+               }
+          })
           if (userToLogin) {
-               let isOkThePassword = bcryptjs.compareSync(req.body.user_password, userToLogin.password)
+               // let isOkThePassword = await bcryptjs.compareSync(req.body.user_password, userToLogin.dataValues.password)
+               const isOkThePassword = req.body.user_password === userToLogin.password;
                if (isOkThePassword) {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;

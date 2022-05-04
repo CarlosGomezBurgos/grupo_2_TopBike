@@ -13,20 +13,35 @@ let db = require('../database/models')
 
 const productController = {
      index: (req,res) => {
-		let products_formato = products.map(product =>{
+		/* let products_formato = products.map(product =>{
                product.actual_price = product.price * (1 - (product.discount/100));
                product.actual_price = product.actual_price.toFixed(2);
 			product.price = parseFloat(product.price).toFixed(2);
 			return product;
 		})
-          res.render('product',{productos: products});
-     },
-     detail: (req,res) => {
-          let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
-          console.log(productoBuscado)
-          res.render('productDetail',{productoBuscado:productoBuscado});
+          res.render('product',{productos: products}); */
+          db.Product.findAll()
+          .then(function(products){
+               return res.render("product",{products:products});
+          })
+
 
      },
+     detail: (req,res) => {
+          /* let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
+          console.log(productoBuscado)
+          res.render('productDetail',{productoBuscado:productoBuscado}); */
+          db.Product.findByPk(req.params.id,{
+               include:[{association: "category"},{association: "cart"}]
+          })
+               .then(function(product){
+                    res.render('productDetail',{products:products});
+               })
+
+     },
+
+
+
      cart: (req,res) => {
          res.render('productCart',{carrito: productsCart});
 
@@ -40,10 +55,19 @@ const productController = {
                     })
                })
      },
+
+
      edit: (req, res) => {
-		let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
+		/* let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
           res.render('productEditForm',{
-               productoBuscado: productoBuscado
+               productoBuscado: productoBuscado */
+               let orderProduct = db.Product.findByPk(req.params.id);
+
+               let orderCategory = db.Product.findAll();
+
+               promise.all([orderProduct, orderCategory])
+                    .then(function([product, category]){
+                         res.render("productEditForm",{product:product, category:category});
           })
           //console.log(productoBuscado)
 	},
@@ -108,10 +132,17 @@ const productController = {
           
 	},
      delete: (req, res) => {
-          let id = req.params.id;
+          /* let id = req.params.id;
           let finalProducts = productsCart.filter(product => product.id != id);
           fs.writeFileSync(productsCartFilePath, JSON.stringify(finalProducts, null, ' '));
-          res.render('productCart',{carrito: finalProducts});
+          res.render('productCart',{carrito: finalProducts}); */
+          db.Product.destroy({
+               where: {
+                    id: req.params.id
+               }
+          })
+
+          res.redirect("/product");
      },
      deleteAll: (req, res) => {
           let finalProducts = [];
