@@ -2,12 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
 
+let db = require('../database/models')
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const productsCartFilePath = path.join(__dirname, '../data/productsCartDataBase.json');
-const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
+// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+// const productsCartFilePath = path.join(__dirname, '../data/productsCartDataBase.json');
+// const productsCart = JSON.parse(fs.readFileSync(productsCartFilePath, 'utf-8'));
 
 const productController = {
      index: (req,res) => {
@@ -30,9 +32,13 @@ const productController = {
 
      },
      create: (req,res) => {
-         res.render('productCreateForm',{
-              oldData: req.body
-         })
+          db.Category.findAll()
+               .then(function(categories){
+                    res.render('productCreateForm',{
+                         oldData: req.body,
+                         categories: categories
+                    })
+               })
      },
      edit: (req, res) => {
 		let productoBuscado = products.find(unProducto => unProducto.id == req.params.id);
@@ -42,26 +48,31 @@ const productController = {
           //console.log(productoBuscado)
 	},
      store: (req, res) => {
-          console.log(req.body);
           const resultValidation = validationResult(req);
-          //console.log(resultValidation);
           if(resultValidation.errors.length > 0){
                return res.render('productCreateForm',{
                     errors: resultValidation.mapped(),
                     oldData: req.body,
                })
           } else {
-               let nuevoProducto = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
-                    id: products[products.length -1].id +1,
-                    ...req.body, // completa todos los elementos de un objeto.
+
+               // let nuevoProducto = {//manteniendo la estructura de cada objeto del json que se ocupa de bd
+               //      id: products[products.length -1].id +1,
+               //      ...req.body, // completa todos los elementos de un objeto.
+               //      image: req.file.filename
+               // }
+               // products.push(nuevoProducto); 
+               // console.log(nuevoProducto)
+               db.Product.create({
+                    name: req.body.name,
+                    price: req.body.price,
+                    discount: req.body.discount,
+                    id_category: req.body.category,
+                    description: req.body.description,
                     image: req.file.filename
-               }
-               products.push(nuevoProducto); 
-               console.log(nuevoProducto)
-  
+               })
+               res.redirect('/product');
           }
-          fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-          res.redirect('/product');
      },
 	update: (req, res) => {
 		let id = req.params.id;

@@ -75,13 +75,12 @@
                                         class="form-input"
                                         >
                                         <option value="">Elegí</option>
-                                        <% let options = ['ofertas','productos-destacados'] %> 
-                                        <% for (const oneOption of options) { %>
-                                            <option 
-                                                value="<%= oneOption %>"
-                                                <%= (oneOption === oldData.category) ? 'selected' : null %> 
-                                            > <%= oneOption %> </option>
+                                        <% for( let i = 0; i < categories.length; i++ ) { %>
+                                            <option value="<% categories[i].id %> ">
+                                                <%= categories[i].name %> 
+                                            </option>
                                         <% } %>
+                                        
                                     </select>
                                     <% if (locals.errors && errors.category) { %>
                                         <p style="color: red"><%= errors.category.msg %> </p>
