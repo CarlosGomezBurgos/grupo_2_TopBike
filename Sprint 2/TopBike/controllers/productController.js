@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { where } = require('sequelize/types');
+
 
 //CRUD
 const db = require("../database/models");
@@ -88,7 +88,7 @@ const productController = {
                discount: req.body.discount ,
                /* id_category: , */
                description: req.body.description,
-               image: req.body.image
+               image: req.file.filename
           });
 
           res.redirect("/product");
