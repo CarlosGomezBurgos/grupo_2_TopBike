@@ -11,21 +11,21 @@
     <main>
         <h3 class="oferta" id="ofertas">Todos los productos</h3>
         <section class="index-articulos">
-            <% productos.forEach(unProducto => { %>
+            <% for (let i = 0; i < products.length; i++) { %>
                     <article class="contenedor">
                             <div class="contenedor-foto">
-                                <a href="./product/detail/<%= unProducto.id %>">
-                                    <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
+                                <a href="./product/detail/<%= products[i].id%>">
+                                    <img class="foto-producto" src="<%= products[i].image %> " alt="miniatura">
                                 </a>                            
                             </div>
                             <div class="detalle">
-                                    <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                    <p class="precio">$ <%= unProducto.actual_price %></p>
-                                    <p class="descuento"><%= unProducto.discount %>% OFF</p>
-                                    <p class="descripcion"><%= unProducto.name %></p>
+                                    <p class="precio-anterior">$ <%= products[i].price  %></p>
+                                    <p class="precio">$ <%= products[i].price * (1 - (products[i].discount/100)) %></p>
+                                    <p class="descuento"><%= products[i].discount %>% OFF</p>
+                                    <p class="descripcion"><%= products[i].description %></p>
                             </div>
                     </article>                  
-            <% }) %>         
+            <% } %>         
         </section>
     </main>
     <%- include('partials/footer.ejs') %>

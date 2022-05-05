@@ -9,7 +9,7 @@ const usersController = {
      register: (req, res) => {
           res.render('register')
      },
-     processRegister: async (req, res) => {
+     registerProcess: async (req, res) => {
           const resultValidation = validationResult(req);
           if (resultValidation.errors.length > 0) { //validacion de errores
                return res.render('register', {
@@ -37,7 +37,7 @@ const usersController = {
                          const newUser = {
                               name: req.body.user_name,
                               email: req.body.email,
-                              // password: bcryptjs.hashSync(req.body.user_password, 10),
+                              // password: bcryptjs.hashSync(req.body.user_password, 10),// la comparacion da false cuando esta encriptada. Intentamos resolver con Andrey sin exito.
                               password: req.body.user_password,
                               picture: req.file.filename
                          };
@@ -55,7 +55,7 @@ const usersController = {
      login: (req, res) => {
           res.render('login')
      },
-     processLogin: async (req, res) => {
+     loginProcess: async (req, res) => {
           // let userToLogin = User.findByField('email', req.body.email)
 
           const userToLogin = await db.User.findOne({

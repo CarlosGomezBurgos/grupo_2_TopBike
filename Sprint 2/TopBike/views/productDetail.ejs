@@ -11,20 +11,20 @@
     </div>
     <main>
         <div class="contenedor-productDetail">
-            <h3 class="product-titulo"><!-- Detalle de Producto: --> <%= productoBuscado.name %></h3>
+            <h3 class="product-titulo"><!-- Detalle de Producto: --> <%= product.name %></h3>
             <div class="contenedor-product-main">
                 <section class="productDetail-section">
                     <div class="productDetail-foto">
-                        <img class="foto-grande" src="/img/products/<%= productoBuscado.image %> " alt="miniatura">
+                        <img class="foto-grande" src="<%= product.image %> " alt="miniatura">
                     </div>              
                 </section>
                 <div class="producto-detalle">
-                    <p id="precio-anterior">$ <%= productoBuscado.price %></p>
-                    <p class="producto-precio">$ <%= productoBuscado.price * (1 - (productoBuscado.discount/100)) %></p>
-                    <p id="descuento">OFF <%= productoBuscado.discount %> %</p>
+                    <p id="precio-anterior">$ <%= product.price %></p>
+                    <p class="producto-precio">$ <%= product.price * (1 - (product.discount/100)) %></p>
+                    <p id="descuento">OFF <%= product.discount %> %</p>
                     <div class="producto-descripcion">
                         <p>
-                            <%= productoBuscado.description %>
+                            <%= product.description %>
                         </p>
                     </div>
                     <div>
