@@ -74,11 +74,12 @@
                                         id="category" 
                                         class="form-input"
                                         >
-                                        <option value="">Elegí</option>
                                         <% for( let i = 0; i < categories.length; i++ ) { %>
-                                            <option value="<% categories[i].id %> ">
+
+                                            <option value="<%= categories[i].id %>">
                                                 <%= categories[i].name %> 
                                             </option>
+
                                         <% } %>
                                         
                                     </select>
