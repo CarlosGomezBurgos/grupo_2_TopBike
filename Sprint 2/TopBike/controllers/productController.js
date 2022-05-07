@@ -23,8 +23,23 @@ const productController = {
           })
 
      },
-     cart: (req, res) => {
-          res.render('productCart', { carrito: productsCart });
+     cart: async (req, res) => {
+          const carts = await db.Cart.findAll({
+               include: [{ 
+                    association: "cartUser", 
+                    association: "cartProduct" 
+               }],
+          })
+          const products = await db.Product.findAll()
+          const user = await db.User.findByPk(req.params.id)
+
+          console.log(user)
+          console.log(carts)
+          res.render('productCart', { 
+               carts,
+               products,
+               user
+          });
 
      },
      create: async (req, res) => {

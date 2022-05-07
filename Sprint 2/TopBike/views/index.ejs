@@ -9,47 +9,30 @@
                         <img src="./img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
                 </div>    
                 <main>
-                        <h3 class="oferta" >Ofertas</h3>
-                        <section class="index-articulos">
-                                <% productos.forEach(unProducto => { %>
-                                        <% if (unProducto.category == "ofertas") { %>
-                                                <article class="contenedor">
-                                                        <div class="contenedor-foto">
-                                                                <a href="./product/detail/<%= unProducto.id %>">
-                                                                        <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
-                                                                </a>                            
-                                                        </div>
-                                                        <div class="detalle">
-                                                                <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                                                <p class="precio">$ <%= unProducto.price * (1 - (unProducto.discount/100)) %></p>
-                                                                <p class="descuento"><%= unProducto.discount %>% OFF</p>
-                                                                <p class="descripcion"><%= unProducto.name %></p>
-                                                        </div>
-                                                </article>                  
-                                        <% } %> 
-                                <% }) %>
-                        </section>
-
-                        <h3 class="productos-destacados">Productos Destacados</h3>
-                        <section class="index-articulos">
-                        <% productos.forEach(unProducto => { %>
-                                <% if (unProducto.category == "productos-destacados") { %>
-                                        <article class="contenedor">
-                                                <div class="contenedor-foto">
-                                                        <a href="./product/detail/<%= unProducto.id %>">
-                                                                <img class="foto-producto" src="./img/products/<%= unProducto.image %> " alt="miniatura">
-                                                        </a>                                                        
-                                                </div>
-                                                <div class="detalle">
-                                                        <p class="precio-anterior">$ <%= unProducto.price%></p>
-                                                        <p class="precio">$ <%= unProducto.price * (1 - (unProducto.discount/100)) %></p>
-                                                        <p class="descuento"><%= unProducto.discount %>% OFF</p>
-                                                        <p class="descripcion"><%= unProducto.name %></p>
-                                                </div>
-                                        </article>                  
-                                <% } %> 
-                        <% }) %>
-                        </section>
+                        <% categories.forEach(category => { %>
+                                <h3 class="oferta" id="ofertas"><%= category.name %></h3>
+                                <section class="index-articulos">
+                                    <% for (let i = 0; i < products.length; i++) { %>
+                                         <% if (products[i].id_category == category.id) { %>
+                                          
+                                                 <article class="contenedor">
+                                                         <div class="contenedor-foto">
+                                                             <a href="./product/detail/<%= products[i].id%>">
+                                                                 <img class="foto-producto" src="<%= products[i].image %> " alt="miniatura">
+                                                             </a>                            
+                                                         </div>
+                                                         <div class="detalle">
+                                                                 <p class="precio-anterior">$ <%= products[i].price  %></p>
+                                                                 <p class="precio">$ <%= products[i].price * (1 - (products[i].discount/100)) %></p>
+                                                                 <p class="descuento"><%= products[i].discount %>% OFF</p>
+                                                                 <p class="descripcion"><%= products[i].description %></p>
+                                                         </div>
+                                                 </article>                  
+         
+                                         <% } %>
+                                    <% } %>         
+                                </section>
+                       <% }) %> 
 
                 </main>
                 <%- include('partials/footer.ejs') %>
