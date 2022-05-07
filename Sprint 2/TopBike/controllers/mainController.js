@@ -1,13 +1,17 @@
-const fs = require('fs');
-const path = require('path');
+let db = require('../database/models')
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const mainController = {
-    index: (req,res) => {
-         res.render('index',{productos: products});
-    }
+    index: async (req, res) => {
+        const categories = await db.Category.findAll()
+        const products = await db.Product.findAll()
+       
+        return res.render("index", {
+             products,
+             categories
+        });
+   },
 }
           
 module.exports = mainController;

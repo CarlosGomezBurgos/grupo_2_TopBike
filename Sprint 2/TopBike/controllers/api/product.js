@@ -5,7 +5,11 @@ module.exports = {
             const products = await db.Product.findAll({
                 include:['category']
             })
-            res.json(products)
+            res.status(200).json({
+                total: products.length,
+                data: products,
+                status: 200,
+            })
         } catch (error) {
             return res.status(500).json(error)
         }
@@ -14,7 +18,10 @@ module.exports = {
     getOne: async (req,res) => {
         try {
             const product = await db.Product.findByPk(req.params.id)
-            res.json(product)
+            res.status(200).json({
+                data: product,
+                status: 200,
+            })
         } catch (error) {
             return res.status(500).json(error)
         }

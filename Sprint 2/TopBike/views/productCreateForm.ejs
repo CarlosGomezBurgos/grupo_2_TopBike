@@ -31,7 +31,7 @@
                                         type="text" 
                                         id="name" 
                                         name="name" 
-                                        placeholder="Ej: Zapatillas Reebok" 
+                                        placeholder="Ej: Bicicleta" 
                                         class="form-input"
                                         value="<%= locals.oldData ? oldData.name : null %>"
                                     >
@@ -45,7 +45,7 @@
                                         type="text" 
                                         id="price" 
                                         name="price" 
-                                        placeholder="Ej: 5678" 
+                                        placeholder="Ej: 75500" 
                                         class="form-input"
                                         value="<%= locals.oldData ? oldData.price : null %>"
                                         >
@@ -89,13 +89,7 @@
                                 </div>
                                 <div class="area col-12">
                                     <label for="description" class="form-label">Descripción:</label>
-                                    <textarea 
-                                        name="description" 
-                                        id="description" 
-                                        class="form-input"
-                                        value="<%= locals.oldData ? oldData.description : null %>"
-                                    >
-                                    </textarea>
+                                    <textarea name="description" id="description" class="form-input"></textarea>
                                     <% if (locals.errors && errors.description) { %>
                                         <p style="color: red"><%= errors.description.msg %> </p>
                                     <% } %>

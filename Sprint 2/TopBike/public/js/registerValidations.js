@@ -37,18 +37,7 @@ window.addEventListener('load',function(){
         } else {
             if(!allowedExtensions.exec(filePath)){
                 errorsList.push('Ingresar un formato de archivo válido: .jpeg/.jpg/.png/');
-            } else {
-                //Image preview
-                //if (fileInput.files && fileInput.files[0]) {
-                    // let reader = new FileReader();
-                    // reader.onload = function(e) {
-                    //     document.getElementById('imagePreview')
-                    //         .innerHTML = '<img src="'+e.target.result+'"/>';
-                    // };
-                    // reader.readAsDataURL(fileInput);
-                //}
-            }
-            
+            }             
         }
         
         //Lista de errores

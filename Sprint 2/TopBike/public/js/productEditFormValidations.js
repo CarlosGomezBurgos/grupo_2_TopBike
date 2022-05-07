@@ -26,27 +26,27 @@ window.addEventListener('load',function(){
             errorsList.push('el campo de "Descripcion" --> está incompleto')
         } else {
             if(description.length < 50) {
-                errorsList.push('el campo "Descripcion" deberá tener al menos 50 caracteres')
+                errorsList.push('el campo "Descripcion" deberá tener al menos 20 caracteres')
             }
         }
         
         let fileInput = document.querySelector('input#file');
         let filePath = fileInput.value;
         let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-        if (!filePath) {
-            errorsList.push('El campo "Imagen de perfil" --> está incompleto')
-        } else {
+        if (filePath) {
+        //     errorsList.push('El campo "Imagen de perfil" --> está incompleto')
+        // } else {
             if(!allowedExtensions.exec(filePath)){
                 errorsList.push('Ingresar un formato de archivo válido: .jpeg/.jpg/.png/');
             }             
         }
-
 
         if(errorsList.length > 0){
             e.preventDefault();
         }
 
         let ulErrors = document.querySelector('div.errors ul')
+        ulErrors.innerHTML = "";
         for (let i = 0; i < errorsList.length; i++) {
             ulErrors.innerHTML += '<li>' + errorsList[i] + '</li>'
         }

@@ -26,7 +26,7 @@
             errorsList.push('el campo de "Descripcion" --> está incompleto')
         } else {
             if(description.length < 50) {
-                errorsList.push('el campo "Descripcion" deberá tener al menos 50 caracteres')
+                errorsList.push('el campo "Descripcion" deberá tener al menos 20 caracteres')
             }
         }
         
@@ -47,6 +47,7 @@
         }
 
         let ulErrors = document.querySelector('div.errors ul')
+        ulErrors.innerHTML = "";
         for (let i = 0; i < errorsList.length; i++) {
             ulErrors.innerHTML += '<li>' + errorsList[i] + '</li>'
         }

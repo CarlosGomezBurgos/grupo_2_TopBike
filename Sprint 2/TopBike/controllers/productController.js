@@ -5,20 +5,22 @@ const { validationResult } = require('express-validator');
 let db = require('../database/models')
 
 const productController = {
-     index: async (req, res) => {
-          await db.Product.findAll()
-               .then(function (products) {
-                    return res.render("product", { products: products });
-               })
+     productList: async (req, res) => {
+          const categories = await db.Category.findAll()
+          const products = await db.Product.findAll()
+         
+          return res.render("product", {
+               products,
+               categories
+          });
      },
      detail: async (req, res) => {
           await db.Product.findByPk(req.params.id, {
                include: [{ association: "category" }],
-               // {association: "cart"}]
           })
-               .then(function (product) {
-                    res.render('productDetail', { product: product });
-               })
+          .then(function (product) {
+               res.render('productDetail', { product: product });
+          })
 
      },
      cart: (req, res) => {
@@ -32,15 +34,15 @@ const productController = {
                categories
           })
      },
-     edit: (req, res) => {
-          let orderProduct = db.Product.findByPk(req.params.id);
+     edit: async (req, res) => {
+          const oneProduct = await db.Product.findByPk(req.params.id);
+          const categories = await db.Category.findAll();
 
-          let orderCategory = db.Product.findAll();
-
-          promise.all([orderProduct, orderCategory])
-               .then(function ([product, category]) {
-                    res.render("productEditForm", { product: product, category: category });
-               })
+          res.render('productEditForm', {
+               oldData: req.body,
+               categories,
+               product: oneProduct,
+          })
      },
      store: async (req, res) => {
           console.log(req.body)
@@ -71,59 +73,63 @@ const productController = {
 
           }
      },
-     update: (req, res) => {
-          let id = req.params.id;
-          let productToEdit = products.find(product => product.id == id);
+     update: async (req, res) => {
+          console.log(req.body)
+          const oneProduct = await db.Product.findByPk(req.params.id);
+          const categories = await db.Category.findAll();
 
           const resultValidation = validationResult(req);
-          console.log(resultValidation)
 
           if (resultValidation.errors.length > 0) {
-               let id = req.params.id;
-               console.log(id)
                return res.render('productEditForm', {
                     errors: resultValidation.mapped(),
-                    //oldData: req.body,
-                    //productoBuscado: productToEdit
-                    productoBuscado: req.body
+                    product: req.body,
+                    categories
                })
           } else {
-               productToEdit = {
-                    id: productToEdit.id,
-                    ...req.body,// los nuevos datos que recibe del form
-                    image: productToEdit.image
-               }
-               let newProducts = products.map(product => {
-                    if (product.id == productToEdit.id) {
-                         return product = { ...productToEdit }
+               try {
+                    if (req.file) {
+                         await db.Product.update({
+                              name: req.body.name,
+                              price: req.body.price,
+                              discount: req.body.discount,
+                              id_category: req.body.category,
+                              description: req.body.description,
+                              image: req.file.filename
+                         }, {
+                              where: {
+                                   id: req.params.id
+                              }
+                         })
+
+                    } else {
+                         await db.Product.update({
+                              name: req.body.name,
+                              price: req.body.price,
+                              discount: req.body.discount,
+                              id_category: req.body.category,
+                              description: req.body.description,
+                         }, {
+                              where: {
+                                   id: req.params.id
+                              }
+                         })
                     }
-                    return product;
-               })
-               fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-               res.redirect('/')
-          }
+                    res.redirect('/product');
 
-     },
-     delete: (req, res) => {
-          /* let id = req.params.id;
-          let finalProducts = productsCart.filter(product => product.id != id);
-          fs.writeFileSync(productsCartFilePath, JSON.stringify(finalProducts, null, ' '));
-          res.render('productCart',{carrito: finalProducts}); */
-          db.Product.destroy({
-               where: {
-                    id: req.params.id
+               } catch (error) {
+                    return res.status(500).json(error)
                }
+          }
+     },
+     delete: async (req, res) => {
+          await db.Product.destroy({
+              where: {
+                  id: req.params.id
+              }
           })
+          res.redirect("/product")
+      }
 
-          res.redirect("/product");
-     },
-     deleteAll: (req, res) => {
-          let finalProducts = [];
-          fs.writeFileSync(productsCartFilePath, JSON.stringify(finalProducts, null, ' '));
-          res.render('productCart', { carrito: finalProducts });
-     },
-     add: (req, res) => {
-
-     }
 }
 module.exports = productController;

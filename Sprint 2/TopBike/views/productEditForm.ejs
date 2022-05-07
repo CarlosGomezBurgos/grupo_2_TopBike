@@ -6,10 +6,7 @@
     </head>
     <body>
         <%- include('partials/header.ejs') %>
-        <div class="carrusel">
-                <img src="/img/carrusel.jpg" alt="carrusel" class="carrusel-foto">
-        </div>
-
+        <br><br><br>
         <div class="contenedor-create-form">
             <div class="errors" style="color: red;">
                 <ul>
@@ -19,11 +16,11 @@
 
             <div class="">
                 <div class="col-12">
-                    <h2 style="color: white" class="products-title">Editar Producto</h2>
+                    <h2 style="color: white" class="products-title">Editar Producto: <%= product.id %></h2>
                 </div>
             </div>
             <div class="col-12">
-                <form action="/product/edit/<%= product.id %>?_method=PATCH" method="POST">
+                <form action="/product/update/<%= product.id %>?_method=PUT" method="POST">
                     <div class="row product-detail">
                         <div class="area col-12 col-md-6">
                             <label for="name" class="form-label">Nombre del producto:</label>
@@ -42,30 +39,53 @@
                         </div>
                         <div class="area col-12 col-md-6">
                             <label for="category" class="form-label">Categoría:</label>
-                            <select 
-                                name="category" 
-                                id="category" 
-                                class="form-input"
+                        <select 
+                            name="category" 
+                            id="category" 
+                            class="form-input"
                             >
-                                <option value="">Elegí</option>
-                                <% let options = ['ofertas','productos-destacados'] %> 
-                                <% for (const oneOption of options) { %>
-                                    <option 
-                                        value="<%= oneOption %>"
-                                        <%= (oneOption === product.category) ? 'selected' : null %> 
-                                    > <%= oneOption %> </option>
+                            <% for( let i = 0; i < categories.length; i++ ) { %>
+                                <% if (categories[i].id == product.id_category) { %>
+                                    <option value="<%= categories[i].id %>" selected>
+                                        <%= categories[i].name %> 
+                                    </option>
+                                 
+                                <% } else { %>
+                                    <option value="<%= categories[i].id %>">
+                                        <%= categories[i].name %> 
+                                    </option>    
                                 <% } %>
-                            </select>
+
+                            <% } %>
+                            
+                        </select>
+
                         </div>
                         <div class="col-12">
                             <label for="description" class="form-label">Descripción:</label>
                             <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
                         </div>
-                        <img style="width: 30%" class="foto-producto" src="/img/products/<%= productoBuscado.image %> " alt="miniatura">
+
+                        <img style="width: 30%" class="foto-producto" src="<%= product.image %> " alt="miniatura">
+
+                        <div class="area col-12 col-md-6">
+                            <label for="image" class="form-label">Imagen del producto:</label>
+                            <input 
+                                type="file" 
+                                id="file" 
+                                name="image"
+                                value="<%= product.image %>"
+                            >   
+                        </div>
 
                         <div class="col-12">
-                            <button type="submit" class="buy-now-button">Guardar producto</button>
+                            <button type="submit" class="buy-now-button">Guardar cambios</button>
                         </div>
+                        
+                        <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="buy-now-button">Borrar Producto</button>
+                        </form>
+
                     </div>
                 </form>
             </div>
