@@ -44,6 +44,12 @@ const productController = {
           })
           const products = await db.Product.findAll()
           const user = await db.User.findByPk(req.params.id)
+          let products_formato = products.map(product =>{
+               product.actual_price = product.price * (1 - (product.discount/100));
+               product.actual_price = product.actual_price.toFixed(2);
+			product.price = parseFloat(product.price).toFixed(2);
+			return product;
+		})
 
           res.render('productCart', { 
                carts,

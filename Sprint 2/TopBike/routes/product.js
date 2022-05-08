@@ -32,7 +32,7 @@ router.post('/', upload.single('image'), productCreateValidations, productContro
 
 /* edit form */
 router.get('/edit/:id', productController.edit); 
-router.put('/update/:id', productEditValidations, productController.update);
+router.put('/update/:id', upload.single('image'),productEditValidations, productController.update);
 
 router.get('/cart/:id', productController.cart)
 

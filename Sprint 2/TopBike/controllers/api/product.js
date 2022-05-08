@@ -1,5 +1,5 @@
 const db = require("../../database/models")
-let url = "http://localhost:4000/public/img/products/"
+let url = "http://localhost:4000/img/products/"
 
 module.exports = {
     getAll: async (req,res) => {

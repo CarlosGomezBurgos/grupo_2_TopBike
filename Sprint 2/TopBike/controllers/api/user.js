@@ -1,5 +1,5 @@
 const db = require("../../database/models")
-let url = "http://localhost:4000/public/img/avatars/"
+let url = "http://localhost:4000/img/avatars/"
 
 
 module.exports = {
@@ -7,10 +7,14 @@ module.exports = {
         try {
             const users = await db.User.findAll()
             users.forEach(user => {
+                delete user.dataValues.password,
                 user.dataValues.picture = url + user.dataValues.picture
             });
 
-            res.json(users)
+            res.json({
+                count: users.length,
+                data: users,
+            })
         } catch (error) {
             return res.status(500).json(error)
         }
@@ -18,9 +22,14 @@ module.exports = {
     getOne: async (req,res) => {
         try {
             const user = await db.User.findByPk(req.params.id)
+            delete user.dataValues.password,
             user.dataValues.picture = url + user.dataValues.picture
 
-            res.json(user)
+            res.status(200).json({
+                data:user,
+                status: 200,
+            }
+            )
         } catch (error) {
             return res.status(500).json(error)
         }
