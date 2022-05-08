@@ -10,30 +10,42 @@
             <br> <br>
             <section class="cart-main">
                 <h3 class="cart-titulo">Carrito de Compras</h3>
-                <h2 style="color: white"> Usuario: <%= user.name %></h2><br>
-                <h2 style="color: orange"> Lista de Productos</h2><br>
 
                 <% carts.forEach(cart => { %>
                     <% if (cart.id_user == user.id) { %>
                      
                         <% products.forEach(product => { %>
                             <% if (cart.id_product == product.id) { %>
-                                <p style="color: white; font-size: 24px;"> Nombre: <%= product.name  %>  </p>
-                                <p style="color: white; font-size: 24px;"> Cantidad: <%= cart.quantity  %>  </p>
-                                <br>
+                            <div class="cart-contenedor">
+                                <div class="cart-contenedor-foto">
+                                    <img class="foto-producto" src="<%= product.image %>" alt="miniatura">
+                                </div>
+                                <div class="cart-detalle">
+                                    <div class="cart-detalle-precios">
+                                        <p class="cart-precio">$ <%= product.price * (1 - (product.discount/100)) %></p>
+                                        <p class="cart-precio-anterior">$ <%= product.price%></p>
+                                        <p class="cart-descripcion"><%= product.name %></p>     
+                                    </div>
+                                </div>
+                                <div class="cart-producto-botones">
+                                    <div class="cart-stock-comprar">
+                                        <p style="color: orange; font-size: 18px;"><%= cart.quantity %></p>
+                                    </div>
+                                </div>
+                                <p class="cart-subtotal"><%= cart.quantity * (product.price * (1 - (product.discount/100))) %></p>
+                                <div>
+                                    <a href="/product/delete/<%= product.id %> ">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+
+
+                            </div>
+
                             <% } %>
-
-
                         <% }) %>
-
-
                     <% } %>
-
-
-
                 <% }) %>
-
-
 
             </section>
         </main>
