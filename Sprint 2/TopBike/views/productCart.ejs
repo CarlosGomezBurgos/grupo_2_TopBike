@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="cart-detalle">
                                     <div class="cart-detalle-precios">
-                                        <p class="cart-precio">$ <%= product.price * (1 - (product.discount/100)) %></p>
+                                        <p class="cart-precio">$ <%= product.actual_price %></p>
                                         <p class="cart-precio-anterior">$ <%= product.price%></p>
                                         <p class="cart-descripcion"><%= product.name %></p>     
                                     </div>

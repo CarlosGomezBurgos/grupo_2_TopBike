@@ -20,7 +20,7 @@
                 </section>
                 <div class="producto-detalle">
                     <p id="precio-anterior">$ <%= product.price %></p>
-                    <p class="producto-precio">$ <%= product.price * (1 - (product.discount/100)) %></p>
+                    <p class="producto-precio">$ <%= product.actual_price %></p>
                     <p id="descuento">OFF <%= product.discount %> %</p>
                     <div class="producto-descripcion">
                         <p>

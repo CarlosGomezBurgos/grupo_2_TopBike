@@ -22,7 +22,7 @@
                             </div>
                             <div class="detalle">
                                     <p class="precio-anterior">$ <%= products[i].price  %></p>
-                                    <p class="precio">$ <%= products[i].price * (1 - (products[i].discount/100)) %></p>
+                                    <p class="precio">$ <%= products[i].actual_price %></p>
                                     <p class="descuento"><%= products[i].discount %>% OFF</p>
                                     <p class="descripcion"><%= products[i].description %></p>
                             </div>

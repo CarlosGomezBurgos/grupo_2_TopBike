@@ -8,9 +8,18 @@ const productController = {
      productList: async (req, res) => {
           const categories = await db.Category.findAll()
           const products = await db.Product.findAll()
-         
+          
+          let products_formato = products.map(product =>{
+               product.actual_price = product.price * (1 - (product.discount/100));
+               product.actual_price = product.actual_price.toFixed(2);
+			product.price = parseFloat(product.price).toFixed(2);
+			return product;
+		})
+          
+          //console.log(products_formato)
+
           return res.render("product", {
-               products,
+               products: products_formato,
                categories
           });
      },
@@ -19,6 +28,9 @@ const productController = {
                include: [{ association: "category" }],
           })
           .then(function (product) {
+               product.actual_price = product.price * (1 - (product.discount/100));
+               product.actual_price = product.actual_price.toFixed(2);
+			product.price = parseFloat(product.price).toFixed(2);
                res.render('productDetail', { product: product });
           })
 
@@ -33,11 +45,9 @@ const productController = {
           const products = await db.Product.findAll()
           const user = await db.User.findByPk(req.params.id)
 
-          console.log(user)
-          console.log(carts)
           res.render('productCart', { 
                carts,
-               products,
+               products: products_formato,
                user
           });
 
