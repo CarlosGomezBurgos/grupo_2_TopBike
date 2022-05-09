@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <br>
+    <br>
+
+    <div class="contenedor_register">
+        <br>
+        <div class="errors" style="color: red;">
+            <ul>
+
+            </ul>
+        </div>
+
+        <h3>EDICION DE REGISTRO</h3>
+        <form action="/user/update/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+            <label for="name">Nombre Completo</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="user_name" 
+                value="<%= user.name %>"
+            >
+            <% if (locals.errors && errors.user_name) { %>
+                <p style="color: red"><%= errors.user_name.msg %> </p>
+            <% } %>
+
+            <label for="email">Correo Electronico</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email"
+                value="<%= user.email %>"
+            >
+            <% if (locals.errors && errors.email) { %>
+                <p><%= errors.email.msg %> </p>
+            <% } %>
+
+            <label for="password">Contraseña</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="user_password"
+            >
+            <% if (locals.errors && errors.user_password) { %>
+                <p><%= errors.user_password.msg %> </p>
+            <% } %>
+    
+            <label for="image">Imagen de perfil</label>
+            <input 
+                type="file" 
+                id="file" 
+                name="avatar"
+                value="<%= user.avatar %>"
+            >
+
+            <!-- Image preview -->
+            <div id="imagePreview"></div>
+
+            <% if (locals.errors && errors.avatar) { %>
+                <p style="color: red"><%= errors.avatar.msg %> </p>
+            <% } %>
+
+            <button type="submit">Guardar cambios</button>
+
+        </form>
+
+    </div>
+    <%- include('partials/footer.ejs') %>
+    <!-- <script src="/js/editValidations.js"></script> -->
+</body>
+</html>

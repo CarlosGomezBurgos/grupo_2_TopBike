@@ -82,11 +82,11 @@
                             <button type="submit" class="buy-now-button">Guardar cambios</button>
                         </div>
                         
-                        <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="buy-now-button">Borrar Producto</button>
-                        </form>
-
                     </div>
+                </form>
+
+                <form action="/product/deleteproduct/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="buy-now-button">Borrar Producto</button>
                 </form>
             </div>
 

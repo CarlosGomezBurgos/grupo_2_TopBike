@@ -16,14 +16,17 @@
     </nav>
     <div class="i_header">
           <i class="user-menu fas fa-search"></i>
-          <a href="/product/cart" class="user-link">
-              <i class="user-menu fas fa-shopping-cart"></i>
-          </a>
-        <% if (locals.isLogged) { %>
-          <label for="check">
+          <% if (locals.isLogged) { %>
+            <label for="check">
+              
+            <a href="/product/cart/<%= locals.userLogged.id %>" class="user-link">
+                <i class="user-menu fas fa-shopping-cart"></i>
+            </a>
+
             <a href="/user/logout">
               <i style="color:red;" class="user-menu fas fa-sign-out-alt" id="btn"></i>
             </a>
+
             <a href="/user/profile" style="font-size: 10px; color: red;"><%= locals.userLogged.email %> </a>
             <% } else { %>
               <label for="check">
@@ -31,7 +34,7 @@
                   <i class="user-menu fas fa-user" id="btn"></i>
                 </a>
               </label>
-              <% } %>
+            <% } %>
              
       </div> 
 </header>

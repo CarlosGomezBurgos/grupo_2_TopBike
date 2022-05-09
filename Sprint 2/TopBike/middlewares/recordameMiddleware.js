@@ -12,7 +12,6 @@ function recordameMiddleware(req, res, next){
         let userEmails = users.map(user => user.email);
         const reqUser = users[userEmails.lastIndexOf(req.cookies.recordame)];
         if(reqUser != -1){
-            console.log('encontrado')
             req.session.usuarioLogueado = reqUser;
         }
     }

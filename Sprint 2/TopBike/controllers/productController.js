@@ -16,8 +16,6 @@ const productController = {
 			return product;
 		})
           
-          //console.log(products_formato)
-
           return res.render("product", {
                products: products_formato,
                categories
@@ -68,24 +66,21 @@ const productController = {
      edit: async (req, res) => {
           const oneProduct = await db.Product.findByPk(req.params.id);
           const categories = await db.Category.findAll();
-
+          console.log(oneProduct.dataValues)
           res.render('productEditForm', {
                oldData: req.body,
                categories,
-               product: oneProduct,
+               product: oneProduct.dataValues,
           })
      },
      store: async (req, res) => {
-          console.log(req.body)
           const resultValidation = validationResult(req);
           if (resultValidation.errors.length > 0) {
-               console.log(1)
                return res.render('productCreateForm', {
                     errors: resultValidation.mapped(),
                     oldData: req.body,
                })
           } else {
-               console.log(2)
                try {
                     const newProduct = {
                          name: req.body.name,
@@ -105,7 +100,6 @@ const productController = {
           }
      },
      update: async (req, res) => {
-          console.log(req.body)
           const oneProduct = await db.Product.findByPk(req.params.id);
           const categories = await db.Category.findAll();
 
@@ -153,10 +147,19 @@ const productController = {
                }
           }
      },
-     delete: async (req, res) => {
+     deleteProduct: async (req, res) => {
           await db.Product.destroy({
               where: {
                   id: req.params.id
+              }
+          })
+          res.redirect("/product")
+      },
+     deleteCart: async (req, res) => {
+          console.log(req.body)
+          await db.Cart.destroy({
+              where: {
+                  id: req.body.id
               }
           })
           res.redirect("/product")

@@ -34,9 +34,11 @@
                                 </div>
                                 <p class="cart-subtotal"><%= cart.quantity * (product.price * (1 - (product.discount/100))) %></p>
                                 <div>
-                                    <a href="/product/delete/<%= product.id %> ">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>
+                                  
+                                    <form action="/product/deletecart/<%= cart.id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="buy-now-button">Borrar</button>
+                                    </form>
+                            
                                 </div>
 
 

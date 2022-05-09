@@ -15,6 +15,15 @@
             <img style="width:30%" src="/img/avatars/<%= user.picture %> " alt="miniatura">
         </div>
 
+        <a href="/user/edit/<%= user.id %>">
+            <button type="submit" class="buy-now-button">Editar Perfil</button>
+        </a>
+
+        
+
+        <form action="" method="POST">
+            <button type="submit" class="buy-now-button">Eliminar Perfil</button>
+        </form>
         <%- include('partials/footer.ejs') %>
     </body>
 </html>

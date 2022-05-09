@@ -3,6 +3,7 @@ const path = require('path');
 const router = express.Router();
 const multer = require ('multer');
 const {body} = require('express-validator');
+const authMiddleware = require('../middlewares/authMiddleware')
 
 
 const productController  = require('../controllers/productController')
@@ -24,18 +25,19 @@ router.get('/', productController.productList);
 
 router.get('/detail/:id', productController.detail);
 
-router.get('/cart', productController.cart);
+router.get('/cart/:id', authMiddleware, productController.cart);
 
 /* create form */
 router.get('/create',productController.create);
 router.post('/', upload.single('image'), productCreateValidations, productController.store);
 
 /* edit form */
-router.get('/edit/:id', productController.edit); 
-router.put('/update/:id', upload.single('image'),productEditValidations, productController.update);
+router.get('/edit/:id', authMiddleware, productController.edit); 
+router.put('/update/:id', authMiddleware,  upload.single('image'),productEditValidations, productController.update);
 
-router.get('/cart/:id', productController.cart)
+// router.get('/cart/:id', productController.cart)
 
-router.delete('/delete/:id', productController.delete); 
+router.delete('/deleteproduct/:id', authMiddleware, productController.deleteProduct); 
+router.delete('/deletecart/:id', authMiddleware, productController.deleteCart); 
 
 module.exports = router;
