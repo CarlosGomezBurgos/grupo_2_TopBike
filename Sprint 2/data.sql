@@ -15,32 +15,32 @@ insert into user (id, name, email, password, picture) values (10, 'Eolande', 'em
 insert into category (id, name) values (1, 'Deportiva');
 insert into category (id, name) values (2, 'Playera');
 
-insert into product (id, name, price, discount, id_category, description, image) values (1, 'Bitwolf', 12208.65, 22, 2, 'bicicleta todo andar, increible.', '/img/product/img-2.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (2, 'Opela', 22887.32, 3, 2, 'bicicleta todo andar, increible.', '/img/product/img-3.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (3, 'Sub-Ex', 33853.53, 35, 1, 'bicicleta todo andar, increible.', '/img/product/img-4.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (4, 'Lotstring', 6216.57, 30, 2, 'bicicleta todo andar, increible.', '/img/product/img-5.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (5, 'Andalax', 12757.27, 24, 2, 'bicicleta todo andar, increible.', '/img/product/img-6.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (6, 'Wrapsafe', 46170.26, 8, 2, 'bicicleta todo andar, increible.', '/img/product/img-7.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (7, 'Flexidy', 34986.43, 3, 1, 'bicicleta todo andar, increible.', '/img/product/img-8.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (8, 'Namfix', 6285.65, 21, 1, 'bicicleta todo andar, increible.', '/img/product/img-9.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (9, 'Alphazap', 49015.37, 20, 1, 'bicicleta todo andar, increible.', '/img/product/img-10.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (10, 'Kanlam', 25087.08, 10, 2, 'bicicleta todo andar, increible.', '/img/product/img-11.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (11, 'Zaam-Dox', 44527.63, 33, 2, 'bicicleta todo andar, increible.', '/img/product/img-12.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (12, 'Bigtax', 5573.7, 15, 1, 'bicicleta todo andar, increible.', '/img/product/img-13.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (13, 'Trippledex', 4364.15, 18, 2, 'bicicleta todo andar, increible.', '/img/product/img-14.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (14, 'Job', 32774.83, 35, 2, 'bicicleta todo andar, increible.', '/img/product/img-15.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (15, 'Cardify', 4115.39, 2, 1, 'bicicleta todo andar, increible.', '/img/product/img-16.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (16, 'Wrapsafe', 49016.24, 31, 2, 'bicicleta todo andar, increible.', '/img/product/img-17.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (17, 'Gembucket', 10522.41, 13, 2, 'bicicleta todo andar, increible.', '/img/product/img-18.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (18, 'Bigtax', 40049.94, 5, 2, 'bicicleta todo andar, increible.', '/img/product/img-19.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (19, 'Y-Solowarm', 40441.52, 0, 1, 'bicicleta todo andar, increible.', '/img/product/img-20.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (20, 'Tempsoft', 47736.22, 16, 1, 'bicicleta todo andar, increible.', '/img/product/img-21.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (21, 'Tresom', 30138.7, 1, 1, 'bicicleta todo andar, increible.', '/img/product/img-22.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (22, 'Flowdesk', 3105.82, 18, 1, 'bicicleta todo andar, increible.', '/img/product/img-23.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (23, 'Opela', 10353.88, 4, 1, 'bicicleta todo andar, increible.', '/img/product/img-24.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (24, 'Daltfresh', 41333.11, 24, 2, 'bicicleta todo andar, increible.', '/img/product/img-25.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (25, 'Prodder', 45436.78, 15, 1, 'bicicleta todo andar, increible.', '/img/product/img-26.jpg');
-insert into product (id, name, price, discount, id_category, description, image) values (26, 'Voltsillam', 8587.8, 11, 2, 'bicicleta todo andar, increible.', '/img/product/img-27.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (1, 'Bitwolf', 12208.65, 22, 2, 'bicicleta todo andar, increible.', '/img/products/img-2.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (2, 'Opela', 22887.32, 3, 2, 'bicicleta todo andar, increible.', '/img/products/img-3.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (3, 'Sub-Ex', 33853.53, 35, 1, 'bicicleta todo andar, increible.', '/img/products/img-4.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (4, 'Lotstring', 6216.57, 30, 2, 'bicicleta todo andar, increible.', '/img/products/img-5.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (5, 'Andalax', 12757.27, 24, 2, 'bicicleta todo andar, increible.', '/img/products/img-6.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (6, 'Wrapsafe', 46170.26, 8, 2, 'bicicleta todo andar, increible.', '/img/products/img-7.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (7, 'Flexidy', 34986.43, 3, 1, 'bicicleta todo andar, increible.', '/img/products/img-8.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (8, 'Namfix', 6285.65, 21, 1, 'bicicleta todo andar, increible.', '/img/products/img-9.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (9, 'Alphazap', 49015.37, 20, 1, 'bicicleta todo andar, increible.', '/img/products/img-10.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (10, 'Kanlam', 25087.08, 10, 2, 'bicicleta todo andar, increible.', '/img/products/img-11.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (11, 'Zaam-Dox', 44527.63, 33, 2, 'bicicleta todo andar, increible.', '/img/products/img-12.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (12, 'Bigtax', 5573.7, 15, 1, 'bicicleta todo andar, increible.', '/img/products/img-13.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (13, 'Trippledex', 4364.15, 18, 2, 'bicicleta todo andar, increible.', '/img/products/img-14.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (14, 'Job', 32774.83, 35, 2, 'bicicleta todo andar, increible.', '/img/products/img-15.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (15, 'Cardify', 4115.39, 2, 1, 'bicicleta todo andar, increible.', '/img/products/img-16.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (16, 'Wrapsafe', 49016.24, 31, 2, 'bicicleta todo andar, increible.', '/img/products/img-17.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (17, 'Gembucket', 10522.41, 13, 2, 'bicicleta todo andar, increible.', '/img/products/img-18.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (18, 'Bigtax', 40049.94, 5, 2, 'bicicleta todo andar, increible.', '/img/products/img-19.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (19, 'Y-Solowarm', 40441.52, 0, 1, 'bicicleta todo andar, increible.', '/img/products/img-20.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (20, 'Tempsoft', 47736.22, 16, 1, 'bicicleta todo andar, increible.', '/img/products/img-21.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (21, 'Tresom', 30138.7, 1, 1, 'bicicleta todo andar, increible.', '/img/products/img-22.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (22, 'Flowdesk', 3105.82, 18, 1, 'bicicleta todo andar, increible.', '/img/products/img-23.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (23, 'Opela', 10353.88, 4, 1, 'bicicleta todo andar, increible.', '/img/products/img-24.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (24, 'Daltfresh', 41333.11, 24, 2, 'bicicleta todo andar, increible.', '/img/products/img-25.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (25, 'Prodder', 45436.78, 15, 1, 'bicicleta todo andar, increible.', '/img/products/img-26.jpg');
+insert into product (id, name, price, discount, id_category, description, image) values (26, 'Voltsillam', 8587.8, 11, 2, 'bicicleta todo andar, increible.', '/img/products/img-27.jpg');
 
 
 
