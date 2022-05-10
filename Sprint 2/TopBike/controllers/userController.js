@@ -97,6 +97,58 @@ const usersController = {
                user: req.session.userLogged
           })
      },
+     edit:(req,res) => {
+          console.log('ingresaste a Editar')
+          res.render('profileEdit', {
+               user: req.session.userLogged
+          })
+     },
+     update: async (req, res) => {
+          console.log('ingresaste a Update')
+          console.log(req.body)
+
+          const resultValidation = validationResult(req);
+
+          if (resultValidation.errors.length > 0) {
+               console.log(1)
+               return res.render('profileEdit', {
+                    errors: resultValidation.mapped(),
+                    user: req.session.userLogged
+               })
+          } else {
+               try {
+                    if (req.file) {
+                         await db.User.update({
+                              name: req.body.user_name,
+                              email: req.body.email,
+                              password: req.body.user_password,
+                              picture: req.file.filename
+                         }, {
+                              where: {
+                                   id: req.params.id
+                              }
+                         })
+
+                    } else {
+                         await db.User.update({
+                              name: req.body.user_name,
+                              email: req.body.email,
+                              password: req.body.user_password,
+                         }, {
+                              where: {
+                                   id: req.params.id
+                              }
+                         })
+                    }
+                    
+                    res.redirect('/user/login');
+
+               } catch (error) {
+                    return res.status(500).json(error)
+               }
+          }
+     },
+
      logout: (req, res) => {
           res.clearCookie('userEmail');
           req.session.destroy();
