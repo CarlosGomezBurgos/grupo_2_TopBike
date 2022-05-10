@@ -1,46 +1,113 @@
 /* view mobile */
+:root{
+    --Naranja: #FF9900;
+    --Dark: #202124;
+    --Negro: #000000;
+    --Blanco: #fff;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--Dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 main{
     width: 95vw;
     box-sizing: border-box;
-    text-align: center;
     align-items: center;
     margin: 15px;
     padding: 15px;
-    color:#ffffff;
     }
     
     
     
     form{
-        text-align: left;
-        margin-left: 12%;
         margin-bottom: 33px;
+        display: flex;
+justify-content: center;
+align-items: center;
     }
     
-    
-    .products-title{
-        font-size: 1.2em;
-        text-shadow: -1px 1px 2px #000000;
-        padding: 11px 0px 3px;
+    h2{
+        color: var(--Naranja) !important;
+        font-size: 2em;
         text-align: center;
-        color: var(--verde);
-        letter-spacing: 5px;
-        margin: 33px 0px 1px;
-        color: var(--Verde);
-        font-weight: 700;
-        text-transform: uppercase;
+        margin-top: 130px;
+        margin-bottom: 35px;
+    }
+
+    #file{
+        display: none;
+    }
+    #preview-avatar{
+        height: 200px;
+        border: 1px solid var(--Blanco);
+        display: flex;
+        align-items: center;
+        width: 200px;
+        justify-content: center;
+        color: var(--Naranja);
+        margin-top: 32px;
+    }
+    #preview-avatar img{
+        max-width: 95%;
+        max-height: 95%;
+    }
+
+    #label-imagen{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--Blanco);
+        background-color: var(--Dark);
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2em;
+        font-weight: 400;
+        margin-bottom: 14px;
+        margin-top: 55px;
+    }
+
+    .description{
+        text-align: center;
+        margin: 40px 0px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .imagen{
+        display: flex;
+justify-content: center;
+width: 100%;
+align-items: center;
+margin: auto;
+text-align: center;
+    width: 67%;
+    margin-top: 54px;
+    }
+
+    .imagen img{
+        width: 100%;
     }
     
     .form-label{
         color: #ffffff;
-        font-size: .8em;
+        font-size: 1em;
         font-weight: 200;
         padding-left: 10px;
+        text-align: center;
      
     }
 
     .area{
-        padding: 10px 0px;
+        text-align: center;
+        margin: 40px 0px;
+    }
+    .area2{
+        text-align: center;
+        margin: 40px 0px;
+        display: flex;
+        justify-content: space-around;
     }
     
     input{
@@ -51,55 +118,70 @@ main{
     }
     
     .buy-now-button{
-        font-size: .7em;
+        font-size: .9em;
         font-weight: 300;
         margin: 10px 5px 10px 0px;
-        color: white;
-        width: 50%;
+        color: var(--Naranja);
+        width: 80%;
         display: inline;
         border-radius: 6px;
-        background: transparent;
+        background: var(--Negro);
         box-shadow: 1px 1px 2px var(--Verde);
-        padding: 5px 0px;
+        padding: 9px 0px;
         border-top: 1px solid rgba(255, 255, 255, .5);
         border-left: 1px solid rgba(255, 255, 255, .5);
+        border: 0;
     }
-    
+
+    .button-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 56px;
+        width: 100%;
+        align-items: center;
+    }
+
     .boton-comprar:hover, .boton-ver-carrito:hover, .boton-pagar:hover {
         background-color: var(--Verde);
     }
-    
-    .area{
-        padding: 3px 0px;
-        margin: 3px 0px;
-    }
-    
     /* view tablet */
     @media(min-width: 768px){
-        input{
-            width: 40%;
+        h2{
+            font-size: 2.5;
         }
-    
         .form-label{
-            padding-right: 7px;
+            font-size: 2.6;
         }
-    
+        input{
+            width: 100%;
+            height: 41px;
+        }
+        
+        #label-imagen{
+            font-size: 1.6em;
+        }
+        #preview-avatar {
+            height: 260px;
+            width: 260px;
+            margin-top: 44px;
+        }
         .buy-now-button{
-            width: 30%;
+            width: 100%;
+            height: 41px;
+            font-size: 1em;
         }
     
-        form{
-            margin-left: 23%;
-        }
+
     }
     
     /* view desktop */
     @media(min-width: 1440px){
-        form{
+       /*  form{
             margin-left: 33%;
         }
     
         input{
             width: 30%;
-        }
+        } */
     }

@@ -3,6 +3,9 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: var(--Dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 :root{
     --Naranja: #FF9900;
@@ -14,7 +17,7 @@ body{
 h3{
     text-align: center;
     color: var(--Naranja);
-    margin: 33px 0px 0px;
+    margin: 130px 0px -88px;
     font-size: 1.4em;
     text-shadow: -5px 1px 0px var(--Negro);
     letter-spacing: 4px;
@@ -49,8 +52,15 @@ form input{
     border-radius: 7px 0 7px;
     background: var(--Blanco);
 }
-form p{
+form h6{
     color: var(--Naranja);
+    padding: 9px 0 0;
+    font-size: .8em;
+    list-style: none;
+    width: 90%;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
 }
 form button{
     width: 90%;
@@ -80,14 +90,19 @@ form a{
 h4{
     text-align: center;
     color: var(--Blanco);
-    margin: 33px 0px 15px;
+    margin: 61px 0px 15px;
     font-size: 1em;
     font-weight: 300;
 }
+/* footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+} */
 
 /* Views Tablet */
 @media(min-width: 768px) {
-    h3{
+    .oferta{
         margin: 36px 0px 0px;
     }
     form button{
@@ -100,16 +115,25 @@ h4{
 
 /* Views Desktop */
 @media(min-width: 1200px) {
+    h3{
+        font-size: 1.8em;
+    }
+    form h6{
+        font-size: 1em;
+    }
+    form{
+        margin-top: 127px;
+    }
     form label{
         font-size: 1.4em;
     }
     form input{
-        width: 60%;
+        width: 33%;
     }
     form button{
-        width: 60%;
+        width: 33%;
     }
     form a{
-        width: 60%;
+        width: 33%;
     }
 }

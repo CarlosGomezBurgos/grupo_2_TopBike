@@ -6,16 +6,11 @@
 </head>
 <body>
     <%- include('partials/header.ejs') %>
-    <br>
-    <br>
-
-    <div class="contenedor_register">
-        <br>
-        <div class="errors" style="color: red;">
+        <!-- <div class="errors" style="color: red;">
             <ul>
 
             </ul>
-        </div>
+        </div> -->
 
         <h3>FORMULARIO DE REGISTRO</h3>
         <form action="/user/register" method="post" enctype="multipart/form-data">
@@ -26,9 +21,14 @@
                 name="user_name" 
                 value="<%= locals.oldData ? oldData.user_name : null %>"
             >
-            <% if (locals.errors && errors.user_name) { %>
+            <!-- <% if (locals.errors && errors.user_name) { %>
                 <p style="color: red"><%= errors.user_name.msg %> </p>
-            <% } %>
+            <% } %> -->
+            <h6 class="errors">
+                <% if (locals.errors && errors.user_name) { %>
+                    <%= errors.user_name.msg %>
+                <% } %>
+            </h6>
 
         <label for="email">Correo Electronico</label>
         <input 
@@ -37,9 +37,14 @@
             name="email"
             value="<%= locals.oldData ? oldData.email : null %>"
         >
-        <% if (locals.errors && errors.email) { %>
+        <!-- <% if (locals.errors && errors.email) { %>
             <p><%= errors.email.msg %> </p>
-        <% } %>
+        <% } %> -->
+        <h6 class="errors">
+            <% if (locals.errors && errors.email) { %>
+                <%= errors.email.msg %>
+            <% } %>
+        </h6>
 
         <label for="password">Contraseña</label>
         <input 
@@ -47,30 +52,41 @@
             id="password" 
             name="user_password"
         >
-        <% if (locals.errors && errors.user_password) { %>
+        <!-- <% if (locals.errors && errors.user_password) { %>
             <p><%= errors.user_password.msg %> </p>
-        <% } %>
+        <% } %> -->
+        <h6 class="errors">
+            <% if (locals.errors && errors.user_password) { %>
+                <%= errors.user_password.msg %>
+            <% } %>
+        </h6>
 
-            <label for="image">Imagen de perfil</label>
-            <input 
+            <label id="label-imagen" for="file">
+                Imagen de perfil
+                <div id="preview-avatar">
+                    <i class="fas fa-camera fa-2x"></i>
+                </div>
+            </label>
+            <input
                 type="file" 
                 id="file" 
                 name="avatar"
                 value="<%= locals.oldData ? oldData.avatar : null %>"
             >
 
-            <!-- Image preview -->
-            <div id="imagePreview"></div>
 
-            <% if (locals.errors && errors.avatar) { %>
-                <p style="color: red"><%= errors.avatar.msg %> </p>
-            <% } %>
+
+            <h6 class="errors">
+                <% if (locals.errors && errors.avatar) { %>
+                    <%= errors.avatar.msg %>
+                <% } %>
+            </h6>
 
             <button type="submit">REGISTRARSE</button>
 
         </form>
-    </div>
-    <%- include('partials/footer.ejs') %>
-    <script src="/js/registerValidations.js"></script>
-</body>
+        <%- include('partials/footer.ejs') %>
+        <script src="/js/registerValidations.js"></script>
+        <script src="/js/fileInputPreview.js"></script>
+    </body>
 </html>

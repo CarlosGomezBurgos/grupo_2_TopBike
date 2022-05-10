@@ -6,8 +6,7 @@
     </head>
     <body>
         <%- include('partials/header.ejs') %>
-        <br><br><br>
-        <div class="contenedor-create-form">
+  
             <div class="errors" style="color: red;">
                 <ul>
     
@@ -19,26 +18,26 @@
                     <h2 style="color: white" class="products-title">Editar Producto: <%= product.id %></h2>
                 </div>
             </div>
-            <div class="col-12">
+         
                 <form action="/product/update/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="row product-detail">
-                        <div class="area col-12 col-md-6">
-                            <label for="name" class="form-label">Nombre del producto:</label>
+                        <div class="area">
+                            <label for="name" class="form-label">Nombre del producto</label>
                             <input type="text" id="name" name="name" value="<%= product.name %>" class="form-input">
                         </div>
                         <% if (locals.errors && errors.name) { %>
                             <p style="color: red"><%= errors.name.msg %> </p>
                         <% } %>
-                        <div class="area col-12 col-md-6">
-                            <label for="price" class="form-label">Precio del producto:</label>
+                        <div class="area">
+                            <label for="price" class="form-label">Precio del producto</label>
                             <input type="text" id="price" name="price" value="<%= product.price %>" class="form-input">
                         </div>
-                        <div class="area col-12 col-md-6">
-                            <label for="discount" class="form-label">Descuento:</label>
+                        <div class="area">
+                            <label for="discount" class="form-label">Descuento</label>
                             <input type="text" id="discount" name="discount" value="<%= product.discount %>" class="form-input">
                         </div>
-                        <div class="area col-12 col-md-6">
-                            <label for="category" class="form-label">Categoría:</label>
+                        <div class="area2">
+                            <label for="category" class="form-label">Categoría </label>
                         <select 
                             name="category" 
                             id="category" 
@@ -61,37 +60,47 @@
                         </select>
 
                         </div>
-                        <div class="col-12">
-                            <label for="description" class="form-label">Descripción:</label>
+                        <div class="description">
+                            <label for="description" class="form-label">Descripción </label>
                             <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
                         </div>
-
-                        <img style="width: 30%" class="foto-producto" src="<%= product.image %> " alt="miniatura">
-
-                        <div class="area col-12 col-md-6">
-                            <label for="image" class="form-label">Imagen del producto:</label>
-                            <input 
-                                type="file" 
-                                id="file" 
-                                name="image"
-                                value="<%= product.image %>"
-                            >   
+                        <div class="imagen">
+                            <img src="<%= product.image %> " alt="miniatura">
                         </div>
 
-                        <div class="col-12">
-                            <button type="submit" class="buy-now-button">Guardar cambios</button>
-                        </div>
+
+
                         
+                    <label id="label-imagen" for="file">
+                        Imagen del producto:
+                        <div id="preview-avatar">
+                            <i class="fas fa-camera fa-2x"></i>
+                        </div>
+                    </label>
+                    <input
+                        type="file" 
+                        id="file" 
+                        name="avatar"
+                        value="<%= product.image %>"
+                    >
+
+                        <div class="button-container">
+                            <button type="submit" class="buy-now-button">Guardar cambios</button>
+                            <button id="delete-button" class="buy-now-button">Borrar Producto</button>
+                        </div>
+
                     </div>
                 </form>
+                <form id="delete-form" action="/product/delete/<%= product.id %>?_method=DELETE" method="POST"></form></form>
+                <script>
+                    document.querySelector("#delete-button").onclick(e => {
+                        document.querySelector("#delete-form").submit();
+                    })
+                </script>
 
-                <form action="/product/deleteproduct/<%= product.id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="buy-now-button">Borrar Producto</button>
-                </form>
-            </div>
-
-        </div>
+  
         <%- include('partials/footer.ejs') %>
         <script src="/js/productEditFormValidations.js"></script>
+        <script src="/js/fileInputPreview.js"></script>
     </body>
 </html>
