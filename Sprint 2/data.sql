@@ -1,7 +1,7 @@
 
 use topbike;
 
-insert into user (id, name, email, password, picture) values (1, 'yuki', 'yuki@mail.com', '12345678', 'http://dummyimage.com/208x100.png/5fa2dd/ffffff');
+insert into user (id, name, email, password, picture) values (1, 'yuki', 'yuki@mail.com', '12345678', 'dinero.jpg');
 insert into user (id, name, email, password, picture) values (2, 'Rosa', 'redson1@washingtonpost.com', 'OQxIPgRUJ4', 'http://dummyimage.com/165x100.png/cc0000/ffffff');
 insert into user (id, name, email, password, picture) values (3, 'Maryann', 'mshelsher2@cbsnews.com', 'OyaziXA', 'http://dummyimage.com/233x100.png/dddddd/000000');
 insert into user (id, name, email, password, picture) values (4, 'Nealon', 'nworham3@bandcamp.com', 'MZy678F', 'http://dummyimage.com/170x100.png/ff4444/ffffff');
