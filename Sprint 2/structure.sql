@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS topbike;
 CREATE DATABASE IF NOT EXISTS topbike;
 USE topbike;
 
@@ -34,6 +35,6 @@ CREATE TABLE cart(
     id_product int not null,
     quantity int not null,
     primary key(id),
-    foreign key(id_user) references user(id),
-    foreign key(id_product) references product(id)
+    foreign key(id_user) references user(id) ON DELETE CASCADE,
+    foreign key(id_product) references product(id) ON DELETE CASCADE
 );
