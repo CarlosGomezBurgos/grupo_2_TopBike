@@ -28,8 +28,8 @@ router.get('/detail/:id', productController.detail);
 router.get('/cart/:id', authMiddleware, productController.cart);
 
 /* create form */
-router.get('/create',productController.create);
-router.post('/', upload.single('image'), productCreateValidations, productController.store);
+router.get('/create', authMiddleware, productController.create);
+router.post('/', authMiddleware, upload.single('image'), productCreateValidations, productController.store);
 
 /* edit form */
 router.get('/edit/:id', authMiddleware, productController.edit); 

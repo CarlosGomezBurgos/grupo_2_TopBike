@@ -65,43 +65,104 @@ Keep Doing :
 // Solución: Reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda. Se definen nuevas tareas a realizar y se cargan al tablero de Trello para su seguimiento. Se define nueva fecha de reunion.
 
 Less of: 
-* Trabajo individual:   // Solución: coincidir horarios para reunirse y realizar tareas en equipo.  
+* Trabajo individual:   
+// Solución: coincidir horarios para reunirse y realizar tareas en equipo.  
 
 Stop Doing:
+* Subir versiones individuales al repositorio sin previa revision.
+// Solucion: Crear ramas individuales.
 
 
 <!-- Retrospectiva Sprint 4 -->
 
 Start Doing: 
-* 
+* Separar las tareas del sprint y asignarlas segun el tiempo disponible por cada integrante
 
 More of:
-* Comentar las dificultades en tareas asignadas   // Solución: tratar de terminar todas las tareas a tiempo
+* Comentar las dificultades en tareas asignadas   
+// Solución: tratar de terminar todas las tareas a tiempo
 
 Keep Doing :
-* Trabajo Colaborativo  // Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
+* Trabajo Colaborativo 
+// Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
 
 Less of: 
-* Trabajo individual:   // Solución: coincidir horarios para reunirse y realizar tareas en equipo.  
+* Trabajo individual:   
+// Solución: coincidir horarios para reunirse y realizar tareas en equipo.  
 
 
 <!-- Retrospectiva Sprint 5 -->
 
 Start Doing: 
-* 
+* Tomar una rama de trabajo como estable.
 
 More of:
-* Compartir soluciones de las dificultades que se tuvieron en las tareas    //Aprovechar un momento de las reuniones de equipo para mostar las soluciones.
+* Compartir soluciones de las dificultades que se tuvieron en las tareas    
+//Aprovechar un momento de las reuniones de equipo para mostar las soluciones.
 
 Keep Doing :
-* Trabajo Colaborativo  // Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
+* Trabajo Colaborativo  
+// Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
+
 * Comentar las dificultades en tareas asignadas   // Solución: tratar de terminar todas las tareas a tiempo
 
 Less of: 
-* Trabajo individual:   // Solución: coincidir horarios para reunirse y realizar tareas en equipo. 
-* no modificar tareas realizadas en sprint anteriores.
+* Trabajo individual:   
+// Solución: coincidir horarios para reunirse y realizar tareas en equipo. 
+* No modificar tareas realizadas en sprint anteriores.
 
-* no pisar las tareas asignadas a otro compañero, //Solución: en todo caso hacer una sugerencia para el que tiene la actividad a cargo lo tenga presenta y de esta manera evitar retrabajo. 
+Stop Doing:
+* Pisar las tareas asignadas a otro compañero.
+// Solución: en todo caso hacer una sugerencia para el que tiene la actividad a cargo lo tenga presenta y de esta manera evitar retrabajo. 
+
+<!-- Retrospectiva Sprint 6 -->
+
+Start Doing: 
+* Definir el modelo de la BD a trabajar y establecer las relaciones.
+
+More of:
+* Compartir opciones de diseños y entidades necesarias para encarar el sprint   
+//Aprovechar un momento de las reuniones de equipo para presentar ideas.
+
+Keep Doing :
+* Trabajo Colaborativo  
+// Solución: reuniones donde se resuelvan tareas del sprint en equipo, un compañero comparte pantalla y el resto ayuda.
+
+* Comentar las dificultades en tareas asignadas   // Solución: tratar de terminar todas las tareas a tiempo
+
+Less of: 
+* Dejar el codigo planteado sin funcionar y cargarlo a la rama estable.
+// Solución: coincidir horarios para reunirse y realizar tareas en equipo. 
+* Consultar en clase y aprovechar el tiempo con los profesores.
+
+Stop Doing:
+* Resolver tareas previas sin definir el modelo a trabajar en BD
+// Solución: Planificar y priorizar tareas para no perder el objetivo del proyecto.
+
+<!-- Retrospectiva Sprint 7 -->
+
+Start Doing: 
+* Var las principales tareas del sprint 6 y definir las validaciones correspondientes. 
+//Separar en carpetas, validaciones del back y del front.
+
+More of:
+* Ver horarios disponibles para avanzar con el proyecto. Mantener la comunicacion  
+//Aprovechar un momento de las reuniones de equipo para presentar ideas.
+
+Keep Doing :
+* Trabajo Colaborativo  
+// Solución: Acompañamiento permanente en solucionar conflictos del grupo.
+
+* Comentar las dificultades en tareas asignadas   
+// Solución: tratar de terminar todas las tareas a tiempo
+
+Less of: 
+* Demorar en responder las preguntas de discord. 
+* No avisar cuestiones personales a tiempo que pueden demorar el proyecto.
+// Solución: liberar tareas tomadas para que otro integrante las pueda resolver.
 
 
+Stop Doing:
+* Mensajes fuera de horario.
+// Solución: Definir horarios de consulta entre miembros del grupo.
 
