@@ -166,3 +166,29 @@ Stop Doing:
 * Mensajes fuera de horario.
 // Solución: Definir horarios de consulta entre miembros del grupo.
 
+<!-- Retrospectiva Sprint 8 -->
+
+Start Doing: 
+* Ver las relaciones de la BD, definir los endpoints de la API y armar componentes de React.
+
+More of:
+* Revisar tareas pendientes de sprints anteriores y CRUD de usuarios/productos  
+//Aprovechar un momento de las reuniones de equipo para presentar las tareas a desarrollar.
+
+Keep Doing :
+* Trabajo Colaborativo  
+// Solución: Acompañamiento permanente en solucionar conflictos del grupo.
+
+* Comentar las dificultades en tareas asignadas   
+// Solución: tratar de terminar todas las tareas a tiempo
+
+Less of: 
+* Demorar en responder las preguntas de discord. 
+* No avisar cuestiones personales a tiempo que pueden demorar el proyecto.
+// Solución: liberar tareas tomadas para que otro integrante las pueda resolver.
+
+
+Stop Doing:
+* Mensajes fuera de horario.
+// Solución: Definir horarios de consulta entre miembros del grupo.
+
