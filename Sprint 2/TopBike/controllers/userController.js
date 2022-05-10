@@ -141,7 +141,7 @@ const usersController = {
                          })
                     }
                     
-                    res.redirect('user/login');
+                    res.redirect('/user/login');
 
                } catch (error) {
                     return res.status(500).json(error)
