@@ -22,9 +22,10 @@
         <% if (locals.isLogged) { %>
           <label for="check">
             <a href="/user/logout">
-              <i style="color:red;" class="user-menu fas fa-sign-out-alt" id="btn"></i>
+              <i class="user-menu fas fa-sign-out-alt" id="btn"></i>
             </a>
-            <a href="/user/profile" style="font-size: 10px; color: red;"><%= locals.userLogged.email %> </a>
+          </label>
+            <a href="/user/profile" class="link-name"><%= locals.userLogged.name %></a>
             <% } else { %>
               <label for="check">
                 <a href="/user/login">
@@ -33,5 +34,12 @@
               </label>
               <% } %>
              
-      </div> 
+      </div>
+      <style>
+        .link-name{
+          font-size: 20px;
+          color: var(--Blanco);
+          text-decoration: none;
+        }
+      </style>
 </header>

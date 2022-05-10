@@ -87,7 +87,7 @@ const usersController = {
           return res.render('login', {
                errors: {
                     email: {
-                         msg: 'No se encuenta este email en nuestra base de datos'
+                         msg: 'No se encuentra este email en nuestra base de datos'
                     }
                }
           })

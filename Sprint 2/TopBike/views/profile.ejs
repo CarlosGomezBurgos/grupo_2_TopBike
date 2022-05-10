@@ -2,18 +2,17 @@
 <html lang="es">
     <head>
         <%- include('partials/head.ejs') %>
-        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/profile.css">
     </head>
     <body>
         <%- include('partials/header.ejs') %>
-        <br>
-        <h1 style="color: white;">PERFIL</h1>
-        <h1 style="color: white;">PERFIL: Bienvenido !!!</h1>
-        <h3 style="color: skyblue;"><%= user.user_name %> </h3>
-        <h3 style="color: skyblue;"><%= user.email %> </h3>
-        <div class="productDetail-foto">
-            <img style="width:30%" src="/img/avatars/<%= user.picture %> " alt="miniatura">
-        </div>
+        <main>
+            <h2>Hola <%= user.name %> !</h2>
+            <h3>Email: <%= user.email %> </h3>
+            <div class="productDetail-foto">
+                <img class="imagen" src="/img/avatars/<%= user.picture %> " alt="miniatura">
+            </div>
+        </main>
 
         <%- include('partials/footer.ejs') %>
     </body>

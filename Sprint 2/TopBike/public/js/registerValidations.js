@@ -1,53 +1,62 @@
-window.addEventListener('load',function(){
+document.addEventListener("DOMContentLoaded", function() { 
     document.querySelector('form').addEventListener('submit', function(e){
-        let errorsList = [];
-        
+
+        //let errorsList = [];
+        let error_counter = 0
         let name = document.querySelector('input#name').value
+        let email = document.querySelector('input#email').value
+        let password = document.querySelector('input#password').value
+        let filePath = document.getElementById('file').value
+        let name_error_container = document.querySelectorAll('.errors')[0]
+        let email_error_container = document.querySelectorAll('.errors')[1]
+        let password_error_container = document.querySelectorAll('.errors')[2]
+        let avatar_error_container = document.querySelectorAll('.errors')[3]
+        
+        //let name = document.querySelector('input#name').value
         if (name == "") {
-            errorsList.push('el campo de "Nombre Completo" --> está incompleto')
+            error_counter++;
+            name_error_container.innerHTML = 'el campo de NOMBRE COMPLETO está incompleto'
         } else {
             if(name.length < 2) {
-                errorsList.push('el campo "Nombre Completo" deberá tener al menos 2 caracteres')
-            }
+                error_counter++;
+                name_error_container.innerHTML ='el campo NOMBRE COMPLETO deberá tener al menos 2 caracteres'
+            } else {name_error_container.innerHTML = '';}
         }
 
-        let email = document.querySelector('input#email').value
+        //let email = document.querySelector('input#email').value
         if (email == "") {
-            errorsList.push('el campo de "Correo Electronico" --> está incompleto')
-        } else {
+            error_counter++;
+            email_error_container.innerHTML = 'el campo de CORREO ELECTRONICO está incompleto'
+        } else {email_error_container.innerHTML = "";
             //deberá ser valido
             //No puede repetirse con los e-mails ya registrados.
         }
         
-        let password = document.querySelector('input#password').value
+        //let password = document.querySelector('input#password').value
         if (password == "") {
-            errorsList.push('el campo de "Contraseña" --> está incompleto')
+            error_counter++;
+            password_error_container.innerHTML = 'el campo de CONTRASEÑA está incompleto'
         } else {
             if(password.length < 8) {
-                errorsList.push('el campo "Contraseña" deberá tener al menos 8 caracteres')
-            }
+                error_counter++;
+                password_error_container.innerHTML = 'el campo CONTRASEÑA deberá tener al menos 8 caracteres';
+            }else {password_error_container.innerHTML = '';}
             //Deberá tener letra mayuscula, minuscula, un numero y un caracter especial.
         }
 
-        let fileInput = document.querySelector('input#file');
-        let filePath = fileInput.value;
         let allowedExtensions = /(.jpg|.jpeg|.png)$/i;
         if (!filePath) {
-            errorsList.push('El campo "Imagen de perfil" --> está incompleto')
+            error_counter++;
+            avatar_error_container.innerHTML = 'El campo IMAGEN DE PERFIL está incompleto'
         } else {
             if(!allowedExtensions.exec(filePath)){
-                errorsList.push('Ingresar un formato de archivo válido: .jpeg/.jpg/.png/');
-            }             
+                error_counter++;
+                avatar_error_container.innerHTML = 'Ingresar un formato de archivo válido: .jpeg/.jpg/.png/';
+            }else {avatar_error_container.innerHTML = ""}         
         }
         
-        //Lista de errores
-        if(errorsList.length > 0){
+        if(error_counter > 0){
             e.preventDefault();
-            let ulErrors = document.querySelector('div.errors ul')
-            ulErrors.innerHTML = "";
-            for (let i = 0; i < errorsList.length; i++) {
-                ulErrors.innerHTML += '<li>' + errorsList[i] + '</li>'
-            }
         }
 
     })
