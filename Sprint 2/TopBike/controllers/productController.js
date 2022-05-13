@@ -74,6 +74,7 @@ const productController = {
           })
      },
      store: async (req, res) => {
+          console.log('')
           const resultValidation = validationResult(req);
           if (resultValidation.errors.length > 0) {
                return res.render('productCreateForm', {
@@ -148,6 +149,7 @@ const productController = {
           }
      },
      deleteProduct: async (req, res) => {
+          console.log('Ingresaste a deleteProduct')
           await db.Product.destroy({
               where: {
                   id: req.params.id
